@@ -45,30 +45,36 @@
 ## Stack Overflow
 
 Il s'agit d'un forum spécialisé dans le devellopement informatique. 
-
 Je viens de créer un compte et je fait une recherche à propos d'un problème que j'ai rencontré la veille sur Processing. 
-
 Attention à la date de création/ date de modification/ / le upvote / la confidentialité des posts/ 
 
 ## La Documentation 
 
 RTFD Read the fucking Document
-
 La documentation peu être un READ.ME sur un github, c'est la base de notre travail, notre mode d'emploi voir notre dictionnaire. 
-
 Le GETTING STARTED nou donne le minimum syndical pour démarrer sur une techno.Souvent le plus important c'est l'installation. 
-
 L'API documentation, très tehcniqu très brut/ basique par contre c'est un outil puissant pour consulter une fonctionnalité. 
 
 ## Chat GPT
 
 Création d'un compte sur Chat GPT avec le mail du campus. 
-
 Les différents niveaux de language, le plus bas c'est 010101010, puis plus on remonte vers l'humain et plus le code évolu, concrétement l'anglais est le plus haut niveau de codage. 
-
 Il est bien meilleur quand on lui parle en Anglais. 
 
+## La veille technologique
+
+Cela permet de rester à jour avec les inovations et le paysage informatique. 
+Sur les groupes de discussion Discord / Telegram/ Whatsapp
+
+ ou sur X.com (attention à bien cibler ses topics) /  Reddit / Github (par le biais de starzer un repo / Daily dev (c'est plus de l'actu) / Tech Crunch /  ##Medium
+
+Un medium est un support d'expression (type un graffeur c'est un mur) 
 
 
+Les Newletters
+
+Suivre des gens sur internet // Repérer les personnes qui font une bonne veille et/ou qui sont à des postes importants (CEO de symfony) / 
+
+Le paratge de connaissance à l'orale avec les autres personnes de notre groupe ou des autres groupes. 
 
 
