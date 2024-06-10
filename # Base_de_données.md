@@ -11,7 +11,7 @@ Les données sont structurées:
     - Tables (voir ça comme un tableau) type une feuille dans un excel 
     - Lignes d'enregistrement (des entrées)
   
-  Le tout constitu une hierarchie de base donnée;
+  Le tout constitut une hierarchie de base donnée;
 
   Le rôle du SGBD en quatre taches: 
 
@@ -19,8 +19,8 @@ Les données sont structurées:
     - Le catalogue: Déscription de notre base de donnée et info sur les utilisateurs avec leur droit d'accès. 
     - Language de requête (traitement): SQL
     - processeur de requête: prendre notre requête et la transformer en commande auprès du moteur. 
-  
-  ## Le processus: 
+
+## Le processus: 
 
     1 - J'écris ma requête et je l'envoi au processeur de requête (un plan d'execution)
     2 - Puis il vérifie les droits dans le catalogue pour effectuer les opérations 
@@ -48,7 +48,7 @@ Ont les distinguent en 2 catégories (minimum et maximum) que l'ont sépare par 
         Une marque peut avoir au moins un modèle de voiture mais aussi plusieurs (1,n)
         Une Autombile doit avoir au moins une marque et ne peut en avoir plus (1,1)
 
-    img "src(./home/rodolphe-delory/Images/Captures d’écran/Capture d’écran du 2024-06-10 10-00-18.png)"
+    ![Exemple Schema](./home/rodolphe-delory/Images/Captures d’écran/Capture d’écran du 2024-06-10 10-00-18.png "Exemple Auto").
 
 ## Glossaire 
 
@@ -56,7 +56,9 @@ table : Un tableau comprenant toutes nos lignes d'enregistrement
 clefs : Réference unique d'une entité, permet de cibler une entité
 index : Est une structure qui permet de segmenter les données afin d'améliorer la recherche du SGBD
 relation : La liaison entre les entités
-les differents types de données: une chaine de caractères, un réel (nb à virgule), un entier (num de fact), une date ou une heure
+les differents types de données: une chaine de caractères, un réel /float/ (nb à virgule), un entier (num de fact), une date ou une heure / var char (variable charactéres) 
+SGBD: Système de gestion de base de données 
+SGBDR : Système de gestion de base de données relationnelle (la relation entre entre deux tableaux)
 
 ![Schema BDD](./home/rodolphe-delory/Images/Schema_BDD_websites.png "Schema BDD").
 
