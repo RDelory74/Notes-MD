@@ -59,8 +59,18 @@ Ont les distinguent en 2 catégories (minimum et maximum) que l'ont sépare par 
 <ins>les differents types de données</ins>: une chaine de caractères, un réel /float/ (nb à virgule), un entier (num de fact), une date ou une heure / var char (variable charactéres) 
 <ins>SGBD</ins>: Système de gestion de base de données 
 <ins>SGBDR</ins> : Système de gestion de base de données relationnelle (la relation entre entre deux tableaux)
+<ins>MDC</ins> : Modèle conceptuel de données qui textualise les données de la manière dont elles seront stockées. 
+<ins>MLD</ins> : Modèle logique de données organise les données avec les tables, les colonnes et les clées primaires. 
+<ins>Clé primaire</ins> : Identifiant d'une entité 
+<ins>Clé Etrangère</ins> : (Foreigner Key) permet d'appeller l'ID d'une entité dans un table.  
+
+
 
 ![Schema BDD](/home/rodolphe-delory/Images/Schema_BDD_websites.png "Schema BDD").
+
+
+
+
 
 
 
