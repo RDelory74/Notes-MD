@@ -48,19 +48,20 @@ Ont les distinguent en 2 catégories (minimum et maximum) que l'ont sépare par 
         Une marque peut avoir au moins un modèle de voiture mais aussi plusieurs (1,n)
         Une Autombile doit avoir au moins une marque et ne peut en avoir plus (1,1)
 
-    ![Exemple Schema](./home/rodolphe-delory/Images/Captures d’écran/Capture d’écran du 2024-06-10 10-00-18.png "Exemple Auto").
+    ![Exemple Schema](/home/rodolphe-delory/Images/Captures d’écran/Capture d’écran du 2024-06-10 10-00-18.png) "Exemple Auto".
 
 ## Glossaire 
 
-table : Un tableau comprenant toutes nos lignes d'enregistrement
-clefs : Réference unique d'une entité, permet de cibler une entité
-index : Est une structure qui permet de segmenter les données afin d'améliorer la recherche du SGBD
-relation : La liaison entre les entités
-les differents types de données: une chaine de caractères, un réel /float/ (nb à virgule), un entier (num de fact), une date ou une heure / var char (variable charactéres) 
-SGBD: Système de gestion de base de données 
-SGBDR : Système de gestion de base de données relationnelle (la relation entre entre deux tableaux)
+<ins>table</ins> : Un tableau comprenant toutes nos lignes d'enregistrement
+<ins>clefs</ins> : Réference unique d'une entité, permet de cibler une entité
+<ins>index</ins> : Est une structure qui permet de segmenter les données afin d'améliorer la recherche du SGBD
+<ins>relation</ins> : La liaison entre les entités
+<ins>les differents types de données</ins>: une chaine de caractères, un réel /float/ (nb à virgule), un entier (num de fact), une date ou une heure / var char (variable charactéres) 
+<ins>SGBD</ins>: Système de gestion de base de données 
+<ins>SGBDR</ins> : Système de gestion de base de données relationnelle (la relation entre entre deux tableaux)
 
-![Schema BDD](./home/rodolphe-delory/Images/Schema_BDD_websites.png "Schema BDD").
+![Schema BDD](/home/rodolphe-delory/Images/Schema_BDD_websites.png "Schema BDD").
+
 
 
 
