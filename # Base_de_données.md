@@ -339,19 +339,7 @@ Liste des films avec Harrison Ford dans son casting
 | NUM_DE_SALLE |
 +--------------+
 |            5 |
-|            5 |
-|            1 |
-|            2 |
-|            2 |
-|            1 |
-|            4 |
-|            4 |
-|            4 |
-|            2 |
-|            2 |
-|            4 |
-|            2 |
-|            4 |
+|            5 |Le nouveau film, Jurassic park
 |            4 |
 |            4 |
 |            3 |
@@ -417,7 +405,257 @@ Tous les cinémas qui ont passé ou vont passer star wars
 
 Nombre total de place par cinéma
 
-    SELECT SUM(NB_DE_PLACE)
+    SELECT SUM(NB_DE_PLACE), NOM
 	FROM mydb.SALLE
     JOIN CINEMA ON CINEMA_iDCINEMA = idCINEMA
-    WHERE CINEMA.NOM = 'MEGARAMA';
+    GROUP BY CINEMA.NOM;
+
++------------------+------------+
+| SUM(NB_DE_PLACE) | NOM        |
++------------------+------------+
+|             1540 | Pathée     |
+|              565 | Megarama   |
+|              157 | La turbine |
++------------------+------------+
+
+Budget total de tous les films par année de sortie
+
+    SELECT BUDGET, DATE_DIFFUSION, NOM
+	FROM mydb.FILM
+    ORDER BY DATE_DIFFUSION
+
++----------+----------------+---------------------------------------------------+
+| BUDGET   | DATE_DIFFUSION | TITRE                                             |
++----------+----------------+---------------------------------------------------+
+| 11500000 | 1977           | Star wars                                         |
+| 31000000 | 1979           | Apocalypse Now                                    |
+| 20000000 | 1981           | Indiana Jones Les Aventuriers de l’Arche perdue   |
+|  8000000 | 1994           | Pulp fiction                                      |
+|  7500000 | 1994           | La cité de la peur                                |
+| 75000000 | 1997           | Le cinquième élément                              |
+|  3000000 | 1999           | Mon voisin Totoro                                 |
++----------+----------------+---------------------------------------------------+
+
+## Insertion, mise à jour et suppression
+
+Créer un film avec au moins trois projections pour le mois prochain
+
+Le nouveau film, Jurassic park
+
+    INSERT INTO mydb.FILM (TITRE,DATE_DIFFUSION,GENRE,BUDGET,DUREE)
+    VALUES ('Jurassic Park', '1993', 'aventure, science-fiction', '63000000', '127min');
+
+Les nouvelles seances
+
+    INSERT INTO mydb.CINEMA_has_SALLE_has_FILM (CINEMA_idCINEMA,SALLE_idSALLE,FILM_idFILM,DATE)
+    VALUES 
+    (1,7,8, '2024-06-28 20:00:00'),
+    (2,6,8, '2024-07-02 22:00:00'),
+    (3,10,8, '2024-08-03 20:00:00');
+
+Les Acteurs 
+
+    INSERT INTO mydb.ACTEURS(NOM,PRENOM,DATE_DE_NAISSANCE,NATIONALITE,ROLES)
+    VALUES
+    ('Sam', 'Neill', '14 septembre 1947', 'néo-zélandais', 'Dr. Alan Grant'),
+    ('Laura', 'Dern', '10 février 1967', 'américaine', 'Dr. Ellie Sattler');
+
+Et enfin le tableau des FILM_has_ACTEURS
+
+    INSERT INTO mydb.FILM_has_ACTEURS(FILM_idFILM,ACTEURS_idACTEURS,ROLES)
+    VALUES
+    (8,20,'Dr. Alan Grant'),
+    (8,21,'Dr. Ellie Sattler');
+
+
+Ajouter un cinéma et ses salles
+
+Le cinéma
+
+    INSERT INTO mydb.CINEMA(NOM,ADRESSE,VILLE,COMPAGNIE)
+    VALUES
+    ('DECAVISION EPAGNY', '145 ROUTE DE LA PRAIRE', 'EPAGNY', 'DECAVISION');
+
+Les Salles
+
+    INSERT INTO mydb.SALLE(NUM_DE_SALLE,NB_DE_PLACE,CINEMA_idCINEMA)
+    VALUES
+    (1,800,4),
+    (2,500,4),
+    (3,300,4);
+
+Ajouter 1 000 000 au budget du film que vous avez créé
+
+    UPDATE mydb.FILM 
+    SET BUDGET = '64000000'
+    WHERE idFILM = 8;
+
+Augmenter de 5% le budget de tous les films
+
+    UPDATE mydb.FILM
+    SET BUDGET = BUDGET *1.05;
+
++--------+---------------------------------------------------+----------------+---------------------------+----------+-------+
+| idFILM | TITRE                                             | DATE_DIFFUSION | GENRE                     | BUDGET   | DUREE |
++--------+---------------------------------------------------+----------------+---------------------------+----------+-------+
+|      1 | Indiana Jones Les Aventuriers de l’Arche perdue   | 1981           | aventure                  | 21000000 |   115 |
+|      2 | Star wars                                         | 1977           | aventure                  | 12075000 |   105 |
+|      3 | Pulp fiction                                      | 1994           | drame                     |  8400000 |   154 |
+|      4 | Le cinquième élément                              | 1997           | action                    | 78750000 |   126 |
+|      5 | Apocalypse Now                                    | 1979           | guerre                    | 32550000 |   153 |
+|      6 | La cité de la peur                                | 1994           | comédie                   |  7875000 |   113 |
+|      7 | Mon voisin Totoro                                 | 1999           | Jeunesse                  |  3150000 |    86 |
+|      8 | Jurassic Park                                     | 1993           | aventure, science-fiction | 67200000 |   127 |
++--------+---------------------------------------------------+----------------+---------------------------+----------+-------+
+
+Supprimer un film (dans ce cas attention, obligation de supprimer toutes les associations précedentes)
+
+Suppression d'abord depuis le ternaire Seances CINEMA_has_SALLE_has_FILM
+
+    DELETE FROM mydb.CINEMA_has_SALLE_has_FILM
+    WHERE FILM_idFILM = 5;
+
+Puis suppression du film dans FILM_has_ACTEURS
+
+    DELETE FROM mydb.FILM_has_ACTEURS
+    WHERE FILM_idFILM = 5;
+
+Enfin suppression du FILM
+
+    DELETE FROM mydb.FILM
+    WHERE idFILM = 5;
+
+Supprimer les films n’ayant aucune projection
+
+    DELETE FROM mydb.FILM       //  commande de supression dans le tableau FILM
+    WHERE NOT EXISTS (      //  Condition ou il n'exist pas 
+    SELECT 1    //  selectionne une valeur on aurai pu utiliser *(tous) mais pour des raison d'optimisation de performance c'est mieux de préciser 1
+    FROM mydb.CINEMA_has_SALLE_has_FILM     // le tableau ou doit s'appliquer la condition 
+    WHERE mydb.CINEMA_has_SALLE_has_FILM.FILM_idFILM = mydb.FILM.idFILM);  // la condtion de jointure entre les deux tableaux via les id de liaisons
+
+Dans ce cas ce sera le film N°7 qui sera supprimé. 
+
+## Pour aller plus loin (optionnel)
+
+Liste de tous les films qui passent aujourd'hui
+
+    SELECT mydb.FILM.*
+    FROM mydb.FILM
+    JOIN CINEMA_has_SALLE_has_FILM ON FILM.idFILM = CINEMA_has_SALLE_has_FILM.FILM_idFILM
+    WHERE DATE(CINEMA_has_SALLE_has_FILM.DATE) = CURRENT_DATE (); 
+
+A ce jour il n'y en a pas, mais je vais en ajouter une de Jurassic Park (un revival)
+
+    INSERT INTO mydb.CINEMA_has_SALLE_has_FILM (CINEMA_idCINEMA, SALLE_idSALLE, FILM_idFILM,DATE)
+    VALUES (1,7,8,'2024-06-13 20:00:00');
+
+Et je reais un test
+
+    SELECT mydb.FILM.*
+    FROM mydb.FILM
+    JOIN CINEMA_has_SALLE_has_FILM ON FILM.idFILM = CINEMA_has_SALLE_has_FILM.FILM_idFILM
+    WHERE DATE(CINEMA_has_SALLE_has_FILM.DATE) = CURRENT_DATE (); 
+
+Parfait, Film trouvé !!! 
+
++--------+---------------+----------------+---------------------------+----------+-------+
+| idFILM | TITRE         | DATE_DIFFUSION | GENRE                     | BUDGET   | DUREE |
++--------+---------------+----------------+---------------------------+----------+-------+
+|      8 | Jurassic Park | 1993           | aventure, science-fiction | 67200000 |   127 |
++--------+---------------+----------------+---------------------------+----------+-------+
+
+Durée totale de projection pour chaque cinéma
+
+    SELECT SUM(DUREE), NOM
+    FROM mydb.FILM
+    JOIN CINEMA_has_SALLE_has_FILM ON FILM.idFILM = CINEMA_has_SALLE_has_FILM.FILM_idFILM
+    JOIN CINEMA ON CINEMA_idCINEMA = idCINEMA
+    GROUP BY CINEMA.NOM;
+
++------------+------------+
+| SUM(DUREE) | NOM        |
++------------+------------+
+|       1377 | Pathée     |
+|       1404 | Megarama   |
+|        337 | La turbine |
++------------+------------+
+
+Liste de tous les films ne contenant pas Harrison Ford
+
+    SELECT mydb.FILM.TITRE      // Dans cet exercice je reprend la même pratique que pour supprimer les films qui n'ont pas de séances
+    FROM mydb.FILM
+    WHERE NOT EXISTS(
+    SELECT *
+    FROM mydb.FILM_has_ACTEURS
+    WHERE FILM_has_ACTEURS.FILM_idFILM = mydb.FILM.idFILM
+    AND FILM_has_ACTEURS.ACTEURS_idACTEURS = 16);       // Sauf qu'ici j'ajoute une condition via la commande AND 
+
+Liste des cinéma qui passent tous les films
+
+    SELECT mydb.CINEMA.NOM
+    FROM mydb.CINEMA
+    WHERE EXISTS(
+    SELECT*
+    FROM mydb.CINEMA_has_SALLE_has_FILM
+    WHERE mydb.CINEMA_has_SALLE_has_FILM.CINEMA_idCINEMA = mydb.CINEMA.idCINEMA
+    AND mydb.CINEMA_has_SALLE_has_FILM.FILM_idFILM = 1 ANd 2 ANd 3 ANd 4 ANd 6 AND 8);  // Ici j'ajoute les conditions nécessaires via les AND
+
++----------+
+| NOM      |
++----------+
+| Pathée   |
+| Megarama |
++----------+
+
+# Initiation NoSQL et MongoDB
+
+## NoSQL, Quésaco ?
+
+Le NoSQL c'est une approche qui se base sur une simplification du traitement des données en évitant l'utilisation conforme des tables, l'objectif est ici d'améliorer la scalabilité horizontale ((scale-out) // ajout de serveurs aux cluster de traitement plutôt que d'améliorer la machine (ajout de ressources type CPU,RAM (scale-UP)))  en fonction de l'évolution des besoins. En sacrifiant une des propriétées ACID on va pouvoir augmenter les autres en rapport avec les besoin de la demande. On favorise ici le codefirst ou l'ensemble des données est  directement intégré au code de l'application ou du programme. 
+
+Type REDIS qui est un modèle de base de données qui va sacrifier la durabilité (sa persistence face aux conflits accidents ou crash) au profit d'une vitesse très élevé, ce qui est très important pour les systèmes bancaires ou de reservation. On va chercher à traiter les conflits de simultanéité par le traçage horaire. 
+
+
+    ACID
+
+    A pour Atomic, l'idée d'un tout, tout fonctionne ensemble ou rien ne marche, l'état est executé ou annulé.
+
+    C pour Coherence, il s'agit de la coherence des données au travers d'une base de donnée une fois qu'elle est executée. Elle traduit la continuité au travers des états relationnels de la base de donnée. 
+    
+    I pour Isolation, il s'agit de l'étanchéité d'une transaction, le fait qu'elle soit isolé des autres pour éviter les conflits
+    
+    D pour durabilité il s'agit de la persistence d'une donnée une fois qu'elle est validée (commit) et ce face aux crash, panne accident. 
+
+
+Type DYNAMODB est un type de base de données supporté par AWS (Amazon Web Service), il a l'avantage d'être structuré sur reseau important de serveurs, ce qui privilégie  la quantité, la durabilité (enregistre sur plusieurs zone pour faire face aux pannes) et la disponibilité au détriment de la coherence. Après les taux de traitement de vitesse ne sont pas ocmparable à ceux 'une base de donnée de type REDIS. 
+
+Enfin le type MongoDB est populaire pour les applications Web App et IoT, il offre une grande flexibilité dans l'écriture et lui permet de s'adapter à d'autre technologies. son écriture ets en Json et il sauvegarde les données sur plusieurs serveurs (sharding). Il permet aussi une certaine structure des données et donc la possibilité de faire des requêtes plus poussées.
+
+Et pour finir les clé-valeurs sont des types de données utilisés dans une base de données, elles stockent des valeurs de plusierus type et sont accès sur l'accés rapide et simple.  
+
+Ci-dessous un exemple de clé-valeur sous json: 
+
+         {
+      "utilisateur1": {
+        "nom": "Alice",
+        "âge": 30,
+        "ville": "Paris"
+      },
+      "utilisateur2": {
+        "nom": "Bob",
+        "âge": 25,
+        "ville": "New York"
+      },
+      "produit123": {
+        "nom": "Smartphone",
+        "prix": 599,
+        "stock": 50
+      },
+      "configuration": {
+        "langue": "français",
+        "thème": "clair",
+        "notifications": true
+      }
+    }
+
+Aller c'est parti pour l'instalation de MonDB. 
