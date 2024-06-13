@@ -291,9 +291,6 @@ Liste des séances sur les 10 derniers jours
 
         -SELECT * FROM mydb.CINEMA_has_SALLE_has_FILM WHERE DATE < '2023-12-31' AND DATE > '2023-12-21';
 -------------+-------------------+---------------+
-| FILM_idFILM | ACTEURS_idACTEURS | ROLES         |
-+-------------+-------------------+---------------+
-|           1 |                16 | Indiana Jones |
 |           2 |                16 | Han Solo      |
 +-------------+-------------------+---------------+
 
@@ -420,19 +417,6 @@ Nombre total de place par cinéma
 
 Budget total de tous les films par année de sortie
 
-    SELECT BUDGET, DATE_DIFFUSION, NOM
-	FROM mydb.FILM
-    ORDER BY DATE_DIFFUSION
-
-+----------+----------------+---------------------------------------------------+
-| BUDGET   | DATE_DIFFUSION | TITRE                                             |
-+----------+----------------+---------------------------------------------------+
-| 11500000 | 1977           | Star wars                                         |
-| 31000000 | 1979           | Apocalypse Now                                    |
-| 20000000 | 1981           | Indiana Jones Les Aventuriers de l’Arche perdue   |
-|  8000000 | 1994           | Pulp fiction                                      |
-|  7500000 | 1994           | La cité de la peur                                |
-| 75000000 | 1997           | Le cinquième élément                              |
 |  3000000 | 1999           | Mon voisin Totoro                                 |
 +----------+----------------+---------------------------------------------------+
 
@@ -659,3 +643,5 @@ Ci-dessous un exemple de clé-valeur sous json:
     }
 
 Aller c'est parti pour l'instalation de MonDB. 
+
+mongodb-compass-1.43.1.x86_64.deb
