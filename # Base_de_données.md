@@ -697,32 +697,28 @@ Récupérer les cinémas avec au moins une salle ayant plus de 300 places
 
         {"SALLES.nb_places": {$gt: 300}}
 
-  {
-    "idCINEMA": 1,
+    {
     "NOM": "Pathée",
     "ADRESSE": "7 Av de Brogny",
     "VILLE": "Annecy",
     "COMPAGNIE": "Pathe"
-  }
-  {
-    "idCINEMA": 2,
+    }
+    {
     "NOM": "Megarama",
     "ADRESSE": "1 Rue du Tremblay",
     "VILLE": "Seynod",
     "COMPAGNIE": "Gaumont"
-  }
-  {
-    "idCINEMA": 3,
+    }
+    {
     "NOM": "La turbine",
     "ADRESSE": "3 Rue des Tisserands",
     "VILLE": "Cran Gevrier",
     "COMPAGNIE": "CG"
-  }
-  {
-    "idCINEMA": 4,
+    }
+    {
     "NOM": "DECAVISION EPAGNY",
     "ADRESSE": "145 ROUTE DE LA PRAIRE",
     "VILLE": "EPAGNY",
     "COMPAGNIE": "DECAVISION"
-  }
+     }
 
