@@ -675,7 +675,8 @@ Je travail principalement sur MongDB Atlas qui ne nécessite pas d'installation 
 
  Pour présenter les associations possibles entre les deux formats SQL / NoSql: 
 
-   ![SQLvsNoSql](./"Sql").
+   ![SQLvsNoSql](./Capture%20d’écran%20du%202024-06-14%2013-46-42.png).
+   ![SQLvsNoSql](./Capture%20d’écran%20du%202024-06-14%2013-48-12.png).
 
 
 
