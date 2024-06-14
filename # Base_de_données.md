@@ -679,7 +679,23 @@ Je travail principalement sur MongDB Atlas qui ne nécessite pas d'installation 
    ![SQLvsNoSql](./Capture%20d’écran%20du%202024-06-14%2013-48-12.png).
 
 
+## Écrivez dans Compass les requêtes suivantes :
 
+Récupérer les informations le film dont l nom est Star wars
+
+        {"TITRE":"Star wars"}
+
+Récupérer tous les films dont la durée est supérieure à deux heures
+
+        db.Cinema_film.Films ({"DUREE": { $gt: 120}})
+
+Récupérer le titre des films dont le budget dépasse les 30 millions
+
+        db.Cinema_film.Films ({"BUDGET": { $gt: 30000000}})
+
+Récupérer les cinémas avec au moins une salle ayant plus de 300 places
+
+        {"SALLES.nb_places": {$gt: 300}}
 
   {
     "idCINEMA": 1,
