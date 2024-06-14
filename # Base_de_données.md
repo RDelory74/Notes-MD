@@ -645,3 +645,67 @@ Ci-dessous un exemple de clé-valeur sous json:
 Aller c'est parti pour l'instalation de MonDB. 
 
 mongodb-compass-1.43.1.x86_64.deb
+
+Je travail principalement sur MongDB Atlas qui ne nécessite pas d'installation de serveur en local et permet de faire les premières insertons de documents:
+
+        {"_id":{"$oid":"666c17eb33157f49c6e2ecb8"},
+        "NOM": "Megarama",
+            "ADRESSE": "1 Rue du Tremblay",
+            "VILLE": "Seynod",
+            "COMPAGNIE": "Gaumont",
+          	"SALLES": [
+              {
+                "Numéro":1,
+                "nb_place":157
+              },
+               {
+                "Numéro":2,
+                "nb_place":158
+              },
+               {
+                "Numéro":3,
+                "nb_place":120
+              },
+               {
+                "Numéro":4,
+                "nb_place":130
+              }
+            ]
+        }
+
+ Pour présenter les associations possibles entre les deux formats SQL / NoSql: 
+
+   ![SQLvsNoSql](./"Sql").
+
+
+
+
+  {
+    "idCINEMA": 1,
+    "NOM": "Pathée",
+    "ADRESSE": "7 Av de Brogny",
+    "VILLE": "Annecy",
+    "COMPAGNIE": "Pathe"
+  }
+  {
+    "idCINEMA": 2,
+    "NOM": "Megarama",
+    "ADRESSE": "1 Rue du Tremblay",
+    "VILLE": "Seynod",
+    "COMPAGNIE": "Gaumont"
+  }
+  {
+    "idCINEMA": 3,
+    "NOM": "La turbine",
+    "ADRESSE": "3 Rue des Tisserands",
+    "VILLE": "Cran Gevrier",
+    "COMPAGNIE": "CG"
+  }
+  {
+    "idCINEMA": 4,
+    "NOM": "DECAVISION EPAGNY",
+    "ADRESSE": "145 ROUTE DE LA PRAIRE",
+    "VILLE": "EPAGNY",
+    "COMPAGNIE": "DECAVISION"
+  }
+
