@@ -78,7 +78,8 @@ En 5 itérations on pourrait définir ces MVP comme suit: (Commande d'un fauteil
     - MVP 3: Petit fauteuil avec les premiers rembourement (plus de moyen et de temps) 
     - Produit final: Fauteuil avec assise et design confort (enveloppe investissement consomé et temps imparti écoulé)
 
-Possibilité, en fonction des delais et des moyens financiers du client, de s'arrêter avant le produit finale; 
+Possibilité, en fonction des delais et des moyens financiers du client, de s'arrêter avant le produit finale.
 
+https://www.atlassian.com/fr/agile/project-management/velocity-scrum#:~:text=La%20v%C3%A9locit%C3%A9%20dans%20Scrum%20est,accomplir%20lors%20des%20prochains%20sprints.
 
-
+https://eventuallycoding.com/2010/05/11/calcul-de-la-velocite
