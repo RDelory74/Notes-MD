@@ -65,5 +65,20 @@ C'est là que la methode Agile entre en jeux, en effet plutot que d'avoir une re
         Vision produit: C'est la vision globale de l'entreprise concernant la realisation d'un produit et de son evolution elle s'étend souvent sur 3 à 5 ans et regroupe toutes les autres temporalitées tel que (la product strategy (1 ans), la roadmap (3 month), le sprint ( 2weeks) user stories (1/2 day to 2 days)).
  
 
-![From Vision to user stories](/home/rodolphe-delory/Method Agile/VisionProduct.jpeg "Vision schema")
+![From Vision to user stories](/home/rodolphe-delory/Notes-MD/Images/VisionProduct.jpeg "Vision schema")
+
+Design thinking 
+
+MVP Minimum Viable Product Produit minimum viable, le produit minimum qu'on apporte au client , c'est définir la version la plus lite possible qui délivre de la valeur. 
+
+En 5 itérations on pourrait définir ces MVP comme suit: (Commande d'un fauteil design)
+
+    - MVP 1: un tabouret (Rapide et pas chère)
+    - MVP 2: une chaise avec dossier  (plus de temps et plus d'investissement financiers)
+    - MVP 3: Petit fauteuil avec les premiers rembourement (plus de moyen et de temps) 
+    - Produit final: Fauteuil avec assise et design confort (enveloppe investissement consomé et temps imparti écoulé)
+
+Possibilité, en fonction des delais et des moyens financiers du client, de s'arrêter avant le produit finale; 
+
+
 

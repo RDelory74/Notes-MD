@@ -1,0 +1,10 @@
+#  IDEES PROJETS: 
+
+## N°1: Créer un site pour calculer la vélocité Scrum avec des story points en ligne. 
+
+    Objectifs : Création d'un outils enb lgne rapide et facile à executer afin de permettre à plusieurs participants de calculer la vélocité de leur projet Scrum. 
+    Deux versions seraient intérressantes: une gratuite avec juste le besoin de créer un compte soit par projet soit par participants, l'affichage de pub viendrait assurer le financement des serveurs. Un autre payante avec des options plus poussées, une persistence des données et des outils d'analyse de performance et/ou d'avancement de projet.
+
+## N°2:  Mise en commun de professionnels de la petite enfance
+
+    Objectif: proposer un extranet des professionnels de la petite enfance permettant aux structures de 
