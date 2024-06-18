@@ -17,7 +17,7 @@ Une analyse, une certification et le bon prix
  
 Achat et revente de produits issus de la culture geek avec la possibilité d'obtenir une certification
  
-### _QUI ?_
+### _QUI_
  
 Offrir une seconde vie au marché Geek retro et assurer la remise en valeur des collections
  
