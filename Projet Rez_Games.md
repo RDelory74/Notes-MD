@@ -1,6 +1,6 @@
 # Projet Method Agile
 
-##  _Vision product_ REZ' GAMES (RETRO)
+##  _Vision product_ R€Z' GAMES (RETRO)
  
 Offrir un site de confiance qui permet de revaloriser et de certifier des produits issus des tendances rétro de la culture Geek
  
