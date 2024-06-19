@@ -6,12 +6,16 @@
 
     - Qu'est ce que la Cybersécurité 
 
-        - C'est l'ensemble des pratiques visant à protéger les systèmes, les réseaux et les programmes contre des attaques numériques. 
+        - C'est l'ensemble des pratiques visant à protéger les systèmes, les données, les réseaux et les programmes contre des attaques numériques. 
+        - Infrastructure 
+        - Aplicatif
+        - Utilisateur
+       Ne pas mettre trop de sécurité si pas necessaire
 
 
     - L'importance de la sécurité informatique pour les entreprises 
 
-        - Protéger les données et les accès afin de maintenir et perinniser l'activitée.
+        - Protéger les données et les accès afin de maintenir et perénniser l'activitée.
 
         - 3 entitées principales doivent être protégées: 
 
@@ -25,6 +29,13 @@
             - Les ransomwares: Technique qui bloque l'accés à un utilisateur sur un terminal ou à des données et à qui ont va demande une rancçon pour retrouver son accès. (Attention dans bien des cas rien ne garantie le retour à cet accès)
             - Le malware: Il s'agit d'un programme malveillant qui permet d'accéder à un espace sécurisé ou d'endommager un logiciel
             - L'ingénierie sociale: Le fait de se renseigner sur une personne ou de cibler une proie par son âge ses centre d'interets ses points de vue politiques. 
+
+        - Il se distingue sur 4 axes: DICP
+              
+              - La confidentialité 
+              - L'intégrité
+              - La disponibilité
+              - Preuves 
 
 ### Les Bonnes pratiques
 
@@ -66,3 +77,23 @@
     - AUTHENTIFICATION A DEUX FACTEURS (2FA)
 
             C'est le système de sécurisation en utilisant deux moyens de connections distings
+
+
+## Les Contremesures
+
+
+### Analyse d'attaques courantes
+
+    Attaque par Deni de Service (DoS/DDoS)
+
+        Attaque réalisées par une pertubation du traffic sur un service, un reseau ou un serveur. Cet action est mise en place à l'aide d'une _botnet_, c'est une armée de _bot_, qui est concentré sur la cible afin de la saturer. Chaque bot envoi des requêtes à l'adresse IP de la cible ce qui va saturer le traffic et provoquer un déni de service. 
+
+        - IDENTIFICATION: 
+
+            - 1 Quantité suspecte de requêtes provenant de la même adresse IP ou de la même plage d'adresse IP. 
+            - 2 Flot de traffic provenant d'utilisateur présentant des similitudes, type même navigateur, même géolocalisation, même appareil utilisé. 
+            - 3 Un comportement inhabituel du traffic comme des pics toutes les 10 min, à des horaires anormaux, ou sur des terminaisons innapropriées.
+
+        - ATTAQUE DE LA COUCHE D'APPLICATION: 
+        - ATTAQUE PROTOCOLAIRE
+        - ATTAQUE VOLUMETRIQUE
