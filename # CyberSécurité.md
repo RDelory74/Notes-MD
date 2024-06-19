@@ -84,9 +84,13 @@
 
 ### Analyse d'attaques courantes
 
-    Attaque par Deni de Service (DoS/DDoS)
+    A- Attaque par Deni de Service (DoS/DDoS)
 
         Attaque réalisées par une pertubation du traffic sur un service, un reseau ou un serveur. Cet action est mise en place à l'aide d'une _botnet_, c'est une armée de _bot_, qui est concentré sur la cible afin de la saturer. Chaque bot envoi des requêtes à l'adresse IP de la cible ce qui va saturer le traffic et provoquer un déni de service. 
+
+        _bot_: Zombie, entité numérique piloté par un hacker 
+        _botnet_: Armée de bots. 
+
 
         - IDENTIFICATION: 
 
@@ -94,6 +98,66 @@
             - 2 Flot de traffic provenant d'utilisateur présentant des similitudes, type même navigateur, même géolocalisation, même appareil utilisé. 
             - 3 Un comportement inhabituel du traffic comme des pics toutes les 10 min, à des horaires anormaux, ou sur des terminaisons innapropriées.
 
-        - ATTAQUE DE LA COUCHE D'APPLICATION: 
-        - ATTAQUE PROTOCOLAIRE
-        - ATTAQUE VOLUMETRIQUE
+        - ATTAQUE DE LA COUCHE D'APPLICATION: Attaque de la couche 7, Il s'agit d'une attaque sur la dernière couche du modèle OSI, c'est la couche qui génére les visuels en reposne aux requêtes HTTP, il s'agit des attaques les plus difficiles à gérer parce qu'il est difficile de différencier les utilisateur BOT des vrais utilisateurs. Type d'attaque HTTP flood
+
+        - ATTAQUE PROTOCOLAIRE: Attaque des couches 3 et 4 du modèle OSI, l'attaque a pour but ici de saturer non-plus les requêtes HTTP mais les demandes de connections TCP/IP qui permettent le transfert de paquets SYN. Type d'attaque SYN flood
+        
+        - ATTAQUE VOLUMETRIQUE: Attaque qui consiste à saturer l'IP d'une cible de requêtes DNS en utilisant des bots.
+
+        - Attaque Multivecteur: lorsque on utilises plusieurs type d'attaque type attaque couche 7 et attaque couche 3/4. 
+
+
+        - SOLUTIONS: 
+
+            1 - Créer un trou noir pour rediriger les utilisateurs vers une sortie du serveur (solution type antibio qui tue les bonnes et mauvaise bacteries).
+            2 - Filtrage - Gérer le taux des requêtes afin de limiter le nombre de requête qu'un srveur peu accepter pendant un moment. Efficace pour ralentir les bot mais suffira pas à elle seule pour gérer l'attaque. 
+            3 - Déployer un WAF rules qui permet d'appliquer des régles de requêtes personnalisées entre internet et le serveur. 
+            4 - Diviser le reseau principale en plusieurs reseaux. CDN
+
+
+
+
+    B - Man-in-the-Middle (MITM)
+
+
+
+        - C'est une attaque ou le hacker se positionne entre deux entités numériques, afin de décrypter les message, les lires et les modifiers. 
+
+    Plus présentent sur les supports mobiles lors de connections vers des reseaux externes (type wifi aeroport, publi, etc) il faut s'assurer de toujours surfer sur des sites HTTPS. 
+
+    Faire attention aux e-mails phishing avec des pièces jointes ou des liens, ne jamais cliquer sur des liens ou ouvrir des pièces jointes. 
+
+    Eviter de se connecter aux wifi publics. 
+
+    S'assurer que son reseau wifi est proitégé avec un mot de passe FORT, pour possiblement ajuster une selection des appareils autorisés à se connécter avec le code MAC. 
+
+
+
+
+    C - injection SQL
+
+        - Attaque suite à une vulnérabilité SQL d'un site ou d'une base de données. Le hacker execute une requête SQL au niveau de la vulnérabilité type modification du password du user N°1. Lui permettant d'obtenir des accès ainsi que des autorisations fortes (les admins sont souvent les premiers de la liste d'employés)
+
+
+    Utiliser des listes blanches plutôt que des black lists 
+
+    Utiliser les derniers technologies et programme en fonction des codes utilisées //     Utiliser un Framework recent  avec des requêtes préparées
+
+
+    Ne jamais faire confiance dans une requête utilisateur qu'elle soit interne ou externe. 
+
+
+
+
+    D - Cross-Site Scripting (XSS)
+
+        - Intégrer une attaque dans le code html d'une page. 
+        - Controler la taille de champs le type de characères
+    - Utiliser le Framework, ne pas faire confiance à ses utilisateurs. 
+
+
+## LA DEFENSE EN PROFONDEUR
+NE JAMAIS REPOSER TOUTE SA DEFENCE SUR UNE STRATEGIE AVOIR TOUJOURS AU MOINS DEUX SOLUTIONS
+
+En TEMPS QUE DEVELOPEUR JE DOIS CONTROLER A CHAQUE FOIS QU'IL Y A UNE INTERFACE DONNEE ENTRE L'EXTERIEUR ET LE SERVEUR 
+
