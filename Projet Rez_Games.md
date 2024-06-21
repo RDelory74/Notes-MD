@@ -45,17 +45,21 @@ Developpeur
 
 ### MVP 1
 
-#### On défini quelle fonctionnalitées on veut mettre en priorité 
+#### On défini quelles fonctionnalitées on veut mettre en priorité 
+    
+    | Consulter des produits                      ||   |   |   |   |
+    | Créer un compte                             ||   |   |   |   |
+    | Etre livré à une certaine adresse           ||   |   |   |   |
+    | Suivre ma commande                          ||   |   |   |   |
+    | Pouvoir accéder à une page produit détaillé ||   |   |   |   |
+    | Accéder à un panier                         ||   |   |   |   |
+    | Paiement CB                                 ||   |   |   |   |
+    | Donner mon avis sur mon experience d'achat  ||   |   |   |   |
+    | Pouvoir gérer mes produits                  |XL|   |   |   |   |
 
-    | Consulter des produits                      |   |   |   |   |   |
-    | Créer un compte                             |   |   |   |   |   |
-    | Etre livré à une certaine adresse           |   |   |   |   |   |
-    | Suivre ma commande                          |   |   |   |   |   |
-    | Pouvoir accéder à une page produit détaillé |   |   |   |   |   |
-    | Accéder à un panier                         |   |   |   |   |   |
-    | Paiement CB                                 |   |   |   |   |   |
-    | Donner mon avis sur mon experience d'achat  |   |   |   |   |   |
-
+    On va mesurer le tout en taille de t-shirt, l'important est de garder une coherence entre les differentes taches, a savoir si on a une user story en XL cela peut vouloir dire qu'il faut la rediviser en petites tâches
 
 #### On utilise le site scrum-poker en ligne 
+
+
 
