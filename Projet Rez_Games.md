@@ -54,17 +54,23 @@ ADMIN
     | Etre livré à une certaine adresse           |S |   |   |   |   |
     | Suivre ma commande                          |M |   |   |   |   |
     | Pouvoir accéder à une page produit détaillé |M |   |   |   |   |
-    | Accéder à un panier                         |XL|   |   |   |   |
+    | Afficher un panier                          |  |M  |   |   |   |
+    | Ajouter à un panier                         |  |S  |   |   |   |
+    | Supprimer à un panier                       |  |S  |   |   |   |
     | Paiement CB                                 |S |   |   |   |   |
-    | Pouvoir gérer mes produits                  |XL|   |   |   |   |
+    | Moyen de connection ADMIN                   |  |M  |   |   |   |
+    | Ajouter des données                         |  |S  |   |   |   |
+    | Supprimer des données                       |  |S  |   |   |   |
+    | Modifier des données                        |  |M  |   |   |   |
     | Gérer mon Compte                            |M |   |   |   |   |
     +---------------------------------------------+------------------+
 
     On voit que pour pour les user story Accéder à un panier et Pouvoir gérer mes produits on pourrais les re-découper de la sorte: 
 
         - Accéder à un panier (GEEK): 
-            - Tache : Visualiser mes produit et mon total
-            - Tache : modifier les quantités
+            - Tache : Afficher un panier
+            - Tache : Ajouter un nouveau produit à mon panier
+            - Tache : Supprimer dans mon panier 
 
         - Pouvoir gérer mes produits (ADMIN): 
             - Tache : Ajouter
@@ -76,7 +82,19 @@ ADMIN
 
     On va mesurer le tout en taille de t-shirt, l'important est de garder une coherence entre les differentes taches, a savoir si on a une user story en XL cela peut vouloir dire qu'il faut la rediviser en petites tâches
 
-#### 
+#### Etablir les taches techniques et estimer le temps en heure pour les réaliser
+
+#### Préparer les bases de données
+
+BASE CLIENT 
+
+    +---------------------------------------------+----+---+---+---+---+
+    | Base de client                              |    |   |   |   |   |
+    +---------------------------------------------+----+---+---+---+---+
+    |                                             |M   |   |   |   |   |
+    | Rodolphe Delory                             |S   |   |   |   |   |
+    +---------------------------------------------+----+---------------+
+
 
 
 
