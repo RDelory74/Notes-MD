@@ -63,6 +63,8 @@ C'est là que la methode Agile entre en jeux, en effet plutot que d'avoir une re
         Vélocité : C'est la mesure de la charge de travail lors de chaque Sprint, afin d'estimer au mieux les delais nécessaires pour la réalisation du projet. (On utilise des story point)
 
         Vision produit: C'est la vision globale de l'entreprise concernant la realisation d'un produit et de son evolution elle s'étend souvent sur 3 à 5 ans et regroupe toutes les autres temporalitées tel que (la product strategy (1 ans), la roadmap (3 month), le sprint ( 2weeks) user stories (1/2 day to 2 days)).
+
+        L'ingénierie logicielle: C'est une science qui à pour but d'optimiser la conception, le devellopement, le deploiement et la maintenance d'un logiciel. 
  
 
 ![From Vision to user stories](/home/rodolphe-delory/Notes-MD/Images/VisionProduct.jpeg "Vision schema")
@@ -83,3 +85,4 @@ Possibilité, en fonction des delais et des moyens financiers du client, de s'ar
 https://www.atlassian.com/fr/agile/project-management/velocity-scrum#:~:text=La%20v%C3%A9locit%C3%A9%20dans%20Scrum%20est,accomplir%20lors%20des%20prochains%20sprints.
 
 https://eventuallycoding.com/2010/05/11/calcul-de-la-velocite
+

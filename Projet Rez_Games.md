@@ -38,5 +38,24 @@ Remise en valeur des collections
 
 ### Types d'utilisateur
 
+Geek Passionnée (visiteur/acheteur/vendeur)
+Expert 
+Developpeur 
 
+
+### MVP 1
+
+#### On défini quelle fonctionnalitées on veut mettre en priorité 
+
+    | Consulter des produits                      |   |   |   |   |   |
+    | Créer un compte                             |   |   |   |   |   |
+    | Etre livré à une certaine adresse           |   |   |   |   |   |
+    | Suivre ma commande                          |   |   |   |   |   |
+    | Pouvoir accéder à une page produit détaillé |   |   |   |   |   |
+    | Accéder à un panier                         |   |   |   |   |   |
+    | Paiement CB                                 |   |   |   |   |   |
+    | Donner mon avis sur mon experience d'achat  |   |   |   |   |   |
+
+
+#### On utilise le site scrum-poker en ligne 
 
