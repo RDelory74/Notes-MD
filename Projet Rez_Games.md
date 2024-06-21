@@ -65,7 +65,7 @@ ADMIN
     | Gérer mon Compte                            |M |   |   |   |   |
     +---------------------------------------------+------------------+
 
-    On voit que pour pour les user story Accéder à un panier et Pouvoir gérer mes produits on pourrais les re-découper de la sorte: 
+    On voit que pour pour les user story (Accéder à un panier) et (Pouvoir gérer mes produits) on pourrais les re-découper de la sorte: 
 
         - Accéder à un panier (GEEK): 
             - Tache : Afficher un panier
@@ -88,11 +88,11 @@ ADMIN
 
 BASE CLIENT 
 
-    +---------------------------------------------+----+---+---+---+---+
-    | Base de client                              |    |   |   |   |   |
-    +---------------------------------------------+----+---+---+---+---+
-    |                                             |M   |   |   |   |   |
-    | Rodolphe Delory                             |S   |   |   |   |   |
+    +---------------------------------------------+------+--------+----------+--------------+--------+-----+
+    | Base de client                              | Nom  | Prenom | Adresse  | Code postal  | Ville  | Age |
+    +---------------------------------------------+------+--------+----------+--------------+--------+-----+
+    |                                             |M     |        |          |              |        |
+    | Rodolphe Delory                             |S     |        |          |              |        |
     +---------------------------------------------+----+---------------+
 
 
