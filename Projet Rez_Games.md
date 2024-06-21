@@ -40,26 +40,43 @@ Remise en valeur des collections
 
 Geek Passionnée (visiteur/acheteur/vendeur)
 Expert 
-Developpeur 
+ADMIN
 
 
 ### MVP 1
 
-#### On défini quelles fonctionnalitées on veut mettre en priorité 
-    
-    | Consulter des produits                      ||   |   |   |   |
-    | Créer un compte                             ||   |   |   |   |
-    | Etre livré à une certaine adresse           ||   |   |   |   |
-    | Suivre ma commande                          ||   |   |   |   |
-    | Pouvoir accéder à une page produit détaillé ||   |   |   |   |
-    | Accéder à un panier                         ||   |   |   |   |
-    | Paiement CB                                 ||   |   |   |   |
-    | Donner mon avis sur mon experience d'achat  ||   |   |   |   |
+#### On défini quelles fonctionnalitées on veut mettre en priorité // On utilise l'app scrum-time 
+    +---------------------------------------------+------------------+
+    | Usert story                                 |Note complexité   |
+    +---------------------------------------------+------------------+
+    | Consulter des produits                      |M |   |   |   |   |
+    | Créer un compte                             |S |   |   |   |   |
+    | Etre livré à une certaine adresse           |S |   |   |   |   |
+    | Suivre ma commande                          |M |   |   |   |   |
+    | Pouvoir accéder à une page produit détaillé |M |   |   |   |   |
+    | Accéder à un panier                         |XL|   |   |   |   |
+    | Paiement CB                                 |S |   |   |   |   |
     | Pouvoir gérer mes produits                  |XL|   |   |   |   |
+    | Gérer mon Compte                            |M |   |   |   |   |
+    +---------------------------------------------+------------------+
+
+    On voit que pour pour les user story Accéder à un panier et Pouvoir gérer mes produits on pourrais les re-découper de la sorte: 
+
+        - Accéder à un panier (GEEK): 
+            - Tache : Visualiser mes produit et mon total
+            - Tache : modifier les quantités
+
+        - Pouvoir gérer mes produits (ADMIN): 
+            - Tache : Ajouter
+            - Tache : Supprimer
+            - Tache : Modifier
+            - Tache : interface
+            - Tache : Connection 
+
 
     On va mesurer le tout en taille de t-shirt, l'important est de garder une coherence entre les differentes taches, a savoir si on a une user story en XL cela peut vouloir dire qu'il faut la rediviser en petites tâches
 
-#### On utilise le site scrum-poker en ligne 
+#### 
 
 
 
