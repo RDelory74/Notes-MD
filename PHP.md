@@ -44,3 +44,11 @@
     $ cd ~/public_html
     $ php -S localhost:8000
 
+    https://openclassrooms.com/forum/sujet/texte-dans-echo-apres-variable-28501
+
+    https://apprendre-php.com/tutoriels/tutoriel-6-les-variables.html
+
+    https://blog.crea-troyes.fr/3553/creation-de-layout-en-php-pour-une-mise-en-page-structuree/
+    
+    https://openclassrooms.com/fr/courses/918836-concevez-votre-site-web-avec-php-et-mysql/912799-ecoutez-la-requete-de-vos-utilisateurs-grace-aux-url
+
