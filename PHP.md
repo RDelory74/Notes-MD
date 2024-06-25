@@ -104,6 +104,49 @@ Je vais faire le même exercie avec une structure If/GET/ELSE/IFELSE:
 
     ?>
 
+## Le formulaire
+
+J'ai créé un formulaire avec Chat GPT dans le quel j'ai intégrer les champs et label désirés: 
+
+        <form class="contact-form" action="traitement_formulaire.php" method="POST">
+        <label class="form-label" for="civility">Civilité :</label>
+        <select class="form-select" id="civility" name="civility">
+            <option value="">Sélectionnez votre civilité</option>
+            <option value="mr">Monsieur</option>
+            <option value="mrs">Madame</option>
+            <option value="miss">Mademoiselle</option>
+        </select>
+        <label class="form-label" for="name">Nom :</label>
+        <input class="form-input" type="text" id="name" name="name">
+
+        <label class="form-label" for="email">Email :</label>
+        <input class="form-input" type="email" id="email" name="email">
+
+        <label class="form-label" for="Raison">Dans quel but :</label>
+        <select class="form-select" id="Raison" name="Raison">
+            <option value="">Quel est le but de ton message</option>
+            <option value="mr">Je veux changer de Heros</option>
+            <option value="mrs">Je veux changer le cours de l'histoire</option>
+            <option value="miss">J'ai une super bonne idée</option>
+        </select>
+
+        <label class="form-label" for="message">Message :</label>
+        <textarea class="form-textarea" id="message" name="message" rows="6"></textarea>
+
+        <input class="form-submit" type="submit" value="Envoyer">
+    </form>
+
+
+Je lui ai attribué une action (me renvoyer sur la page de traitement php traitement_formulaire.php ) et un methode (POST) qui est de récupérer les données
+
+Quand je rempli mon formulaire et que j'appuis sur le bouton Envoyer j'arrive sur uyn page qui m'afiche le resultat suivant: 
+
+array(5) { ["civility"]=> string(2) "mr" ["name"]=> string(6) "Delory" ["email"]=> string(22) "roro_spike@hotmail.com" ["Raison"]=> string(2) "mr" ["message"]=> string(86) "Je trouve que le héros est pas trop trop bien. Je propose que ce soit une héroïne. " }
+
+J'ai bien un tableau à 5 entrées (civility,name,email,Raison,message)
+
+
+## Super Bonus pour valider les compétences
 
     Valider la notion de boucle en créant plusieurs images sans répeter le code
 
