@@ -52,3 +52,59 @@
     
     https://openclassrooms.com/fr/courses/918836-concevez-votre-site-web-avec-php-et-mysql/912799-ecoutez-la-requete-de-vos-utilisateurs-grace-aux-url
 
+
+Pour gérer le front controller j'ai utilisé une balise switch sur un fichier index.php, en effet lors du lancement de mon serveur, ce dernier va automatiquement chercher à afficher le fichier index.php, puis avec le code suivant: 
+
+      <?php
+      
+      $path = isset($_GET['path']) ? $_GET['path'] : '/home';
+      
+      switch ($path) {
+          case '/home':
+              include 'home.php';
+              break;
+          case '/about':
+              include 'about.php';
+              break;
+          case '/chapters':
+              include 'chapters.php';
+              break;
+          default:
+              echo "Mais tu t'es planté mec, j'ai pas cette page";
+              break;
+      }
+      ?>
+      
+
+Je cré dans un premier temps une variable que j'appelle $path:
+
+    $path = isset($_GET['path']) ? $_GET['path'] : 'home';
+
+Je lui intègre "isset" qui vérifie que la variable est bien déclarée et differente de nulle. 
+
+Puis j'apelle la fonction $_GET qui va récupérer la variable path si elle est présente dans l'URL. 
+
+qui va récupérer l'URI de la page (ligne 60) puis je lance la fonction switch (ligne 62) avec pour paramétre ma variable $path.
+Enfin je dis que dans le cas ou l'URI est /home (case'/home') inclure le contenu du fichier home.php (include('home.php')). 
+Petite note sur le dernier ou il ne trouverais pas le fichier correspondant à l'URI il affiche un default ('not found php'). 
+
+Je vais faire le même exercie avec une structure If/GET/ELSE/IFELSE: 
+
+    <?php
+
+    $path = isset($_GET['path']) ? $_GET['path'] : 'home';
+
+    if ($path == '/home') {
+        include('home.php');
+    } elseif ($path == '/about') {
+        include('about.php');
+    } elseif ($path == '/chapters') {
+        include('chapters.php');
+    } else echo "404 error php not found !";
+
+    ?>
+
+
+    Valider la notion de boucle en créant plusieurs images sans répeter le code
+
+    Créer une fonction qui appel notre front controller
