@@ -145,6 +145,35 @@ array(5) { ["civility"]=> string(2) "mr" ["name"]=> string(6) "Delory" ["email"]
 
 J'ai bien un tableau à 5 entrées (civility,name,email,Raison,message)
 
+Après je dois le sécuriser avec du PHP sur la partie Front, alors dans mon document de traitement php j'ai mis le code php suivant qui dit que :
+
+
+
+        if (strlen($message) < 5) // Si le message a au moins 5 caractères // 
+        {
+        echo "Le message n'a pas assez de caractères.";
+        } 
+
+        if (filter_var($mail, FILTER_VALIDATE_EMAIL)) // si l'email est bien valide
+        {
+            echo "Félicitation $civilité $name votre requête pour $Raison a bien été envoyée avec le message suivant:$message ";
+        } else echo "Le mail n'est pas valide.";
+        if (empty($name))  // si le chant name est rempli 
+        {
+        echo "Le chant Civilité n'est pas valide.";
+        } 
+        if (empty($Raison)) // si raison est bien selectionner
+        {
+        echo "Le chant raison n'est pas valide.";
+        } 
+
+
+
+        function escape($valeur)
+        {
+            return htmlspecialchars($valeur, ENT_QUOTES, 'UTF-8', false);
+        }
+
 
 ## Super Bonus pour valider les compétences
 
