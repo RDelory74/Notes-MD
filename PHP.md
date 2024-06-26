@@ -167,12 +167,48 @@ Après je dois le sécuriser avec du PHP sur la partie Front, alors dans mon doc
         echo "Le chant raison n'est pas valide.";
         } 
 
+Code que j'ai réécris de cette façon plus condensé: 
 
+        if (isset($_POST['name']) 
+        && isset($_POST['email']) 
+        && isset($_POST['message']) 
+        && filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) 
+        && isset($_POST['civility']) 
+        && strlen($_POST['message']) > 5) {
+            // Le formulaire a été soumis : récupération des informations et    création des variables
 
-        function escape($valeur)
-        {
-            return htmlspecialchars($valeur, ENT_QUOTES, 'UTF-8', false);
+            echo "Félicitation $civilité $name votre requête pour $Raison a bien été envoyée avec le message suivant:$message ";
         }
+        else {
+            echo "Formulaire pas valide !! ";
+            // Le formulaire n'a pas été soumis
+            // ...
+        }
+
+
+
+
+J'ai créé une fonction qui va protéger mes champs. 
+
+    function valid_info($infos){
+    $infos = trim($infos);
+    $infos = stripslashes($infos);
+    $infos = htmlspecialchars($infos);
+    }
+
+Puis je prend soin de l'appliquer à mes variables
+
+     $mail = valid_info($_POST['email']);
+     $civilité = valid_info($_POST["civility"]);
+     $name = valid_info($_POST["name"]);
+     $Raison = valid_info($_POST["Raison"]);
+     $message = valid_info($_POST["message"]);
+
+
+
+
+
+
 
 
 ## Super Bonus pour valider les compétences
