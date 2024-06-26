@@ -194,6 +194,9 @@ J'ai créé une fonction qui va protéger mes champs.
     $infos = trim($infos);
     $infos = stripslashes($infos);
     $infos = htmlspecialchars($infos);
+
+    Capitale// le return = infos;
+
     }
 
 Puis je prend soin de l'appliquer à mes variables
@@ -205,6 +208,8 @@ Puis je prend soin de l'appliquer à mes variables
      $message = valid_info($_POST["message"]);
 
 
+
+https://www.pierre-giraud.com/php-mysql-apprendre-coder-cours/introduction/
 
 
 
