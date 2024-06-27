@@ -276,6 +276,10 @@ Si le chant civilite est rempli et (&&) vérifie que la valeur du chant est éga
         <p class="footext">© 2024 Avian-Spark-Tales. Tous droits réservés.</p>
     </footer>
 
+<div class="pictpos">
+        <img class="picstyle" href="" src="/IMG/indexpict.png" alt="image d'accueil">
+    </div>
+
 ## Super Bonus pour valider les compétences
 
     Valider la notion de boucle en créant plusieurs images sans répeter le code
