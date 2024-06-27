@@ -207,17 +207,79 @@ Puis je prend soin de l'appliquer à mes variables
      $Raison = valid_info($_POST["Raison"]);
      $message = valid_info($_POST["message"]);
 
+Ensuite comme je vais devoir récupérer les infos de mon formulaire je vais charger mes valeurs dans une variable que j'appel $data: 
 
+    $data = "Civilité: $civilite\n";
+    $data .= "Nom: $name\n";
+    $data .= "Email: $mail\n";
+    $data .= "Raison de contact: $Raison\n";
+    $data .= "Message:$message\n\n";
+
+Enfin dans ma condition je lance une fonction file_put_contents avec en paramètres la destination du fichier, (bdd.txt), ma variable chargée de données ($data).
+
+     if (file_put_contents($file,$data, FILE_APPEND | LOCK_EX)!== false)
+
+On notera deux actions en paramètre, FILE_APPEND et LOCK_EX, la première pour remplir le fichier à la suite et la suivante pour s'assurer qu'aucune autre écriture puisse se faire en même temps que celle-ci(ça lock le fichier) enfin on return un false si le fichier est
+
+https://www.pierre-giraud.com/php-mysql-apprendre-coder-cours/tableau-multidimensionnel/
 
 https://www.pierre-giraud.com/php-mysql-apprendre-coder-cours/introduction/
 
+Ensuite je vais m'occuper des sessions en intégrant une balise php dans mon header (pour qu'il s'applique à toutes les pages): 
 
 
+        <?php
+        session_start(); // Je démarre une nouvelle session dans tous mes header
+        ?>
 
 
+J'ai bien du rajouter la balise dans ma page de traitement_formulaire, parce qu'elle ne contient pas de header
+
+Ensuite j'ai attribué les valeurs de mon formulaire à ma variable de session: 
+
+    $_SESSION['email'] = $mail;
+    $_SESSION['civility'] = $civilite;
+    $_SESSION['name'] = $name;
+    $_SESSION['Raison'] = $Raison;
+    $_SESSION['message'] = $message;
+
+Enfin cela va me permettre de les modfier dans mon HTML en utilisant des balise PHP comme pour le traitement demandé des champs qui ne doivent pas se vider lorsqu'il y a une erreur de remplissage: 
+
+Donc au lieu d'avoir: 
+
+    <select class="form-select" id="civility" name="civility">
+            <option value="">Sélectionnez votre civilité</option>
+            <option value="Mr">Monsieur</option>
+            <option value="Mrs">Madame</option>
+            <option value="Miss">Mademoiselle</option>
+        </select>
+Je vais avoir :
+            <option value="" <? empty($_SESSION['civilite']) ? 'selected' : '' ?>>Sélectionnez votre civilité</option>
+            <option value="Mr" <?= isset($_SESSION['civilite']) && $_SESSION['civilite'] == 'Mr' ? 'selected' : '' ?>>Monsieur</option>
+            <option value="Mrs" <?= isset($_SESSION['civilite']) && $_SESSION['civilite'] == 'Mrs' ? 'selected' : '' ?>>Madame</option>
+Donc ici j'appel une balise php <?= qui dit:
+
+     (isset($_SESSION['civilite']) && $_SESSION['civilite'])
+Si le chant civilite est rempli et (&&) vérifie que la valeur du chant est égale à 'Mr' alors (?) on attribut 'selected' à l'option sinon (:) on laisse le chant vide. 
+
+<!-- footer.php -->
+<footer>
+
+<p class="footext">
+        <?php if (isset($_SESSION['civilite'], $_SESSION['name'], $_SESSION['message'])): ?>
+            <h3>Dernière Contribution :</h3>
+            <p><strong>Civilité :</strong> <?= htmlspecialchars($_SESSION['civilite']) ?></p>
+            <p><strong>Nom :</strong> <?= htmlspecialchars($_SESSION['name']) ?></p>
+            <p><strong>Message :</strong><br><?= nl2br(htmlspecialchars($_SESSION['message'])) ?></p>
+        <?php endif; ?>
+        </p>
+        <p class="footext">© 2024 Avian-Spark-Tales. Tous droits réservés.</p>
+    </footer>
 
 ## Super Bonus pour valider les compétences
 
     Valider la notion de boucle en créant plusieurs images sans répeter le code
+
+
 
     Créer une fonction qui appel notre front controller
