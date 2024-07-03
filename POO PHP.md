@@ -72,7 +72,74 @@ Visibilité d'une variable:
     Protected : Il n'y a que les enfants qui peuvent le modifier
 
 
+### Découverte des outils 
+
+C’est quoi un autoload en php ?
+
+    C'est une fonction qui va se charger de lancer un fichier lorsqu'on appel une classe. 
+
+
+Qu’est-ce qu’un fichier .PHAR ?
+
+    C'est une archive zipper d'un ensemble de fichier PHP que l'on peut faire tourner sans l'extraire 
+
+Qu’est-ce que composer ?
+
+    C'est un gestionnaire de téléchargement de packages. 
+
+Quel intérêt y-a-t’il à l’utiliser ?
+
+    Il permet de gérer et d'intégrer des paquets dans leur projets PHP. 
+
+Quelle est la version actuelle de composer ?
+
+    Composer v2.7.7
+
+
+C’est quoi PSR ?
+
+    L'ensemble des normes qui régissent l'écriture du code PHP c'est un standard d'écriture
+    https://www.itefficience.com/article/qu-est-ce-que-les-psrs-et-a-quoi-servent-ils
+
+C’est quoi PSR-4 ?
+
+    Définit un système d'autoloading pour permettre aux dévellopeur d'appeller des classes sans avoir à les inclures. (Chargement automatique des classes)
+
+
 
 ## Ressources Supp 
 
+https://php.watch/versions/8.1/readonly
+
+https://www.w3schools.com/php/php_oop_classes_abstract.asp
+
+https://www.w3schools.com/php/php_namespaces.asp
+
 https://grafikart.fr/tutoriels/presentation-1091#autoplay
+
+
+
+
+
+https://what-if.xkcd.com/29/
+
+
+$animals = array(
+    array("Poisson",5,getNoise()),
+    array("BubbleFish",3,noise()),
+    array("CatFish",2,noise()),
+    array("ClownFish",1,noise()),
+    array("Dove",2,noise()),
+    array("Elephant",2,noise()),
+    array("Zebra",1,noise()),
+    array("Parrot",10,noise())
+);
+
+
+
+for ($row =0; $row < count($animals); $row++) {
+    echo $animals[$row][0] . "\n";
+    for($col = 0; $col < count($animals[$row]); $col++) {
+        echo "L'animal".$animals[$row][$col] . "\n";
+    }
+}   
