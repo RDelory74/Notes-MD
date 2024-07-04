@@ -1,3 +1,26 @@
+# Lancement du Projet Rez'Games
+
+Choisir un produit service soit: 
+
+    - D’une application mobile et sa page marketing desktop
+
+On axe toute l'UX/UI sur l'utilisation App Mobile et on va créer en second une landing page (plutot static) pour rediriger ver l'app (PWA) 
+
+    - D’un produit/service cross-platform disponible à la fois sur appli et sur navigateur
+
+On axe notre UX/UI sur une utilisation cross-plateform, c'est à dire tant Descktop que mobile. 
+
+
+### Notre choix se portera sur: 
+
+    - 
+
+### Car: 
+
+    - 
+
+
+
 # Projet Method Agile
 
 ##  _Vision product_ R€Z' GAMES (RETRO)
