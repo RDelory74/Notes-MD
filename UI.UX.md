@@ -21,7 +21,7 @@ Une UI/UX bonne pour tout le monde est bonne pour personne. Un produit doit êtr
     -simple
 
 
- 2. Persona: Il s'agit du profil de l'utilisateurqui permet de déterminer le cas d'usage
+ 2. Persona: Il s'agit du profil de l'utilisateurqui permet de déterminer le cas d'usage et les fonctionnalitées
 
  3. affordance: Il s'agit de la manière dont l'utilisateur s'appropri le produit. 
 

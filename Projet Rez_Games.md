@@ -13,11 +13,51 @@ On axe notre UX/UI sur une utilisation cross-plateform, c'est à dire tant Desck
 
 ### Notre choix se portera sur: 
 
-    - 
+    - D'un produit/service cross-plateform disponible à la fois sur appli et sur navigateur
 
 ### Car: 
 
-    - 
+    - Possibilité de charger des photos et de consulter en ligne à la maison et correspond plus à notre persona principal
+
+### Personna:
+1. Créer un à trois persona pour le projet
+     Qui sont vos cibles ?
+     Quels sont leur besoins,
+    leurs habitudes numériques, 
+    les freins envers le projet, 
+    leur but immédiat… 
+
+    //PERSONA
+
+… Nom               | Johan le Passionnée de Jeux vidéo       | Moumen le Collectionneur Dévoué                     |        Rodolphe le Cosplayeur   |
+… Tranche d'âge     |  22 ans                                 |  40 ans                                             |  30 ans                         | 
+… Profession        |  Employé                                |  Ingénieur logiciel                                 |  Intermittent                   | 
+… Centre d'interet  |  Jouer                                  |  Constituer sa collection                           |  Se déguiser en Cosplay         |
+… Objectifs         |  Acheter le derniers jeux               |  Cherche des pièces rares                           |  Trouver des accessoires costume|
+… Objectifs         |  Acheter une version unique             |  Faire estimer sa collection                        |  Acheter des Figurines déco     |
+… Objectifs         | (re)Découvrir des Jeux                  | Compléter sa collection                             |                                 |
+… Objectifs         | Acheter pas chère                       | Etre informé de la dispo d'un article recherché     |                                 |
+… Frustrations      | Ne pas trouver le jeux rechercher       | Recevoir un faux/Contrefaçon                        | Recevoir une contrefaçon        |
+… Frustrations      | Recevoir un jeux qui fonctionne pas/mal | Avoir une mauvaise estimation                       |                                 |
+… Frustrations      | Attendre pour la livraison              | Probléme de livraison                               |                                 |
+… Frustrations      |                                         | Manque de confiance des les revendeurs              |                                 |
+… Frustrations      |                                         | Difficulté à estimer collection autres plateformes  |                                 |
+
+
+
+
+### Fonctionnalité:
+2. Lister les fonctionnalités que vous souhaitez proposer Les hiérarchiser en plusieurs lots en fonction de leur pertinence par rapport à votre concept et vos cibles
+
+### Experience utilisation 
+3. Définir l’expérience d’utilisation de votre app Mapper la navigation dans l’application, les différents écrans et les possibilités d’interaction grâce à un user flow
+
+### Wireframe
+4. Détailler les wireframes des écrans principaux Choisissez un scénario de démo pour la présentation, et faites des wireframes pour chacun des écrans qui le compose. Laisser de côté les écrans de connexion/inscription et autres réglages, concentrez vous sur une ou plusieurs proposition de valeur.
+
+### Le MarkDown
+5. Consignez ces éléments dans un document de la forme de votre choix Il représentera votre dossier de conception
+
 
 
 
