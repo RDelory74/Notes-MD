@@ -150,40 +150,54 @@ ADMIN
 ## Speed Boat 
 Eric
 Ancre: H/ Bien définir qui fait quoi | T/.. | A/Aller à l'essentiel. 
-
 Vent: H/ on s'entend bien | T/... | A/ On comprend bien  
-
 Equipe: H/ Moyen de se parler et de resoudre les problèmes | T/ On arrive à se répartir les tâches | A/ On avance ensemble 
-
 Objectifs: H/ S'engager sur les délais | T/Back-ENd - Bien commenter | A/ Tous apprendre le FrameWork
 
 Moumen
 Ancre: H/Le fait d'avoir 3 debutants dans l'équipe |  T/  |  A/ 
-
 Vent: H/  | T/ | A/L'envi d'enfin passer aux choses sérieuses avec Laravel  
-
 Equipe: H/ T/  A/  
-
 Objectifs: H/ | T/Découvrir comment faire un site de A à Z | A/Mieux comprendre l'algo 
 
 
 Johan
 Ancre: H/ Risque qu'on s'entende pas  |  T/ Qu'on s'aligne pas tous au même niveau | A/ 
-
 Vent: H/ Bonne communication  | T/ Eric à déja touché | A/  
-
 Equipe: H/ Le site qui nous plaît | T/ Peu de fonctionnalité sur le site | A/ Tous apprendre le FrameWork 
-
 Objectifs: H/ Tous nous entendre et prendre chaque décision ensemble | T/Découvrir comment faire un site de A à Z | A/
 
 Rodolphe
 Ancre: H/ On s'éparpille pas  |  T/ Qu'on y arive pas   |  A/ On est 3 débutants
+Vent: H/ Cohesion et dialogue | T/ On met du temps à s'installer mais après ça va vite  | A/ On a vu d'autres modules PHP/POO/SQL/GIT  
+Equipe: H/ On s'écoute T/ On s'aide  A/ On s'éxplique  
+Objectifs: H/ Tous accomplir une taĉhe valorisante  | T/ Savoir utiliser l'ensemble le framework Laravel | A/ Acquérir des compétences Back-end 
 
-Vent: H/ Cohesion et dialogue | T/  | A/  
+ ### Compte rendu Speed Boat: 
 
-Equipe: H/ T/  A/  
+    - Dans l'ensemble bien définir les tâches et leur réalisation, on ne fait pas d'avancé seul, on essai d'avancer tous ensemble //Solution: si quelqu'un termine avant les autres il va les aider avant de repasser sur une nouvelle tâche. 
 
-Objectifs: H/ | T/ | A/
+    - La gestion du temps // Solution: gérer les fonctionnalités, identifier les indispensables.
+
+    - La communication: on discute de chaque chose que l'ont va réaliser et comment. // Solution: Cela implique une concertation avant d'entreprendre une action qui peux avoir de l'importance sur le projet.
+
+    - L'engagement dans les delais: // On s'engage à rendre les livrables dans les delais peu importe leur état.  
+
+    - Daily stand-up: Tous les matins on fait un point sur le projet à l'oral, en répondant à 3 questions: 30sec / 3 phrases
+      - Qu'est que j'ai fais hier ? 
+      - Problème rencontré ! 
+      - Qu'est ce je compte faire ajourd'hui. 
+
+
+#### Organisation de notre travail 
+    - Utilisation de Trello Jira pour voir l'avancée des tâches
+
+     - On pense le nommage de nos méthodes / class / 
+
+    - La bonne conduite GIT: 
+      - On désigne un master "Eric"
+      - On rebase avant de push avec la main 
+
 
 
 
