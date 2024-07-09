@@ -8,7 +8,7 @@ On axe toute l'UX/UI sur l'utilisation App Mobile et on va créer en second une 
 
     - D’un produit/service cross-platform disponible à la fois sur appli et sur navigateur
 
-On axe notre UX/UI sur une utilisation cross-plateform, c'est à dire tant Descktop que mobile. 
+On axe notre UX/UI sur une utilisation cross-plateform, c'e st à dire tant Descktop que mobile. 
 
 
 ### Notre choix se portera sur: 
@@ -33,7 +33,7 @@ On axe notre UX/UI sur une utilisation cross-plateform, c'est à dire tant Desck
 … Tranche d'âge     |  22 ans                                 |  40 ans                                             |  30 ans                         | 
 … Profession        |  Employé                                |  Ingénieur logiciel                                 |  Intermittent                   | 
 … Centre d'interet  |  Jouer                                  |  Constituer sa collection                           |  Se déguiser en Cosplay         |
-… Objectifs         |  Acheter le derniers jeux               |  Cherche des pièces rares                           |  Trouver des accessoires costume|
+… Objectifs         |  Acheter le derniers jeux               |  Cherche d es pièces rares                          |  Trouver des accessoires costume|
 … Objectifs         |  Acheter une version unique             |  Faire estimer sa collection                        |  Acheter des Figurines déco     |
 … Objectifs         | (re)Découvrir des Jeux                  | Compléter sa collection                             |                                 |
 … Objectifs         | Acheter pas chère                       | Etre informé de la dispo d'un article recherché     |                                 |
