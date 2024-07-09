@@ -24,6 +24,6 @@ Router: la route de la requête jusqu'au retour.
 CRUD Creat Read Update Delete
 
 
-# Les design patterns 
+## LES DESIGN PATTERNS
 
-Patrons de conception – sont des méthodes de codage reconnues, qui permettent de résoudre des problèmes récurrents.
+Patron de conception – sont des méthodes de codage reconnues, qui permettent de résoudre des problèmes récurrents.

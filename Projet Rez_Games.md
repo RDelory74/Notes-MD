@@ -147,6 +147,46 @@ ADMIN
 
 #### Etablir les taches techniques et estimer le temps en heure pour les réaliser
 
+## Speed Boat 
+Eric
+Ancre: H/ Bien définir qui fait quoi | T/.. | A/Aller à l'essentiel. 
+
+Vent: H/ on s'entend bien | T/... | A/ On comprend bien  
+
+Equipe: H/ Moyen de se parler et de resoudre les problèmes | T/ On arrive à se répartir les tâches | A/ On avance ensemble 
+
+Objectifs: H/ S'engager sur les délais | T/Back-ENd - Bien commenter | A/ Tous apprendre le FrameWork
+
+Moumen
+Ancre: H/Le fait d'avoir 3 debutants dans l'équipe |  T/  |  A/ 
+
+Vent: H/  | T/ | A/L'envi d'enfin passer aux choses sérieuses avec Laravel  
+
+Equipe: H/ T/  A/  
+
+Objectifs: H/ | T/Découvrir comment faire un site de A à Z | A/Mieux comprendre l'algo 
+
+
+Johan
+Ancre: H/ Risque qu'on s'entende pas  |  T/ Qu'on s'aligne pas tous au même niveau | A/ 
+
+Vent: H/ Bonne communication  | T/ Eric à déja touché | A/  
+
+Equipe: H/ Le site qui nous plaît | T/ Peu de fonctionnalité sur le site | A/ Tous apprendre le FrameWork 
+
+Objectifs: H/ Tous nous entendre et prendre chaque décision ensemble | T/Découvrir comment faire un site de A à Z | A/
+
+Rodolphe
+Ancre: H/ On s'éparpille pas  |  T/ Qu'on y arive pas   |  A/ On est 3 débutants
+
+Vent: H/ Cohesion et dialogue | T/  | A/  
+
+Equipe: H/ T/  A/  
+
+Objectifs: H/ | T/ | A/
+
+
+
 #### Préparer les bases de données
 
 BASE CLIENT 
