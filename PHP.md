@@ -154,7 +154,7 @@ Après je dois le sécuriser avec du PHP sur la partie Front, alors dans mon doc
         echo "Le message n'a pas assez de caractères.";
         } 
 
-        if (filter_var($mail, FILTER_VALIDATE_EMAIL)) // si l'email est bien valide
+        if (filter_var($mail, FILTER_VALIDATE_EMAIL)) // si l'email e['Tableau' => 'La liste des clients'];st bien valide
         {
             echo "Félicitation $civilité $name votre requête pour $Raison a bien été envoyée avec le message suivant:$message ";
         } else echo "Le mail n'est pas valide.";
