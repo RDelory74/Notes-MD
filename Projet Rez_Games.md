@@ -217,3 +217,10 @@ BASE CLIENT
     +--------+---------------------------------+--------------------------+--------------------+----------+-------+
 
 
+User::factory()->create([
+            'name' => 'JhonDOe',
+            'email' => 'JhonDoe@example.com',
+            
+        ]);*
+
+        $this->call(CategoriesTableSeeder::class);
