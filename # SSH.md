@@ -50,3 +50,7 @@ usage : git remote [-v | --verbose]
 depuis github cloner le projet avec le lien SSH puis entrez la commande suivante sur le main du projet:
 
     main* ❯ git remote set-url origin git@github.com:rmMoumenCampusNum/REZ_GAMES.git
+
+
+php artisan make:controller NomDuController --resource
+
