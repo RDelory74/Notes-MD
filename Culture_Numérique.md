@@ -78,3 +78,66 @@ Suivre des gens sur internet // Repérer les personnes qui font une bonne veille
 Le paratge de connaissance à l'orale avec les autres personnes de notre groupe ou des autres groupes. 
 
 
+## L'IA
+
+### Crée et tester un framework IA
+
+USBEK et RICA
+
+
+Tensor flow Google // kaggle
+
+Gemini
+
+Claude
+
+Passer par Python pour commercer à travailler sur de l'IA, utiliser des framework Python type Panda. 
+Utiliser aussi un logiciel qui permet de faire travailler un programme sur GPU plutot que le processeur (voir Nvidia).
+
+Plateform IA: 
+
+Dall-E
+Chat GPT
+MidJourney
+Bard
+Replica
+Gemini
+Stable Diffusion
+Black-Box // Fait moi le html d'une photo 
+
+
+Tensorflow : 
+PyTorch : 
+Scikit-learn :
+Spark : 
+Keras : 
+AMAZON MACHINE LEARNING
+MICROSOFT CNTK
+Theano
+Sci-kit Learn
+Caffe
+Kubeflow 
+Mistral
+GLUON
+
+### Pour un bon prompt: 
+
+Lui dire d'oublier ce qui a été dit jusqua présent 
+
+Premier ingrédient – Donner un rôle à l’IA
+
+Deuxième ingrédient – Établir le contexte (cible et objectifs)
+
+Troisième ingrédient – Définir un format
+
+Quatrième ingrédient – Préciser le ton souhaité
+
+Cinquième ingrédient – Placer des limites
+
+Sixième ingrédient – Révisions et améliorations
+
+https://digitad.ca/prompt-chatgpt/
+
+
+https://www.meltwater.com/fr/blog/chatgpt-prompts-marketing
+

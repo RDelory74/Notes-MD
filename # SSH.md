@@ -54,3 +54,75 @@ depuis github cloner le projet avec le lien SSH puis entrez la commande suivante
 
 php artisan make:controller NomDuController --resource
 
+namespace App\Http\Controllers;
+
+use App\Models\Item; // Assurez-vous d'importer le modèle Item
+use Illuminate\Http\Request;
+
+class ItemController extends Controller
+{
+    /**
+     * Affiche une liste des ressources.
+     */
+    public function index()
+    {
+        $items = Item::all(); // Récupère tous les items
+        return response()->json($items);
+    }
+
+    /**
+     * Affiche le formulaire pour créer une nouvelle ressource.
+     */
+    public function create()
+    {
+        // Retourne une vue si nécessaire
+    }
+
+    /**
+     * Stocke une nouvelle ressource dans le stockage.
+     */
+    public function store(Request $request)
+    {
+        $item = Item::create($request->all()); // Crée un nouvel item
+        return response()->json($item, 201);
+    }
+
+    /**
+     * Affiche la ressource spécifiée.
+     */
+    public function show(string $id)
+    {
+        $item = Item::findOrFail($id); // Trouve l'item par ID
+        return response()->json($item);
+    }
+
+    /**
+     * Affiche le formulaire pour modifier la ressource spécifiée.
+     */
+    public function edit(string $id)
+    {
+        // Retourne une vue si nécessaire
+    }
+
+    /**
+     * Met à jour la ressource spécifiée dans le stockage.
+     */
+    public function update(Request $request, string $id)
+    {
+        $item = Item::findOrFail($id); // Trouve l'item
+        $item->update($request->all()); // Met à jour l'item
+        return response()->json($item);
+    }
+
+    /**
+     * Supprime la ressource spécifiée du stockage.
+     */
+    public function destroy(string $id)
+    {
+        $item = Item::findOrFail($id); // Trouve l'item
+        $item->delete(); // Supprime l'item
+        
+        https://www.youtube.com/watch?v=olf35zb2YS0
+
+
+        https://www.youtube.com/watch?v=olf35zb2YS0

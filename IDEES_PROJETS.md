@@ -14,3 +14,5 @@ Voir site qui existe déja.
 ## N°3: Créer un site avec une version en ligne d'un livre dont vous etes le heros. 
 
 ## N°4: Créer un jeux online !! Hahahah
+
+## N°5: Balancer les CGV de plusieurs contrat à Chat GPT pour qu'il me sorte un tableau comparatif
