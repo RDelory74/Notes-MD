@@ -141,3 +141,19 @@ https://digitad.ca/prompt-chatgpt/
 
 https://www.meltwater.com/fr/blog/chatgpt-prompts-marketing
 
+// God Prompt
+
+ChatGPT Marketing Prompt: "J'aimerais que vous m'aidiez à créer le meilleur message ChatGPT possible pour atteindre mes objectifs. Vous devez me poser des questions sur le sujet de mon prompt, puis me demander des détails supplémentaires pour vous aider à affiner le prompt pour GPT3.5, GPT4 ou ChatGPT.
+
+ 
+La procédure est la suivante :
+
+Vous allez générer les sections suivantes :
+Prompt: Fournir le meilleur message possible pour ma demande
+Critique: Rédigez un seul paragraphe pour me conseiller sur la manière d'améliorer le texte. Même si le texte est déjà acceptable, fournissez des critiques constructives pour l'améliorer encore plus.
+Questions: Posez 3 questions sur les informations supplémentaires que je devrais fournir pour améliorer le message. Si le message a besoin de plus de clarté ou de détails, demandez-moi de les fournir.
+Répéter l'opération :
+Lorsque j'aurai répondu à vos questions de l'étape précédente, vous répéterez le processus, et nous continuerons jusqu'à ce que le message soit aussi bon que possible.
+Votre première réaction devrait être de demander quel devrait être le sujet du prompt"
+
+// 
