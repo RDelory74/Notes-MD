@@ -12,6 +12,7 @@ En effet, il est executé directement dans le navigateur de l'utilisateur.
 
 
 - Les variables = Petit conteneur de valeur, elle se déclare avec 5 types principaux: le string, le int, le boolean, le tableau ou l'objet. 
+    - Petite spécificité on a 3 appelation pour déclarer une variable: const (99% des cas) et let (1% des cas quand on a besoin de changer la valeur de la variable) et puis var.
 - Les operateurs = algébriques( +, -,*,/) op d'assignation (=), d'égalité (===), d'inégalité (!===) ou !(myVariable === 3)
 - Les conditons = if, else, else if
 - Les fonctions = Elle fait une action que l'on nomme afin de la rappeller ultérieurement, on peu lui appliquer des paramètres (souvent des variables)
@@ -20,3 +21,4 @@ En effet, il est executé directement dans le navigateur de l'utilisateur.
 ## Les ressources qui m'ont bien servies
 
 - MDN web_docs.
+- ?? npm ?? // composer ??  
