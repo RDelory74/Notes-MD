@@ -22,3 +22,40 @@ En effet, il est executé directement dans le navigateur de l'utilisateur.
 
 - MDN web_docs.
 - ?? npm ?? // composer ??  
+
+
+
+
+## Les copy/colle de l'exo 
+
+    console.log(`${cities.length} communes chargées`);
+    const cl = console.log;
+    const db = cities;
+    /*
+    cities.filter(city => city.population > 300000).sort((a, b) => b.population - a.population).forEach(city => { cl(`Nom: ${city.nom}, Population :${city.population}`) });
+
+
+    cities.filter(city =>city.codeDepartement === "74").forEach(city => cl(`${city.nom}`));
+    */
+
+
+    // Création d'une fonction getCitiesByDept pour retourner un tableau avec un code postale en paramètre.  
+
+    function getCitiesByDept (cp){
+        let cpCities= [];
+        db.forEach(db => {if (db.codeDepartement == cp){
+            cpCities.push(db)
+        }
+    });
+    return cpCities;
+    }
+    // utilisation de la fonction dans une vairable afin d'afficher le tableau (ligne 23) et chaque ville (ligne 25).
+    let villes = getCitiesByDept("74");
+    console.log(villes);
+
+    // création d'une fonction qui affiche les villes du département selectionnée dans getCitiesByDept. 
+    
+    function displayCity (city){
+    villes.forEach(city=>cl(`${city.nom}`));
+    }
+    displayCity("74");
