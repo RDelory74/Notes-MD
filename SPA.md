@@ -211,7 +211,9 @@ multi-thread et single-thread
 mutli-thread = plusieurs tahces en parallèle
 single-thread = une seule tache à la fois 
 
+#### FrameWork : EXpress sert à faire des API, interressant d'aller y faire un saut. 
 
+Checker aussi les Websocket pour le multi joueur 
 
 
 
@@ -336,3 +338,56 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 ### FrameWorks: (vue.js)
+
+Vitejs le bundler  axios utile pour la création des requêtes Get Post Put Delete 
+
+vitejs.dev/guide  Router et pinia
+
+
+
+Décrire le concept de Single Page App
+
+    On affiche un site entier sur une seule page html, le header et le footer sont statics et c'est le contenu qui va changer en fonction des requêtes http
+
+
+Différencier le web mobile du mobile natif
+
+    Le web mobile est dévelloppé pour un navigateur mobile et computer, le native est spécialement dévellopé pour le mobile et peut utiliser les fonctionnalité native des appareils, tels que :
+
+    Suivi de la localisation de l'appareil
+    Microphone et caméras de l'appareil
+    Listes de contacts des utilisateurs
+    Gestes tactiles, inclinaison de l'appareil et autres interactions de l'utilisateur
+    Fonctionnalités de sécurité de l'appareil comme la numérisation d'empreintes digitales ou la reconnaissance faciale
+
+Comprendre l’utilité de l’approche composants
+
+    L'approche composant est une manière d'organiser son code pour le single page application en créant un composant pour un tache et permettant de décomposer au maximum les items d'une page. 
+
+Quand et pourquoi ce type d'applications a vu le jour ?
+
+    Introduit en 2005 par Steve Yen afin d'éviter de recharger toute la page mais seulement la partie de son contenu nécessaire. 
+    Permet un meilleur affichage (plus léger) des pages web pour les ordinateurs certes mais aussi et surtout pour les mobiles (le fait d'avoir une utilisation nomade rapport à la couverture reseau)
+
+
+Quels sont les avantages et inconvénients de cette approche ?
+
+    Les avantages: 
+    rapidité, débugging sans se soucier du coté serveur, adaptabilité aux applications mobiles
+
+    Les inconvenient: 
+    Moins bon SEO (moins d'informations )
+
+Quels sont les principaux frameworks utilisés pour développer des "SPA" de nos jours ?
+ 
+    { 
+      "Framework":"SPA",
+      { "nom" : "Angular", "Date_de_sortie":"2010", "Mainteneur" : "Google", "Licence": "MIT", "Spec":"Approche modulaire orientée composant basé sur modèle MVVM"}, 
+      { "nom" : "React", "Date_de_sortie":"2013", "Mainteneur" : "Facebook", "Licence": "MIT", "Spec":"Approche orienté composant qui s'apparente à une bibliothèque"}, 
+      { "nom" : "Angular", "Date_de_sortie":"2014", "Mainteneur" : "Ancien Dev Angular ", "Licence": "MIT", "Spec":"Approche modulaire orienté compposant de type bibliothèque"} 
+    }
+
+Pour tout savoir : https://digiwin.fr/actualites/angular-react-et-vue-quel-framework-spa-choisir/#:~:text=Pr%C3%A9sentation%20de%20Angular%2C%20React%20et,Ils%20sont%20open%2Dsource.
+
+
+
