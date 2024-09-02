@@ -391,3 +391,55 @@ Pour tout savoir : https://digiwin.fr/actualites/angular-react-et-vue-quel-frame
 
 
 
+### Exercices sur playground Vue.js 
+
+Rendez votre application réactive : affichez dans le titre du texte qui sera renseigné en Javascript, dans l'objet data de Vue.
+Modifiez la valeur de votre data dans l'extension Vue DevTools.
+Un champ input permettant de mettre à jour le contenu d’une balise H1
+Un champ input permettant de mettre à jour le contenu d’une balise H1 au clic sur un bouton. Attention, pas seulement quand l'input perd le focus !
+Une checkbox permettant d’ajouter la classe "red" aux H1 et H2 quand elle est cochée
+Une checkbox pour afficher / masquer une image
+
+    <template>
+      <h1>{{titre}}</h1>
+      <input placeholder= "change le titre en haut" v-model="titre"/> 
+      <input placeholder= "change le titre en bas avec boutton" v-model="titreChanger" />
+      <button @click="changeTitre">Change le Titre</button>
+      <input type="checkbox" v-model="changeColor" > Title in Red </input>
+      <input type="checkbox" v-model="imgPrint" > Affiche l'image </input>
+      <h1 :class="{redColor:changeColor}">{{titreBoutton}}</h1> 
+      <img v-if="imgPrint" src="https://www.journalduluxe.fr/files/mercedes-haute-voiture_70b6b237f932ea3aaddcc781e6bd1c0a.jpeg"/> 
+    </template>
+
+    <script>
+    
+    
+    export default {
+      data(){
+        return {
+          titre: "",
+          titreBoutton: "",
+          titreChanger: "",
+          changeColor:false,
+          imgPrint:false
+        }
+      },
+      methods:{
+      changeTitre() {
+        console.log(this.titreChanger)
+        this.titreBoutton = this.titreChanger;
+      },
+    }
+    }
+    </script>
+
+
+    <style>
+    
+    .redColor {
+      color: red;
+    }
+
+    </style>
+
+
