@@ -19,4 +19,6 @@ Voir site qui existe déja.
 
 ## N°6: créer un algo qui permettrait de filtrer les EAN qui se perdent pour les caissières. 
 
+## N°7: Créer un programme qui dicte à Siry de chercher les liste existantes dans un nappareil et de rajouter une tach ou une puce
+
 
