@@ -19,6 +19,10 @@ Voir site qui existe déja.
 
 ## N°6: créer un algo qui permettrait de filtrer les EAN qui se perdent pour les caissières. 
 
+    Kit code-barres, produits manquants pour caissière, créer programme pour identifier produits avec code-barres, manquant fréquent, afin d’établir un kit disponible sur toutes les caisses, permettant aux caissières de ne pas avoir appelé de réunion. Non le rayon.
+
 ## N°7: Créer un programme qui dicte à Siry de chercher les liste existantes dans un nappareil et de rajouter une tach ou une puce
+
+
 
 
