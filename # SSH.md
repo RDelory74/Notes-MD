@@ -126,3 +126,25 @@ class ItemController extends Controller
 
 
         https://www.youtube.com/watch?v=olf35zb2YS0
+
+
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/rodolphe-delory/.ssh/id_rsa):                                                
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/rodolphe-delory/.ssh/id_rsa
+Your public key has been saved in /home/rodolphe-delory/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:vGhjZ2VQUfDdTZvppVDLuhsMgHH4HnmUE3Su3suEJkI rodolphe-delory@rodolphe-delory-HP-CNA-102
+The key's randomart image is:
++---[RSA 3072]----+
+|      ....**o . .|
+|      .+ .++ + +=|
+|      ..oo .+ +++|
+|       .+o.. o...|
+|      E.So= . .. |
+|     . ..= = .   |
+|      * = + *    |
+|     o = o o +   |
+|            +    |
++----[SHA256]-----+
