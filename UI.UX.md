@@ -159,3 +159,11 @@ CAS D'USAGE (Liste des cas dans lesquels le persona utilise le produit, comment 
 Color picker
 trello
 https://www.favicon.cc/?
+
+            <li>Freepik: <a href="https://www.pexels.com/">https://www.freepik.com/home</a></li>
+			<li>Pexels: <a href="https://www.pexels.com/">https://www.pexels.com/</a></li>
+			<li>SplitShire: <a href="https://www.splitshire.com/">https://www.splitshire.com/</a></li>
+			<li>StartupStockPhotos: <a href="http://startupstockphotos.com/">http://startupstockphotos.com/</a></li>
+			<li>StockSnap: <a href="https://stocksnap.io/">https://stocksnap.io/</a></li>
+			<li>ISO Republic: <a href="http://isorepublic.com/">http://isorepublic.com/</a></li>
+			<li>Videezy: <a href="https://www.videezy.com/">https://www.videezy.com/</a> - for videos</li>

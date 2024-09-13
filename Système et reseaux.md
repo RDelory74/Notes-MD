@@ -333,6 +333,8 @@ https://http-exercice.williamburillon.com/api/login
 
 SSH
 
+https://doc.fedora-fr.org/wiki/SSH_:_Authentification_par_cl%C3%A9
+
 Protocoles remplacés par SSH : SSH (Secure Shell) a remplacé des protocoles comme Telnet, rlogin, FTP et rsh, qui transmettaient les données en clair sur le réseau, ce qui les rendait vulnérables aux interceptions.
 
 Différents modes d'utilisation de SSH (sécurité) :
@@ -349,29 +351,58 @@ Client Serveur
 |<-- Challenge (chiffrement avec la clé publique) -------|
 |--- Réponse (déchiffrement avec la clé privée) -------->|
 |--- Connexion sécurisée établie -----------------------|
+
+Fermer le serveur: 
+
+    sudo shutdown
+
+redémarrer le serveur: 
+
+    shutdown -r now // immediatement; shutdown -r 5 // dans 5 min
+
 La connexion se fait via une vérification mutuelle entre la clé privée du client et la clé publique du serveur, assurant une connexion chiffrée.
+
+Commande linux pour créer une clé ssh public et privée, elle va être ensuite créée dans un dossier avec les fichiers suivants: 
+
+    $ ssh-keygen -t 
+
+    id_e2548
+    id_e2548.pub
+    id_rsa
+    id_rsa.pub
+    authorised_keys
 
 
 Catégorie	Ligne de commande
+
 Navigation et Gestion de Fichiers	
+
     ls  //affiche le contenu du dossier 
     cd  // se déplacer 
     pwd //afficher le path
-    Manipulation de Fichiers et de Répertoires
+
+Manipulation de Fichiers et de Répertoires
+
     cp  // copier
     mkdir   // créer un dosssier    
     touch   //créer un fichier
     mv  // mv déplacer ou renomer un dossier ou un fichier
     rm  // supprimer
-    Affichage et lecture de contenu de fichier
+
+Affichage et lecture de contenu de fichier
+
     cat // prévisualiser
     less    // prévisualise un fichier d'avant en arrière possible
     find    // trouve un fichier 
     grep    // trouve un terme dans un fichier et l'affiche
-    Transfert et Synchronisation de Fichiers
+
+Transfert et Synchronisation de Fichiers
+
     scp     //transféré des ficchier entre serveurs et machine  /scp -p root@162.168.1.1:/media/scp.png hostinger@162.168.1.2:/bureau/destination
     rsync   //  permet de transférer et mettre à jour des fichiers // rsync  version 3.1.2  protocol version 31
-    Éditeur de Texte	
+
+Éditeur de Texte	
+
     vim // vim /chemin/texte éditer un texte
     nano    // parcourir et modifier un texte
 
@@ -384,6 +415,7 @@ Your public key has been saved in /home/rodolphe-delory/.ssh/id_rsa.pub
 The key fingerprint is:
 SHA256:vGhjZ2VQUfDdTZvppVDLuhsMgHH4HnmUE3Su3suEJkI rodolphe-delory@rodolphe-delory-HP-CNA-102
 The key's randomart image is:
+
 +---[RSA 3072]----+
 |      ....**o . .|
 |      .+ .++ + +=|
@@ -396,6 +428,10 @@ The key's randomart image is:
 |            +    |
 +----[SHA256]-----+
 
+
+
+
+https://www.hostinger.fr/tutoriels/generer-cle-ssh
 
 Connection à un serveur SSH: 
 Configurer son serveur 
@@ -434,3 +470,37 @@ https://medium.com/@mgonzalezbaile/demystifying-nginx-and-php-fpm-for-php-develo
 
 
 /home/rodolphe-delory/Images/Captures d’écran/
+
+
+Il est nécessaire de configurer nginx: 
+
+Création d'un fichier /var/www/ dans lequel tu mets ton site pis après tu configure le fichier 'nom du site' qui se trouve à l'adresse:
+
+    /etc/nginx/sites-availables
+
+    puis tu fais un sudo nano du fichier du site: 
+    
+    
+
+    server {
+        listen 80;
+        server_name 212.47.230.222;
+
+       root /var/www/datahive;
+        index index.php index.html index.htm;
+
+        location / {
+            try_files $uri $uri/ =404;
+        }
+
+        location ~ \.php$ {
+            include snippets/fastcgi-php.conf;
+            fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+        }
+
+        location ~ /\.ht {
+            deny all;
+        }
+    }
+
+
