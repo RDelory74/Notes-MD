@@ -476,13 +476,17 @@ Il est nécessaire de configurer nginx:
 
 Création d'un fichier /var/www/ dans lequel tu mets ton site pis après tu configure le fichier 'nom du site' qui se trouve à l'adresse:
 
+Se positionner dans le dossier /var/www/ puis Utilisation de Git clone du HTTP du projet sur github
+
     /etc/nginx/sites-availables
 
     puis tu fais un sudo nano du fichier du site: 
-    
-    
 
-    server {
+
+##### Autorise l'ouverture des ports :sudo ufw allow 81
+
+
+ server {
         listen 80;
         server_name 212.47.230.222;
 
@@ -503,4 +507,213 @@ Création d'un fichier /var/www/ dans lequel tu mets ton site pis après tu conf
         }
     }
 
+Quelles sont les problématiques qui vont survenir par rapport à la gestion des différents code source (notamment par rapport à la diversité des technologies)?
 
+Le problème lorsque l'on fait fonctionner plusieurs sites sur le même serveur c'est s'il y en a un qui merde et que l'on doit faire de la maintenance, ça peut bloquer tous les autres, on a donc un problème d'isolation entre les domaineS.
+
+
+# Certificats TLS/SSL
+
+https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04-fr
+
+Obtenir un domaine sécure HTTPS
+
+
+
+
+
+Le hacking: 
+
+En 4 phases 
+
+- La reconnaissance :
+
+- Le scan : le port 20 / le port 22 (pour la ssh) le port 25: SNTP /  HTTP: port 8080  / HTTPS: 443 // Une des bonnes pratiques c'est de changer les ports          standardisés. 
+
+- L'exploitation : 
+
+- Maintient: 
+
+rodolphe@server-delory:/etc/nginx/sites-enabled$ cd
+rodolphe@server-delory:~$ sudo apt install certbot python3-certbot-nginx
+[sudo] password for rodolphe: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  python3-acme python3-certbot python3-configargparse python3-icu python3-josepy python3-parsedatetime python3-requests-toolbelt python3-rfc3339 python3-zope.component
+  python3-zope.event python3-zope.hookable
+Suggested packages:
+  python-certbot-doc python3-certbot-apache python-acme-doc python-certbot-nginx-doc
+The following NEW packages will be installed:
+  certbot python3-acme python3-certbot python3-certbot-nginx python3-configargparse python3-icu python3-josepy python3-parsedatetime python3-requests-toolbelt python3-rfc3339
+  python3-zope.component python3-zope.event python3-zope.hookable
+0 upgraded, 13 newly installed, 0 to remove and 38 not upgraded.
+Need to get 993 kB of archives.
+After this operation, 5077 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-josepy all 1.10.0-1 [22.0 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-requests-toolbelt all 0.9.1-1 [38.0 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-rfc3339 all 1.1-3 [7110 B]
+Get:4 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 python3-acme all 1.21.0-1ubuntu0.1 [36.4 kB]
+Get:5 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-configargparse all 1.5.3-1 [26.9 kB]
+Get:6 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-parsedatetime all 2.6-2 [32.9 kB]
+Get:7 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-zope.hookable amd64 5.1.0-1build1 [11.6 kB]
+Get:8 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-zope.event all 4.4-3 [8180 B]
+Get:9 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-zope.component all 4.3.0-3 [38.3 kB]
+Get:10 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-certbot all 1.21.0-1build1 [175 kB]
+Get:11 http://archive.ubuntu.com/ubuntu jammy/universe amd64 certbot all 1.21.0-1build1 [21.3 kB]
+Get:12 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-certbot-nginx all 1.21.0-1 [35.4 kB]
+Get:13 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-icu amd64 2.8.1-0ubuntu2 [540 kB]
+Fetched 993 kB in 0s (7165 kB/s)  
+Preconfiguring packages ...
+Selecting previously unselected package python3-josepy.
+(Reading database ... 102321 files and directories currently installed.)
+Preparing to unpack .../00-python3-josepy_1.10.0-1_all.deb ...
+Unpacking python3-josepy (1.10.0-1) ...
+Selecting previously unselected package python3-requests-toolbelt.
+Preparing to unpack .../01-python3-requests-toolbelt_0.9.1-1_all.deb ...
+Unpacking python3-requests-toolbelt (0.9.1-1) ...
+Selecting previously unselected package python3-rfc3339.
+Preparing to unpack .../02-python3-rfc3339_1.1-3_all.deb ...
+Unpacking python3-rfc3339 (1.1-3) ...
+Selecting previously unselected package python3-acme.
+Preparing to unpack .../03-python3-acme_1.21.0-1ubuntu0.1_all.deb ...
+Unpacking python3-acme (1.21.0-1ubuntu0.1) ...
+Selecting previously unselected package python3-configargparse.
+Preparing to unpack .../04-python3-configargparse_1.5.3-1_all.deb ...
+Unpacking python3-configargparse (1.5.3-1) ...
+Selecting previously unselected package python3-parsedatetime.
+Preparing to unpack .../05-python3-parsedatetime_2.6-2_all.deb ...
+Unpacking python3-parsedatetime (2.6-2) ...
+Selecting previously unselected package python3-zope.hookable.
+Preparing to unpack .../06-python3-zope.hookable_5.1.0-1build1_amd64.deb ...
+Unpacking python3-zope.hookable (5.1.0-1build1) ...
+Selecting previously unselected package python3-zope.event.
+Preparing to unpack .../07-python3-zope.event_4.4-3_all.deb ...
+Unpacking python3-zope.event (4.4-3) ...
+Selecting previously unselected package python3-zope.component.
+Preparing to unpack .../08-python3-zope.component_4.3.0-3_all.deb ...
+Unpacking python3-zope.component (4.3.0-3) ...
+Selecting previously unselected package python3-certbot.
+Preparing to unpack .../09-python3-certbot_1.21.0-1build1_all.deb ...
+Unpacking python3-certbot (1.21.0-1build1) ...
+Selecting previously unselected package certbot.
+Preparing to unpack .../10-certbot_1.21.0-1build1_all.deb ...
+Unpacking certbot (1.21.0-1build1) ...
+Selecting previously unselected package python3-certbot-nginx.
+Preparing to unpack .../11-python3-certbot-nginx_1.21.0-1_all.deb ...
+Unpacking python3-certbot-nginx (1.21.0-1) ...
+Selecting previously unselected package python3-icu.
+Preparing to unpack .../12-python3-icu_2.8.1-0ubuntu2_amd64.deb ...
+Unpacking python3-icu (2.8.1-0ubuntu2) ...
+Setting up python3-configargparse (1.5.3-1) ...
+Setting up python3-requests-toolbelt (0.9.1-1) ...
+Setting up python3-parsedatetime (2.6-2) ...
+Setting up python3-icu (2.8.1-0ubuntu2) ...
+Setting up python3-zope.event (4.4-3) ...
+Setting up python3-zope.hookable (5.1.0-1build1) ...
+Setting up python3-josepy (1.10.0-1) ...
+Setting up python3-rfc3339 (1.1-3) ...
+Setting up python3-zope.component (4.3.0-3) ...
+Setting up python3-acme (1.21.0-1ubuntu0.1) ...
+Setting up python3-certbot (1.21.0-1build1) ...
+Setting up certbot (1.21.0-1build1) ...
+Created symlink /etc/systemd/system/timers.target.wants/certbot.timer → /lib/systemd/system/certbot.timer.
+Setting up python3-certbot-nginx (1.21.0-1) ...
+Processing triggers for man-db (2.10.2-1) ...
+Scanning processes...                                                                                                                                                                   
+Scanning linux images...                                                                                                                                                                
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+rodolphe@server-delory:~$ sudo nano /etc/nginx/sites-available/CV
+rodolphe@server-delory:~$ sudo nano /etc/nginx/sites-available/CV
+rodolphe@server-delory:~$ sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+rodolphe@server-delory:~$ sudo systemctl reload nginx
+rodolphe@server-delory:~$ sudo ufw status
+Status: active
+
+To                         Action      From
+--                         ------      ----
+OpenSSH                    ALLOW       Anywhere                  
+Nginx HTTP                 ALLOW       Anywhere                  
+81                         ALLOW       Anywhere                  
+OpenSSH (v6)               ALLOW       Anywhere (v6)             
+Nginx HTTP (v6)            ALLOW       Anywhere (v6)             
+81 (v6)                    ALLOW       Anywhere (v6)             
+
+rodolphe@server-delory:~$ sudo ufw allow 'Nginx Full'
+sudo ufw delete allow 'Nginx HTTP'
+Rule added
+Rule added (v6)
+Rule deleted
+Rule deleted (v6)
+rodolphe@server-delory:~$ sudo ufw allow 'Nginx Full'
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+rodolphe@server-delory:~$ sudo ufw status
+Status: active
+
+To                         Action      From
+--                         ------      ----
+OpenSSH                    ALLOW       Anywhere                  
+81                         ALLOW       Anywhere                  
+Nginx Full                 ALLOW       Anywhere                  
+OpenSSH (v6)               ALLOW       Anywhere (v6)             
+81 (v6)                    ALLOW       Anywhere (v6)             
+Nginx Full (v6)            ALLOW       Anywhere (v6)             
+
+rodolphe@server-delory:~$ sudo certbot --nginx -d rod-cv.fr -d www.rod-cv.fr
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+Enter email address (used for urgent renewal and security notices)
+ (Enter 'c' to cancel): rodolphe.delory@le-campus-numerique.fr
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Please read the Terms of Service at
+https://letsencrypt.org/documents/LE-SA-v1.4-April-3-2024.pdf. You must agree in
+order to register with the ACME server. Do you agree?
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+(Y)es/(N)o: y
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Would you be willing, once your first certificate is successfully issued, to
+share your email address with the Electronic Frontier Foundation, a founding
+partner of the Let's Encrypt project and the non-profit organization that
+develops Certbot? We'd like to send you email about our work encrypting the web,
+EFF news, campaigns, and ways to support digital freedom.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+(Y)es/(N)o: n
+Account registered.
+Requesting a certificate for rod-cv.fr and www.rod-cv.fr
+
+Successfully received certificate.
+Certificate is saved at: /etc/letsencrypt/live/rod-cv.fr/fullchain.pem
+Key is saved at:         /etc/letsencrypt/live/rod-cv.fr/privkey.pem
+This certificate expires on 2024-12-15.
+These files will be updated when the certificate renews.
+Certbot has set up a scheduled task to automatically renew this certificate in the background.
+
+Deploying certificate
+Could not install certificate
+
+NEXT STEPS:
+- The certificate was saved, but could not be installed (installer: nginx). After fixing the error shown below, try installing it again by running:
+  certbot install --cert-name rod-cv.fr
+
+Could not automatically find a matching server block for rod-cv.fr. Set the `server_name` directive to use the Nginx installer.
+Ask for help or search for solutions at https://community.letsencrypt.org. See the logfile /var/log/letsencrypt/letsencrypt.log or re-run Certbot with -v for more details.
+rodolphe@server-delory:~$ sudo nano /etc/nginx/sites-available/CV
+rodolphe@server-delory:~$ sudo certbot install --cert-name rod-cv.fr
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+Deploying certificate
+Successfully deployed certificate for rod-cv.fr to /etc/nginx/sites-enabled/CV
+Successfully deployed certificate for www.rod-cv.fr to /etc/nginx/sites-enabled/CV
+rodolphe@server-delory:~$ 
