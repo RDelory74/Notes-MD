@@ -724,9 +724,9 @@ rodolphe@server-delory:~$
 
 
 
-## DOKKER: 
+## DOCKER: 
 
-
+https://www.youtube.com/watch?v=orS3UCIH4wg
 
     USING WEB-BASED LOGIN
     To sign in with credentials on the command line, use 'docker login -u <username>'
