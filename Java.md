@@ -268,3 +268,46 @@ public class Main {
         }
     }
 }
+
+public class Main {
+    public Main() {
+    }
+
+    public static void main(String[] args) {
+        double nbCartons = 34.0;
+        System.out.println("Il y a " + nbCartons + " cartons dans le local.");
+        double truckCapacity = 9.0;
+        System.out.println("Et le camion à une capacité de " + truckCapacity + " cartons par voyages.");
+        double nbVoyages = nbCartons / truckCapacity;
+        System.out.println("Il faudra faire " + Math.round(nbVoyages) + " voyages.");
+
+        while(nbCartons > 0.0 && truckCapacity < nbCartons) {
+            nbCartons -= truckCapacity;
+            System.out.println("Un voyage de " + truckCapacity + " cartons.");
+            System.out.println("Il reste " + nbCartons + " au locale.");
+        }
+        System.out.println("Dernier voyage avec " + nbCartons + " dans le camion.");
+    }
+}
+
+
+### Getter / Setter 
+
+https://codegym.cc/fr/groups/posts/getters-et-setters-en-java
+
+En gros quand on met de chants d'instance en private afin de limiter l'accés aux données par nos pairs, cela nous permet après de leur appliquer des méthodes, afin de s'assurer du type ou de l'affectation des valeurs. 
+
+On va donc ajouter dans le fichier class les getter et les setters associé à notre constructeur et ainsi leur appliquer des méthodes pour contraindre les affectations. 
+
+
+### System.out.printf (format)
+
+Avec cette commande tu peux formater les valeurs de sortie avec différents méthodes (voir la doc // https://www.baeldung.com/java-printstream-printf) 
+La méthode s'écri avec un % au debut et doit respecter l'ordre d'apparitiondes variables séparée elles par une virgule. 
+
+
+Exponant help 
+
+https://www.baeldung.com/java-calculating-the-power-without-math-pow
+
+Something is truee right above
