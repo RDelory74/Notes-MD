@@ -275,11 +275,11 @@ public class Main {
 
     public static void main(String[] args) {
         double nbCartons = 34.0;
-        System.out.println("Il y a " + nbCartons + " cartons dans le local.");
+          System.out.println("Il y a " + nbCartons + " cartons dans le local.");
         double truckCapacity = 9.0;
-        System.out.println("Et le camion à une capacité de " + truckCapacity + " cartons par voyages.");
+          System.out.println("Et le camion à une capacité de " + truckCapacity + " cartons par voyages.");
         double nbVoyages = nbCartons / truckCapacity;
-        System.out.println("Il faudra faire " + Math.round(nbVoyages) + " voyages.");
+          System.out.println("Il faudra faire " + Math.round(nbVoyages) + " voyages.");
 
         while(nbCartons > 0.0 && truckCapacity < nbCartons) {
             nbCartons -= truckCapacity;
@@ -311,3 +311,91 @@ Exponant help
 https://www.baeldung.com/java-calculating-the-power-without-math-pow
 
 Something is truee right above
+
+### Le Buffer
+
+
+
+import java.util.Scanner;
+import java.awt.event.KeyEvent;
+import java.util.Random;
+
+
+
+public class Menu {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Random random = new Random();
+
+        System.out.println("Welcome to Dungeons & Dragons!");
+        System.out.println("Let's create a new player");
+
+
+        System.out.print("Enter your character name: ");
+        String characterName = sc.nextLine();
+        System.out.print("Enter your character Type Choose Warrior or Wizard: ");
+        String characterType = sc.nextLine();
+
+        if( characterType.equals("Warrior")||characterType.equals("Wizard")) {
+            Character character = new Character(characterName, characterType);
+
+        System.out.println("C'est alors que des entrailles de l'abysse jailli notre nouveau héros: " + character.toString());
+        System.out.println("Character name: " + characterName);
+        System.out.println("Character type: " + characterType);
+
+        while (true) {
+            System.out.println("\nMain Menu:");
+            System.out.println("1. Voir Info Héros");
+            System.out.println("2. Modifier infos Héros");
+            System.out.println("0. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = sc.nextInt();
+            if (choice == 0) {
+                break;
+            } else if (choice == 1) {
+                System.out.println("Info Héros");
+                System.out.println("Name :" + character.getName() +
+                        "\n" + "PV :" + character.getVie() +
+                        "\n" + "Force :" + character.getStrength() +
+                        "\n" + "Arme :" + character.getWeapon() +
+                        "\n" + "Defense :" + character.getDefense() +
+                        "\n" + "Type :" + character.getType() +
+                        "\n");
+            } else if (choice == 2) {
+                System.out.println("\nModifier Héros:");
+                System.out.println("1. Modifier Nom");
+                System.out.println("2. Modifier Type");
+                System.out.println("0. Back");
+                System.out.print("Enter your choice: ");
+                int custChoice = sc.nextInt();
+                if (custChoice == 0) {
+                    System.out.println("Retour au menu");
+                } else if (custChoice == 1) {
+                    System.out.println("Nouveau nom du Héros:");
+                    character.setName(sc.nextLine());
+                    System.out.println("Le nouveau nom du héros a bien été remplacé par: "+character.getName());
+                } else if (custChoice == 2) {
+                    System.out.println("Nouveau type de Héros (Wizard ou Warrior): ");
+                    character.setType(sc.nextLine());
+                    System.out.println("Le nouveau type du héros a bien été remplacé par: "+character.getType());
+                } else {
+                    System.out.println("Invalid choice. Try again.");
+                }
+            } else {
+                System.out.println("Invalid choice. Try again.");
+            }
+        }
+        }else {
+            System.out.println("Invalid choice. Try again.");
+        }
+
+    }
+
+}
+
+
+DD Help https://github.com/LucasMouraDeOliveira/Dungeon/blob/master/src/dungeon/Game.java#L18
+
+https://github.com/srajan-kiyotaka/Dungeons-and-Dragons/blob/main/Java/D%26D_Medium.java
+
+https://devpost.com/software/dungeons-and-dragons-wdl825#updates
