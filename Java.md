@@ -315,6 +315,20 @@ Something is truee right above
 ### Le Buffer
 
 
+### Le Scanner
+
+### L'Héritage
+
+### Surcharger ou remplacer des comportement de classe mère: Le polymorphisme
+
+En réutilisant un méthode de classe on applique un: 
+Avec super. 
+
+On vient mettre un 
+
+@Override au dessus de la méthode pour lui indiquer qu'on va la surcharger. 
+
+
 
 import java.util.Scanner;
 import java.awt.event.KeyEvent;
@@ -399,3 +413,59 @@ DD Help https://github.com/LucasMouraDeOliveira/Dungeon/blob/master/src/dungeon/
 https://github.com/srajan-kiyotaka/Dungeons-and-Dragons/blob/main/Java/D%26D_Medium.java
 
 https://devpost.com/software/dungeons-and-dragons-wdl825#updates
+
+____________ZZZZZZZZZZZZZZZZZZZZZ
+__________ZZZZZ______________ZZZZZZ
+________ZZZZZ____________________ZZZZ
+______ZZZZZ_______________________ZZZZZ
+____ZZZZZ___________________________ZZZZ
+___ZZZZ______________________________ZZZZ
+__ZZZ__________________________________ZZZ
+_ZZZ____________________________________ZZZ
+ZZZZ____________________________________ZZZ
+ZZZ_____________________________________ZZZ
+ZZZ_____________________________________ZZZ
+ZZZ_____________________________________ZZZ
+ZZZ_____________________________ZZ______ZZZ
+ZZZ___________________________ZZZZZ_____ZZZ
+ZZZ________________________ZZZZZZZZZ__ZZZZZ
+ZZZZ____ZZZ______________ZZZZZZZZZZZZ_ZZZZ
+ZZZZ___ZZZZZZ___________ZZZZZZZZZZZZZ_ZZZ
+ZZZZ__ZZZZZZZZZZ_______ZZZZZZZZZZZZZ__ZZ
+ZZZZ__ZZZZZZZZZZZ______ZZZZZZZZZZZZ___ZZ
+_ZZZ___ZZZZZZZZZZZ______ZZZZZZZZZZ____ZZ
+_ZZZ____ZZZZZZZZZ_ZZZZZ___ZZZZZZ____ZZZZ
+__ZZZ____ZZZZZZZ__ZZZZZZ___________ZZZZ
+___ZZZZZ__________Z__ZZZ_____ZZZZZZZZZ
+____ZZZZZZZZ__________ZZ____ZZZZZZZZ
+_____ZZZZZZZZ_____________ZZZZZ
+__________ZZZ__Z___Z___Z__ZZZ
+__________ZZZ_ZZZ_ZZZ_ZZZ_ZZZ
+__________ZZZ_ZZZ_ZZZ_ZZZ_ZZZ
+__________ZZZ_ZZZ_ZZZ_ZZZ_ZZZ
+___________ZZZZZZZZZZZZZZZZZ
+______________ZZZZZZZZZZZ
+
+
+____*#####*
+___*########*
+_*###########*
+_*############*
+_*#############*_________*##*
+_*#############*_____*#######*
+_*#############*___*##########*
+__*#############*_*###########*
+___*#############*############*
+____*########################*
+_____*#######################*
+______*#####################*
+________*##################*
+_________*################*
+__________*#############*
+___________*##########*
+____________*#######*
+_____________*#####*
+______________*###*
+_______________*#*
+________________*
+
