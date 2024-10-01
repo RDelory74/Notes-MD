@@ -4,7 +4,29 @@ https://www.w3schools.com/java/java_getstarted.asp
 
 https://www.codecademy.com/learn/learn-java
 
-https://openclassrooms.com/en/courses/6173501-apprenez-a-programmer-en-java
+
+JM DOUDOU 
+
+https://www.jmdoudoux.fr/accueil.html
+
+Baeldung 
+
+https://www.baeldung.com/
+
+La doc Oracle
+
+****https://docs.oracle.com/
+
+
+### Nommage 
+
+Constructeur commence par une majuscule 
+
+Classe commence par une majuscule
+
+Variable c'est un nom, commence par une minuscule Camel case
+
+Méthode est un verbe commence par une minucscule sauf constructeur 
 
 ### QuickStart 
 
@@ -293,6 +315,8 @@ public class Main {
 
 ### Getter / Setter 
 
+Lorsqe l'on met des attribut en private il est nécessaire de créer des méthode get et set pour récupérer ou modifier les attirbuts de la clzasse au travers du code. 
+
 https://codegym.cc/fr/groups/posts/getters-et-setters-en-java
 
 En gros quand on met de chants d'instance en private afin de limiter l'accés aux données par nos pairs, cela nous permet après de leur appliquer des méthodes, afin de s'assurer du type ou de l'affectation des valeurs. 
@@ -314,14 +338,8 @@ Something is truee right above
 
 ### Le Buffer
 
+La mémoire tampon des infos dans le cache lors du déroulement du programme. 
 
-### Le Scanner
-
-Méthode Java qui permet de récupérer ce que l'utilisateur écrit: 
-
-  Scanner sc = Scanner scanner
-  int variable = sc.Int(); 
-  String variable = sc.nextLine();
 
 ### L'Héritage
 
@@ -342,13 +360,170 @@ Ca se passe comme ça:   - public Mother abstract class ------------------- publ
                             |_____ (inclus abstrcat méthode)                            |____ (inclus abstract methode)
 
 
+### Méthode sur les Array:
+
+  Pour l'ajout:
+
+        plateau.add(new Empty(1));
+        plateau.add(new Arme("Excalibur",5,"sword"));
+        plateau.add(new Ennemis("Gobelin",6,3));
+        plateau.add(new Potion("Potion standard",2,"healPotion"));
+        plateau.add(new Ennemis("Sorcier",9,2));
+        plateau.add(new Ennemis("Dragon",15,4));
+        plateau.add(new Bouclier("Bouclier en métal de fou",15,"Bouclier"));
+
+Pour mélanger: 
+
+        Collections.shuffle(plateau);
+
+Code une fonction pour générer une chaine de caractère aléatoire.
+
+        https://www.codeurjava.com/2015/03/generer-des-caracteres-aleatoires.html
+
+### Le Scanner
+
+Pour récupérer la saisie d'un utilisateur 
+
+    import java.util.Scanner;
+    Scanner sc = new Scanner scanner;
+
+Méthode Java qui permet de récupérer ce que l'utilisateur écrit: 
+
+      Scanner sc = Scanner scanner
+      int variable = sc.Int(); 
+      String variable = sc.nextLine();
+
+Pour initier une méthode random. 
+
+    import java.util.Random;
+    Random rd = new Random random;
+
+### Connecter BDD 
 
 
-import java.util.Scanner;
-import java.awt.event.KeyEvent;
-import java.util.Random;
+IDE: Intellij
+Création de Database dans Mysql: 
+
+    mysql> CREATE DATABASE DonjonsEtDragons;
+
+Ajout d'un plugin dans l'IDe pour gérer les BDD: 
+
+    DB navigator
+
+Installation d'une librairie pour la gestion des bdd (connection et requêtes) jdbc: (fichier .jar à installer dans un dossier lib (créé par mes soins) que l'ont va ensuite configurer pour indiquer à l'IDE qu'il s'agit d'un fichier source de controle et de librairie (https://www.geeksforgeeks.org/how-to-add-external-jar-file-to-an-intellij-idea-project/) )
+
+tel du fichier .jar: 
+
+      https://www.geeksforgeeks.org/how-to-add-external-jar-file-to-an-intellij-idea-project/
+
+Ensuite on fait une configuration de notre plugin: 
+
+Configurer la connexion :
+Nom de la base de données : entre DonjonsEtDragons.
+Host : entre l'adresse IP du serveur MySQL (si c'est en local, utilise localhost ou 127.0.0.1).
+Port : entre le port par défaut de MySQL, généralement 3306.
+User : entre ton nom d'utilisateur MySQL (ex. root).
+Password : entre le mot de passe de ton utilisateur MySQL.
+Database : spécifie le nom de la base, ici DonjonsEtDragons.
 
 
+Notre Bdd devrait connéctée à ce stade: on va pouvoir y intégrer les tables nécessaires: (type Player) 
+
+      CREATE TABLE Player (
+          id INT AUTO_INCREMENT PRIMARY KEY,  
+          name VARCHAR(100),
+          pv INT,
+          strength INT,
+          weapon VARCHAR(100),
+          defense VARCHAR(100),
+          type VARCHAR(100),
+          exp INT,
+          gold INT,    
+          level INT
+      );
+
+
+
+Enfin je créé des Class que je prend soin d'installer dans un dossier db (au même niveau que les dossiers item et autres)
+
+Ces classes vont me permettre de gérer la connection ainsi que l'interaction avec ma base de donnée. 
+
+Je la structure comme suit: 
+
+  - Les imports et packages classiques
+    + import java.sql.*;
+
+  - la méthode de connection à configurer
+
+            private Connection connect() {
+             // Connection
+             Connection conn = null;
+             try {
+                 String url = "jdbc:mysql://localhost:3306/DonjonsEtDragons";
+                 String user = "root";
+                 String password = "password";
+                 conn = DriverManager.getConnection(url, user, password);
+             } catch (SQLException e) {
+                 System.out.println(e.getMessage());
+             }
+             return conn;
+            }    
+
+  - les méthodes CREATE, SHOW, INSERT, PUT et autres 
+
+  Exemple de méthode et sa structure. 
+
+    // D'abord je créé une variable String dans laquel je vais entrer la requête SQL: 
+
+           String sql = "INSERT INTO Player(name, pv, strength, weapon, defense, type, exp, or, level) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+    // puis on fait un try / catch avec la méthode apropriée ()
+
+Dans notre cas la méthode: PreparedStatement = Un objet qui représente une instruction SQL précompilée.
+
+    En gros avec mon try je teste la connection: 
+
+      try(Connection conn = this.connect())
+
+Attention dans ce cas la connection à déja été appellée plus haut (voir méthode de connection)
+
+
+
+
+pstmt.executeUpdate();
+
+Statement
+
+ResultSet rs = stmt.executeQuery(sql)
+
+
+           public void createPlayer(Player player) {
+
+        // Méthode pour créer un joueur
+        String sql = "INSERT INTO Player(name, pv, strength, weapon, defense, type, exp, or, level) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        try (Connection conn = this.connect();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, player.getName());
+            pstmt.setInt(2, player.getVie());
+            pstmt.setInt(3, player.getStrength());
+            pstmt.setString(4, player.getWeapon());
+            pstmt.setString(5, player.getDefense());
+            pstmt.setString(6, player.getType());
+            pstmt.setInt(7, player.getExp());
+            pstmt.setInt(8, player.getOr());
+            pstmt.setInt(9, player.getLevel());
+
+            pstmt.executeUpdate();
+            System.out.println("Player created successfully.");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+
+### Notes et divers 
 
 public class Menu {
     public static void main(String[] args) {
@@ -671,7 +846,12 @@ ________________*
               https://www.asciiart.eu/#google_vignette
 
 
-
+____   ____.__        __                       
+\   \ /   /|__| _____/  |_  ___________ ___.__.
+ \   Y   / |  |/ ___\   __\/  _ \_  __ <   |  |
+  \     /  |  \  \___|  | (  <_> )  | \/\___  |
+   \___/   |__|\___  >__|  \____/|__|   / ____|
+                   \/                   \/     
                            ___
                           ( ((
                            ) ))
