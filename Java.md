@@ -488,8 +488,6 @@ Dans notre cas la méthode: PreparedStatement = Un objet qui représente une ins
 Attention dans ce cas la connection à déja été appellée plus haut (voir méthode de connection)
 
 
-
-
 pstmt.executeUpdate();
 
 Statement
@@ -522,7 +520,7 @@ ResultSet rs = stmt.executeQuery(sql)
         }
     }
 
-
+https://www.jmdoudoux.fr/java/dej/chap-jdbc.htm
 ### Notes et divers 
 
 public class Menu {
