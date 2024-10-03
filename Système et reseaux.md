@@ -1,5 +1,13 @@
 # Système Reseaux
 
+#### Me connecter au serveur Ngnix via SSH : 
+
+ ssh rodolphe@212.47.230.222
+
+ Puis dans le dossier /var/www/
+
+
+
 Pour vous, qu’est ce qu’un réseau ?
 
         Un lien entre plusieurs entité numériques pour transférer de l'information.

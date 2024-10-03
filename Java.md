@@ -473,20 +473,7 @@ Je la structure comme suit:
 
   Exemple de méthode et sa structure. 
 
-    // D'abord je créé une variable String dans laquel je vais entrer la requête SQL: 
-
-           String sql = "INSERT INTO Player(name, pv, strength, weapon, defense, type, exp, or, level) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-    // puis on fait un try / catch avec la méthode apropriée ()
-
-Dans notre cas la méthode: PreparedStatement = Un objet qui représente une instruction SQL précompilée.
-
-    En gros avec mon try je teste la connection: 
-
-      try(Connection conn = this.connect())
-
-Attention dans ce cas la connection à déja été appellée plus haut (voir méthode de connection)
-
+    // D'abord je créé une variable String dans laquel jRandom random = new Random();
 
 pstmt.executeUpdate();
 
@@ -534,25 +521,7 @@ public class Menu {
 
         System.out.print("Enter your character name: ");
         String characterName = sc.nextLine();
-        System.out.print("Enter your character Type Choose Warrior or Wizard: ");
-        String characterType = sc.nextLine();
-
-        if( characterType.equals("Warrior")||characterType.equals("Wizard")) {
-            Character character = new Character(characterName, characterType);
-
-        System.out.println("C'est alors que des entrailles de l'abysse jailli notre nouveau héros: " + character.toString());
-        System.out.println("Character name: " + characterName);
-        System.out.println("Character type: " + characterType);
-
-        while (true) {
-            System.out.println("\nMain Menu:");
-            System.out.println("1. Voir Info Héros");
-            System.out.println("2. Modifier infos Héros");
-            System.out.println("0. Exit");
-            System.out.print("Enter your choice: ");
-            int choice = sc.nextInt();
-            if (choice == 0) {
-                break;
+        System.out.print("Enter your character Type Random random = new Random();
             } else if (choice == 1) {
                 System.out.println("Info Héros");
                 System.out.println("Name :" + character.getName() +
@@ -569,7 +538,7 @@ public class Menu {
                 System.out.println("0. Back");
                 System.out.print("Enter your choice: ");
                 int custChoice = sc.nextInt();
-                if (custChoice == 0) {
+                if (custChoice == 0) {Random random = new Random();
                     System.out.println("Retour au menu");
                 } else if (custChoice == 1) {
                     System.out.println("Nouveau nom du Héros:");
@@ -629,23 +598,7 @@ _____ZZZZZZZZ_____________ZZZZZ
 __________ZZZ__Z___Z___Z__ZZZ
 __________ZZZ_ZZZ_ZZZ_ZZZ_ZZZ
 __________ZZZ_ZZZ_ZZZ_ZZZ_ZZZ
-__________ZZZ_ZZZ_ZZZ_ZZZ_ZZZ
-___________ZZZZZZZZZZZZZZZZZ
-______________ZZZZZZZZZZZ
-
-
-____*#####*
-___*########*
-_*###########*
-_*############*
-_*#############*_________*##*
-_*#############*_____*#######*
-_*#############*___*##########*
-__*#############*_*###########*
-___*#############*############*
-____*########################*
-_____*#######################*
-______*#####################*
+__________ZZZ_ZZZ_ZZZ_ZZZ_ZZZRandom random = new Random();
 ________*##################*
 _________*################*
 __________*#############*
@@ -890,3 +843,26 @@ ____   ____.__        __
 
 
 
+CREATE TABLE Player (
+    id VARCHAR(36) PRIMARY KEY,
+    name VARCHAR(255),
+    pv INT,
+    strength INT,
+    weapon VARCHAR(255),
+    defense VARCHAR(255),
+    type VARCHAR(50),
+    exp INT,
+    gold INT,
+    level INT,
+    inventoryCapacity INT
+);
+
+CREATE TABLE Inventory (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    player_id INT,
+    item_name VARCHAR(255),
+    item_type VARCHAR(255),
+    weight INT,
+    is_equipped BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (player_id) REFERENCES Player(id)
+);
