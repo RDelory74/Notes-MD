@@ -842,27 +842,130 @@ ____   ____.__        __
 \______/ (_______)  \/                                                  
 
 
+                                    <`--._<`--.____________________________ 
+                 Dragon              ) ,..-) ,..------------------------,-' 
+                                   ,','  >','  \\                  ,        
+                                 ,','  ,','     \\            ,             
+                               ,','  ,','        \\       ,                 
+                             ,' /  ,' /           \\  ,                     
+                            /  /  /  /             \`<                      
+                           /  /,-/  /,--------------\/                      
+                          /__'--/  (/--.                                    
+          .-.     ____, '<.  / '   '   '----.                               
+         ( . `. ,'    \  '     .-------.  ` '--,                            
+          \_) ,'  (_.  \      /         `-----<\                            
+          \'   ,'', `.  \   ,'   ,  '          `\                           
+         _/ _/',O)>   )  )_            ,'        >                          
+     \  (o /o) \` )  /  /'\`   `------<___   ,   )                          
+      \`-)| (/`,)\`-'  /   `.          /   >-'    \                         
+       `-VvvV ,/( `---'\     `       ,'   /`.      )                        
+           / ,/\    \   `.    `          ' ,'`.   '\                        
+         (^^(/`      \    `--<, ` --------' ,' `.   )                       
+          ``` ________>  ,'   `-')  `      /     \  |                       
+     ,-------'        `  )   .--'     ,   /       \  |_                     
+   ,'/ _,--,--,,,-,______>   )     \,    (_.-.     \   ),---.               
+  / ,\ )                   ,'     ,'          \ .--.\,  .__, \-.            
+ /_/ /\)                  /      /             / )-.    /--`--) \           
+( )\ ) `                 .      /             (-'   `--'      `--)          
+ \' \'                  ,      .                 )                          
+                        ,     ,                ,'                           
+                         `.  .               ,'`.                           
+                        ,',` |              /-.  `.                         
+                       ( (   |              \  \   `._                      
+                        \ \  /             \    \     \.                    
+                         \ \  /          ,\`-.   \  ,'  )                   
+                          \ \  /`--,--,-')   /    \'   /                    
+                           \ `---------,'   /-.    \\,'                     
+                            `--------,'    /-. \                            
+                                    /     /   ) )                           
+                                   (      > ,/ (_                           
+                                  /`-,---'\ |, ,'                           
+                                  `-^-----' |,'
 
-CREATE TABLE Player (
-    id VARCHAR(36) PRIMARY KEY,
-    name VARCHAR(255),
-    pv INT,
-    strength INT,
-    weapon VARCHAR(255),
-    defense VARCHAR(255),
-    type VARCHAR(50),
-    exp INT,
-    gold INT,
-    level INT,
-    inventoryCapacity INT
-);
+
+
 
 CREATE TABLE Inventory (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id VARCHAR(36) PRIMARY KEY,
     player_id INT,
-    item_name VARCHAR(255),
-    item_type VARCHAR(255),
-    weight INT,
-    is_equipped BOOLEAN DEFAULT FALSE,
-    FOREIGN KEY (player_id) REFERENCES Player(id)
+    
 );
+CREATE TABLE Player (
+    id VARCHAR(36) PRIMARY KEY, -- UUID
+    name VARCHAR(255) NOT NULL, -- Nom du joueur
+    pv INT DEFAULT 10,          -- Points de vie
+    strength INT DEFAULT 10,    -- Force
+    weapon_id VARCHAR(36),              -- Référence à une arme (foreign key)
+    defense_id VARCHAR(36),             -- Référence à une défense (foreign key)
+    type VARCHAR (255),         -- 
+    gold INT DEFAULT 0,         -- Or
+    exp INT DEFAULT 0,          -- Expérience
+    level INT DEFAULT 1,        -- Niveau
+    inventoryCapacity INT DEFAULT 0 -- Capacité de l'inventaire
+);
+
+CREATE TABLE Defense (
+    id VARCHAR(36) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    defense INT NOT NULL,
+    type VARCHAR(255) NOT NULL,
+    weight INT NOT NULL,
+    value INT NOT NULL
+);
+INSERT INTO defense(id, name, defense,type ,weight, value )
+
+CREATE TABLE Weapon (
+    id VARCHAR(36) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    attack INT NOT NULL,
+    type VARCHAR(255),
+    value INT NOT NULL,
+    weight INT NOT NULL
+);
+
+
+
+INSERT INTO Weapon(id, name,attack, type, value, weight)
+
+
+
+CREATE TABLE Player (
+    id VARCHAR(36) PRIMARY KEY, -- UUID
+    name VARCHAR(255) NOT NULL, -- Nom du joueur
+    pv INT DEFAULT 10,          -- Points de vie
+    strength INT DEFAULT 10,    -- Force
+    weapon_id VARCHAR(36),              -- Référence à une arme (foreign key)
+    defense_id VARCHAR(36),             -- Référence à une défense (foreign key)
+    inventory_id VARCHAR(36)
+    type VARCHAR (255),         -- 
+    gold INT DEFAULT 0,         -- Or
+    exp INT DEFAULT 0,          -- Expérience
+    level INT DEFAULT 1,        -- Niveau
+    inventoryCapacity INT DEFAULT 0 -- Capacité de l'inventaire
+);
+
+
+CREATE TABLE Inventory (
+    id VARCHAR(36) PRIMARY KEY,
+);
+
+CREATE TABLE Defense (
+    id VARCHAR(36) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    defense INT NOT NULL,
+    type VARCHAR(255) NOT NULL,
+    weight INT NOT NULL,
+    value INT NOT NULL,
+    inventory_id VARCHAR(36)
+);
+
+CREATE TABLE Weapon (
+    id VARCHAR(36) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    attack INT NOT NULL,
+    type VARCHAR(255),
+    value INT NOT NULL,
+    weight INT NOT NULL,
+    inventory_id VARCHAR(36)
+);
+
