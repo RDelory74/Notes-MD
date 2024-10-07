@@ -508,6 +508,8 @@ ResultSet rs = stmt.executeQuery(sql)
     }
 
 https://www.jmdoudoux.fr/java/dej/chap-jdbc.htm
+
+
 ### Notes et divers 
 
 public class Menu {
@@ -558,10 +560,9 @@ public class Menu {
         }else {
             System.out.println("Invalid choice. Try again.");
         }
-
     }
-
 }
+
 
 
 DD Help https://github.com/LucasMouraDeOliveira/Dungeon/blob/master/src/dungeon/Game.java#L18
