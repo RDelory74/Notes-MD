@@ -1,5 +1,20 @@
 #  IDEES PROJETS: 
 
+
+Appliquer le principe: 
+
+ Etapes d'un projet : 
+
+ 
+    1. Avant-Projet
+    2. Lancement 
+    3. Conception 
+    4. Réalisation 
+    5. Bilan 
+
+
+ Le principe est simple en gros, on peut vendre n'importe quel porduit tant qu'on peut expliquer POURQUOI on le vend.
+
 ## N°1: Créer un site pour calculer la vélocité Scrum avec des story points en ligne. 
 
 Voir site qui existe déja.
