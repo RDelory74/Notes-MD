@@ -17,10 +17,88 @@ Vue en Methode Agile
 
 ### Etapes d'un projet 
     1. Avant-Projet
+
+ Cahier des chrages 
+ Discution avec le client de la realisation Why What When Who How ??? 
+
     2. Lancement 
+
+ Choix de la solution
+ Et gestion des risques 
+
     3. Conception 
+
+ Maquettage
+
     4. Réalisation 
     5. Bilan 
+
+
+### La gestion de projet avec SMART(E)
+
+Introduite en 1981 par George T.Doran sur les travaux de Peter F.Drucker réalisées eux en 1954. 
+
+Il s'agit définir des sous objectifs aux objectifs principaux du projet à réaliser dans un delais court. 
+
+En gros on si je prend un projet simple type Mariage j'ai trois taches principales à réaliser:
+
+Sur 12 Mois: 
+
+    - Tache n°1 Poser les fondations (lieu, budget)
+    - Tache n°2 Contacter les pax et prestataires
+    - Tache n°3 Se présenter le jour du Mariage 
+
+Je vais donc les redécouper chacune en sous objectifs (sous taches): 
+
+
+Les 6 premiers mois:
+
+    - Tache n°1 Poser les fondations (lieu, budget)
+
+      - 1.A Définir le budget en fonction des finances du foyer (2 Mois)
+      - 1.B Visiter des lieux et les valider (6 Mois)
+      - 1.C Choisir un thèmes et un niveau de presta (Avant le point 2.C)
+
+Les 5 mois suivants:
+
+    - Tache n°2 Contacter les pax et prestataires
+
+      - 2.A Faire la liste des pax (En fonction du point 1.C)
+      - 2.B Etablir la liste de prestataire potentiels
+      - 2.C Envoyer les faire-part et demander devis Presta
+
+
+Le dernier Mois: 
+
+    - Tache n°3 Se présenter le jour du Mariage
+
+      - 3.A Trouver la tenue (costume / alliances)
+      - 3.B Se faire beau 
+      - 3.C Se présenter au mariage
+
+    - ENJOY
+
+
+
+S: Spécifique 
+
+    On précise les priorités dans les priorités, il s'agit de rendre claire chaque taches en les definissant au plus concret
+
+M: Mesurable
+
+    On met en place un system de mesure, un peu à l'image d'une loading bar, qui permet d'évaluer rapidement l'avancée dans l'objectif SMART
+
+A: Atteignable ou Acceptable
+
+    Chaque sous objectif doit être Atteignable psychlogiquement et Acceptable "validable" par chacune des parties prenantes
+
+R: Réaliste
+
+    Il faut que le projet soit assez concret pour être réél, tant au niveau endogène (avons nous les compétences ou les ressources) qu'exogène (l'environnement, le calendrier). 
+
+T: Temporel
+
+    La durée se doit d'être la plus courte possible pour chaque sous-objectif afin de mesurer rapidement l'évolution, mais assez réaliste pour qu'il reste atteignable. 
 
 
 ### Cycles iteratif (PCDA, Roue de Deming)
