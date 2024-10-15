@@ -184,6 +184,8 @@ Nike
 #### Le cycle en V 
 #### Methode Agile
 
+### SCRUM
+Issue de la méthode Agil, est l'une des plus utilisé pour la gestion de projet en informatique
 
 ## PERT / GRANT
 
