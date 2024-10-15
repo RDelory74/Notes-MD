@@ -31,8 +31,13 @@ Vue en Methode Agile
  Maquettage
 
     4. Réalisation 
-    5. Bilan 
 
+Inclus la phase de test
+
+
+    1. Bilan 
+
+Livraison 
 
 ### La gestion de projet avec SMART(E)
 
@@ -172,4 +177,99 @@ Les nouvelles méthodes ou étape de fabrication sont appliquées
 On constate l'évolution positive 
 
 ##### Entreprise qui utilise cette méthode: 
+
+Nike
+
+#### Le cycle en cascade 
+#### Le cycle en V 
+#### Methode Agile
+
+
+## PERT / GRANT
+
+### Le diagramme GRANT: (Ou diagramme à barre)
+
+Histo: Henry Gantt en 1885 (vieux) 
+
+Kesako: 
+
+    On établi le diagramme de Gantt à partir du PERT 
+
+    (Program Evaluation Research Task)
+
+Ce diagramme se veut temporel, en effet il permet une lecture et une 
+comprehension rapide des taches à effectuer ainsi que de leur temporalité
+au sein du projet. 
+
+En gros c'est un tableau avec un axe pour l'identification des tâches et un axe pour les durées. 
+
+On va représenter une tache par une barre aligné avec son repère de tâche et que l'on va étirer en fonction de sa durée.
+
+Pour une représentation visuel: 
+GANNT
+https://jusdarobase.wordpress.com/wp-content/uploads/2011/10/diagramme-gantt1.jpg?w=584
+
+PERT 
+https://quizizz.com/_media/quizzes/3a1a9e77-3883-473c-a277-4b9f228097d0
+
+## Ressourcces: 
+
+Jira permet de générer le GANTT en fonction du bakclog réalisé
+
+https://www.atlassian.com/agile/scrum/backlogs
+
+### PERT: 
+
+Le PERT aurait été développé à la fin des années 1950 pour 
+servir au projet du sous-marin nucléaire Polaris de la marine 
+américaine. Il aurait permis à celle-ci d’économiser deux ans de
+ développement. Alors, intrigué par cet outil ? 
+
+Le diagramme de PERT est généralement utilisé avant le début d’un projet 
+ambitieux afin de scinder les tâches les moins importantes. C’est un travail 
+qui se réalise au préalable dans une démarche de planification
+des tâches et de leur optimisation.
+
+Pour calculer le PERT on identifie les tâches à réaliser: 
+// On reprend l'exemple de notre Mariage: 
+
+
+ Name   Durée-TE  Antécedents  Tâches 
+ A      1           0.0        - 1.A Définir le budget en fonction des finances du foyer 
+ B      1           1.A        - 1.B Visiter des lieux et les valider
+ C      1           1.A        - 1.C Choisir un thèmes et un niveau de presta (1.A)
+ D      1           1.C        - 2.A Faire la liste des pax (1.C)
+ E      1           1.B        - 2.B Etablir la liste de prestataire potentiels (1.B)
+ F      1           1.C        - 2.C Envoyer les faire-part et demander devis Presta (1.C)
+ G      1           0.0        - 3.A Trouver la tenue (costume / alliances)
+ H      1           3.A        - 3.B Se faire beau 
+ I      1           3.A        - 3.C Se présenter au mariage 3.A
+
+Ensuite on estime des dates pour chaque tâches en appliquant // 
+
+            la formule TE = (O + 4M + P) / 6 
+
+Soit ESTIMATION DURÉE oPTI + ESTIMANT MoY *4 + ESTIMATION DUREE PESSIMISTE  LE TOUT DIVISE PAR 6
+
+
+Dans la construction du schéma, quand on ets en optimiste (à l'aller) on prend le plus grand chiffre, en pessimiste (on prend le plus petit)
+
+Exo faire le Pert de mon mariage: 
+
+ ____
+|
+
+
+### Chemin critique ?? 
+
+C'est l'addition des durées calculées via la formule TE cela permet de représenter la durée totale du projet puis d'en tirer les marges. 
+
+### La difference ?? 
+
+    Il sont complémentaires le PERT permet d'aticiper les scénarios alors que le Gantt offre de la visibilité sur l'échelonnement 
+
+### Comment choisir entre les deux ?? 
+
+    On ne choisi pas on réalise dabord un diagramme de PERT pour ensuite réaliser un diagramme de GANTT 
+
 
