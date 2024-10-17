@@ -38,6 +38,8 @@ Voir site qui existe déja.
 
 ## N°7: Créer un programme qui dicte à Siry de chercher les liste existantes dans un nappareil et de rajouter une tach ou une puce
 
+# N°8: Créer une appli pour gérer une partie de jeux de rôle. Avec fonctionnalité génerer évenement via Ia
+
 
 
 
