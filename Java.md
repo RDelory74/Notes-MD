@@ -563,6 +563,11 @@ public class Menu {
     }
 }
 
+Big ressource visual Java: 
+
+
+https://www3.ntu.edu.sg/home/ehchua/programming/java/J4b_CustomGraphics.html
+
 
 https://docs.oracle.com/javase/tutorial/uiswing/components/frame.html
 
