@@ -127,6 +127,13 @@ describe("Méthode displayedWord", () => {
     })
 })
 
+## Github Action 
+
+Definition google: 
+
+GitHub Actions est une plateforme d'intégration continue et livraison continue (CI/CD)
+ qui vous permet d'automatiser votre pipeline de génération, de test et de déploiement.
+
 ### Ressources 
 
 https://2023.stateofjs.com/en-US
