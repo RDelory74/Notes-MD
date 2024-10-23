@@ -98,7 +98,23 @@ Identifier les méthodes que l'on va tester :
 
 
     4. checkWin()
+    ID: T5
+    Objectif: On vérifie avec un scénario ou displayedWord is full (n'inclus pas de "_") on désactive tous les boutons 
+    Etapes de test: 
+        - Instanciation de hangman on simule un word et on entre dans guesseLetter les lettres associées alors checkWin() fait son job et disableAllButtons() est appellée
+    Resultat attendu: 
+        - la methode disableAllButtons() est appellée.
+
+
     5. checkLose()
+    ID: T6
+    Objectif: On vérifie avec un scénario ou l nbr d'essais est plus grand que le nombre d'essai max afin que la méthode checkLose assign bien le message suivant à la variable messageElement.textContent = `You Lose! The word was "${this.word}".` et que la méthode disableAllButtons est appellée. 
+    Etapes de test: 
+        - Instanciation de hangman, je simule un nombre d'attemps qui est + elevé que le maxAttempts et je lance checkLose;
+    Resultat attendu: 
+        - messageElement.textContent se voit assigné le mess `You Lose! The word was "${this.word}".` et disableAllButtons est appellée.
+
+
     6. disableallButtons()
 
 
