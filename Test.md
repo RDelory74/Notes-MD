@@ -63,34 +63,53 @@ Résultat attendu : Une explication de la manière dont la fonctionnalité ou le
 
 Identifier les méthodes que l'on va tester :
 
+    0.  Nom : Méthode displayedWord - Teste le bon affichage du mot à deviner en fonction des lettres trouvées
+    ID : T1
+    Objectif : Tester le bon affichage du mot à deviner en fonction des lettres trouvées
+    Étapes de test : 
+        - Instanciation d'un jeu du pendu avec comme mot à deviner `bonjour` et avec comme scénario le fait d'avoir déjà trouvé la lettre `b`
+    Résultat attendu :
+        - Le mot affiché devrait être `b _ _ _ _ _ _`
+
     1. displayLetters() // On test l'affichage des lettres au lancement de la page //
+    Id: T2
+    Objectif: On vérifie qu'au lancement de la page chaque button comporte bien une lettre et que le nombre de boutons est de 26 ("lenght alphabet")
+    Etapes de test :
+        - Instanciation de Hangman avec vérification du nombre de lettre puis du contenu de chaque boutons
+    Resultats attendu : 
+        - La collection d'Elements de boutons doit être de 26 elements, puis que chaque index de button depuis le la colleciton de buttons doit être une lettre de l'alphabet
 
-    import describe from vitest
-
-        Arrange : 
-
-       Jquery            lettersElement = 
-       String Array      alphabet =
-       Html Element      button =
-       Array             guessedLetters =
-
-        Act : 
-
-        it return the correct letters button in the good range
+    2. handleKeyPress() // On test que lorsque un bouton de lettre de A à Z est appuyé la méthode handleGuess est lancée
+    ID: T3 
+    Objectif: On test que lorsque un bouton est appuyé la méthode handleGuess est lancée
+    Etapes de test: 
+        - Instanciation de Hangman, vérification que l'entrée d'une lettre sur le clavier est bien transmise à la méthode handleGuess en paramètre. 
+    Resulats attendu :
+        - Que la méthode handleGuess soit exécuté avec le bon argument.
 
 
-        Assert : 
-
-        expect (result) to contain letters from word from Json
-
-    2. handleKeyPress()
     3. handleGuess(letter)
+    ID: T4
+    Objectif: On vérifie qu'avec un scénario ou la bonne lettre est choisie les méthodes displayWord et checkWin soient lancés.
+    Etapes de test: 
+        - Instanciation de hangman. avec comme variable word: "weapon" et comme letter: "a" 
+    Resultat attendu: 
+        - Que si la variable word inclus la variable letter en paramètre alors on run displayWord et checkWin
+
+
     4. checkWin()
     5. checkLose()
     6. disableallButtons()
 
 
+import { describe, it, expect } from 'vitest'
 
+describe("Méthode displayedWord", () => {
+    it("Teste le bon affichage du mot à deviner en fonction des lettres trouvées", () => {
+        const hangman = new Hangman({ word: "bonjour", guessedLetters: ["b"]})
+        expect(hangman.displayedWord()).toBe("b _ _ _ _ _ _")
+    })
+})
 
 ### Ressources 
 
