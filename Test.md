@@ -134,6 +134,166 @@ Definition google:
 GitHub Actions est une plateforme d'intégration continue et livraison continue (CI/CD)
  qui vous permet d'automatiser votre pipeline de génération, de test et de déploiement.
 
+### les étapes: 
+
+    1. Créer un dossier workflows dans le dossier (caché) .github 
+    2. puis dans ce dossier créer un fichier tests.yml 
+    3. Configurer son dossier de test (voir exemple ci-dessous à réadapter en fonction des besoins): 
+       1. name: Run Tests
+
+            on:
+              push:
+                branches: [ main, master ]  # s'exécute sur push vers main ou master
+              pull_request:
+                branches: [ main, master ]  # s'exécute aussi sur les PR vers main ou master
+
+            jobs:
+              test:
+                runs-on: ubuntu-latest
+
+                steps:
+                  - uses: actions/checkout@v3  # récupère le code du repo
+
+                  - name: Set up Node.js
+                    uses: actions/setup-node@v3
+                    with:
+                      node-version: '20'  # utilise Node.js 20.x
+
+                  - name: Install dependencies
+                    run: npm ci  # installe les dépendances
+
+                  - name: Run tests
+                    run: npm test  # exécute les tests
+
+    4. Puis git add, git commit et git push 
+    5. Enfin il est possible de retrouver ses Github Actions dans l'onglet Actions du projet
+
+
+## Les test END-to-END (E2E)
+
+Les test End-toEnd sont des test qui vont simuler toute une application entière sur l'ensemble des story possible. 
+Très efficace et permettant d'identifier les points critiques users (les plus impactants)
+                Tester l'application dans son ensemble
+                Vérifier l'intégration de tous les composants
+                S'assurer que les flux utilisateurs fonctionnent correctement
+                Détecter les problèmes dans l'environnement de production
+
+
+Exemple concret pour un site e-commerce :
+
+    javascriptCopydescribe('Processus d'achat', () => {
+      it('permet à l'utilisateur d'acheter un produit', () => {
+        // Connexion
+        cy.visit('/login')
+        cy.get('#email').type('user@example.com')
+        cy.get('#password').type('password123')
+        cy.get('button[type="submit"]').click()
+
+        // Navigation catalogue
+        cy.visit('/products')
+        cy.get('.product-card').first().click()
+
+        // Ajout au panier
+        cy.get('.add-to-cart').click()
+
+        // Processus de paiement
+        cy.get('.checkout').click()
+        cy.get('#card-number').type('4242424242424242')
+        cy.get('#expiry').type('1225')
+        cy.get('#cvv').type('123')
+        cy.get('button[type="submit"]').click()
+
+        // Vérification
+        cy.get('.confirmation-message')
+          .should('contain', 'Commande confirmée')
+      })
+    })
+
+
+Outils populaires :
+
+Cypress || Selenium || Playwright || TestCafe || Puppeteer
+
+Avantages || Inconvénients 
+
+
+    Teste l'application comme un utilisateur réel   || Plus lents à exécuter
+    Vérifie l'intégration complète                  || Plus complexes à maintenir
+    Identifie les problèmes de performance          || Plus fragiles (peuvent échouer pour des raisons externes)
+    Valide les flux utilisateurs critiques          || Plus coûteux en ressources
+
+
+
+Bonnes pratiques :
+
+    Tester les parcours utilisateurs critiques
+    Maintenir des données de test isolées
+    Gérer les temps d'attente intelligemment
+    Structurer les tests de manière modulaire
+    Utiliser des sélecteurs stables
+    Mettre en place du reporting détaillé
+
+Les tests E2E complètent la pyramide de tests traditionnelle (unitaires, intégration) en validant l'application dans son ensemble.
+
+### Selecteur Stables (petite parenthèse)
+
+Il s'agit de bonne pratique dans la conceptiond des selecteurs HTML plus robustes: 
+
+    Exemple:
+
+        <!-- Mauvais exemple -->
+
+        <button class="btn-blue mt-4">Submit</button>
+
+        <!-- Bon exemple -->
+
+        <button 
+          data-testid="submit-button"
+          class="btn-blue mt-4"
+        >
+          Submit
+        </button> 
+
+
+### PlayWright 
+
+// Tuto Claude pour l'installation de Playwirght sur un projet perso afin de lui appliquer des tests automatiques. 
+
+Installer et configurer Playwright pour les tests end-to-end.
+En effet, Playwright doit généralement être installé au niveau de la racine de votre projet. Voici la procédure :
+
+À la racine de votre projet, installez Playwright via npm :
+
+bashCopynpm init playwright@latest
+
+Cette commande va :
+
+
+Installer les dépendances nécessaires
+Créer un dossier tests avec un exemple de test
+Créer un fichier playwright.config.ts (ou .js) à la racine
+Ajouter les scripts nécessaires dans votre package.json
+
+La structure typique ressemblera à :
+
+        Copyvotre-projet/
+        ├── node_modules/
+        ├── tests/
+        │   ├── example.spec.ts
+        │   └── ...
+        ├── playwright.config.ts
+        ├── package.json
+        └── ...
+
+Pour exécuter vos tests, vous pourrez utiliser :
+
+bashCopynpx playwright test
+
+
 ### Ressources 
 
 https://2023.stateofjs.com/en-US
+
+https://learn.microsoft.com/fr-fr/dotnet/devops/dotnet-test-github-action
+
+
