@@ -1,5 +1,9 @@
 # Spring Boot
 
+## La doc
+
+https://docs.spring.io/spring-boot/documentation.html
+
 ## Découverte du FrameWork
 
     Après une première passe, il s'agit d'un framework Java très utilisé, de par sa légereté, il n'embarque que les librairies nécessaires, son architecture est en microservices. 
@@ -105,7 +109,7 @@ C'est ici qu'on va appliquer la logique métier afin d'interagir avec la BDD, to
             }
 
 
-    B. Les methodes 
+    B. Les methodes spécifiques à l'objet
 
 
             // Méthode pour afficher les informations du client
@@ -122,7 +126,7 @@ C'est ici qu'on va appliquer la logique métier afin d'interagir avec la BDD, to
         }
 
 
-Enfin on va avoir les classes de gestion de connction avec la base de donnée (les DAO) Data Access Object qui vont nous permettre à partir des classes d'interagir avec la bdd
+Enfin on va avoir les classes de gestion de connection avec la base de donnée (les DAO) Data Access Object qui vont nous permettre à partir des classes d'interagir avec la bdd
 
 (Comme dans mon donjon et dragon)
 
@@ -139,3 +143,101 @@ Enfin on va avoir les classes de gestion de connction avec la base de donnée (l
     1. Poids et perf, l'ensemble des dépendances par defaut qui sont intégrés peuvent ralentir inutilement le processus de petits projets
     2. Courbe d'apprentissag abrupte, très à première vue, il devient vite difficile de s'imiscer dans les rouages dès qu'on veut controler les choses
     3. Les config auto qui sont très pratiques sur du basique mais qui peuvent vite devenir source de conflit si le projet se complexifie
+
+
+## Les Starters 
+
+Le plus plus courant, le starter web:
+
+        <dependency>
+
+          <groupId>org.springframework.boot</groupId>
+
+          <artifactId>spring-boot-starter-web</artifactId>
+
+        </dependency>
+
+
+spring-boot-starter-mail : pour les applications et services d'envoi de mails.
+
+spring-boot-starter-thymeleaf : si vous souhaitez créer une application qui offre une interface utilisateur en utilisant le moteur de template Thymeleaf.
+
+spring-boot-starter-web-services : pour les services plus classiques utilisant SOAP.
+
+## Les termes
+
+    Stubs (en test): une fausse classe simplifier pour tester une fonctionnalité
+    Mock (en test): redefinition d'un comportement de méthode là encore pour réaliser un test sans avoir à écrire toute la méthode.
+
+#### Beans Factory 
+
+La BeanFactory est un composant central de Spring qui s'occupe de la gestion des objets Java, appelés "beans", dans le contexte d'une application. Elle est responsable de créer, configurer et gérer le cycle de vie des objets.
+
+        <beans>
+            <bean id="clientService" class="com.example.ClientService">
+                <property name="emailService" ref="emailService" />
+            </bean>
+
+            <bean id="emailService" class="com.example.EmailService" />
+        </beans>
+
+### Pom.xml
+
+### L'autoconfiguration
+
+Pour activer l'autoconfiguration, on utilise l'annotation  @EnableAutoConfiguration .
+Si vous écrivez vos propres configurations, celles-ci priment sur celles de Spring Boot.
+
+### Pour compiler 
+
+Avec Maven dans l'onglet de droite on va dans: 
+        |_rentakar
+            |_Lifecycle
+                |_install
+
+Ca va nous créer un fichier.jar dans le dossier target créé à cet occasion (youpi). 
+
+Enfin avec le terminal pour lancer cette commande on va rentrer la ligne de commande: 
+
+    java -jar /home/rodolphe-delory/rentakar/target/rentakar-0.0.1-SNAPSHOT.jar
+
+
+### Créer ses controller 
+
+Quand on cré ses controller on assign des annotation à notre classe pour indiquer qu'elle va utiliser des méthodes GET POST PUT PATCH DELETE
+
+L'annotation @RestController au dessus de la classe nous permet de l'identifier ainsis 
+
+puis on va ajouter des annotation mapping tel que @GetMapping 
+
+    Exemple pour mon rentakar
+        // ICI le package
+        package com.RentaKar.rentakar.web.controller;
+        // Les imports en fonctions des annotation et méthodes nécessaires
+        import org.springframework.web.bind.annotation.GetMapping;
+        import org.springframework.web.bind.annotation.RestController;
+        // L'annotation RestController puis ma Classe
+        @RestController
+        public class UserControler {
+        
+        @GetMapping("/Users")
+            public String listeUsers(){
+            return "Liste des users";
+        }
+        }
+
+
+    //Dans ce code,  c'est l'annotation @GetMapping  qui permet de faire le lien entre l'URI "/Users", invoquée via GET, et la méthode listeUsers.
+
+De nouvelles annotations sont dorénavant disponibles, telles que @GetMapping, @PostMapping, @PutMapping, @DeleteMapping qui permettent de ne spécifier que l’URL, tout en utilisant le verbe HTTP lié, présent juste avant le mapping.
+
+@Repository : cette annotation est appliquée à la classe afin d'indiquer à Spring qu'il s'agit d'une classe qui gère les données, ce qui nous permettra de profiter de certaines fonctionnalités, comme les translations des erreurs. Nous y reviendrons.
+
+L’annotation @Autowired permet d’activer l’injection automatique de dépendance. Cette annotation peut être placée sur un constructeur, une méthode setter ou directement sur un attribut (même privé). Le Spring Framework va chercher le bean du contexte d’application dont le type est applicable à chaque paramètre du constructeur, aux paramètres de la méthode ou à l’attribut.
+
+Annotation Spring Booot 
+
+https://www.jrebel.com/blog/spring-annotations-cheat-sheet
+
+https://www.jrebel.com/sites/rebel/files/pdfs/cheatsheet-jrebel-spring-annotations.pdf
+
