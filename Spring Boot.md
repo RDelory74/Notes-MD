@@ -241,3 +241,107 @@ https://www.jrebel.com/blog/spring-annotations-cheat-sheet
 
 https://www.jrebel.com/sites/rebel/files/pdfs/cheatsheet-jrebel-spring-annotations.pdf
 
+
+### Controller, Service, DAO 
+
+ @Service
+
+Comme j'ai compris les choses, on va avoir le Controller qui va router les requêtes et les retours server. 
+La DAO (Repository) qui va gérer les requêtes simple à la BDD ,type CRUD.
+Le service qui va  s'occuper de la logique métier appliquée à la DAO. 
+
+Il s'agit d'une forme de factorisation dans le sens ou on va découper les traitement en plusieurs couches dans un soucis d'isolation et de maintenance. 
+
+En gros: 
+
+    LeController
+        |_LeService
+            |_LaDao(Repository)
+                |_LeModel(Domaine)
+
+
+Si demain j'arrive sur le code et que j'ai bespoin d'appliquer une logique métier sur ce dernier je n'aurais besoin d'intervenir que sur le couche Service sans toucher à la DAO ni au controller ni au model. 
+
+@Transactional
+
+Qu'est-ce qu'une transaction dans les méthodes de service ?
+
+Dans une méthode de service annotée avec @Transactional, Spring garantit que toutes les opérations dans cette méthode s'exécutent dans le cadre d'une seule transaction. Par exemple, si la méthode exécute plusieurs opérations de base de données (comme enregistrer un client, créer une réservation de voiture, et mettre à jour l’inventaire), toutes ces opérations sont traitées comme une seule transaction.
+Pourquoi utiliser @Transactional ?
+
+Avec @Transactional, si une opération dans la méthode échoue (comme une exception due à un problème d'insertion de données), toutes les opérations précédentes sont annulées. Ce mécanisme s'appelle le rollback, et il garantit que la base de données reste cohérente et n’applique pas partiellement des modifications en cas d'erreur.
+Comment fonctionne le rollback avec @Transactional ?
+Spring surveille les exceptions qui surviennent dans la méthode de service annotée. En cas d'exception non récupérée (comme une RuntimeException), Spring annule automatiquement les changements pour que la base de données retrouve son état initial, comme si la méthode n'avait jamais été exécutée.
+C’est l’occasion parfaite pour moi pour vous parler d’un point important : les transactions.
+
+Les transactions sont le mécanisme qui permet de respecter les propriétés ACID :
+
+Atomicité : Une transaction s’effectue entièrement, ou pas du tout.
+
+Cohérence : Le contenu d’une base doit être cohérent au début et à la fin d’une transaction.
+
+Isolation : Les modifications d’une transaction ne sont visibles/modifiables que quand celle-ci a été validée.
+
+Durabilité : Une fois la transaction validée, l’état de la base est permanent (non affecté par les pannes ou autre).
+
+Le respect de ces propriétés est synonyme de fiabilité dans le traitement de vos données.
+
+## Projet JAVA 
+
+Introduction
+Le but de ce projet est de développer un site permettant de réserver un véhicule auprès d’un
+loueur de véhicule. Ce site utilisera Spring Boot, sous forme d’architecture microservice
+(MSA - pour MicroService Architecture).
+
+Livrables
+Le code est déposé sous github.
+Une présentation des choix d’architecture et du travail réalisé. (15 à 20 minutes par groupe
+maximum)
+
+Une représentation graphique de votre architecture pour chaque itération que vous
+aurez identifié comme nécessaire.
+La définition de vos API pour chacun des microservices.
+
+Objectifs
+Création d’une webapp sous forme de micro services en Java Spring Boot.
+Solidification des compétences techniques acquises lors de la 1ère phase de
+ce module.
+
+Modalités
+Le projet s’effectue en binôme, un seul livrable sera rendu (sur GitHub).
+Le projet devant être réalisé sous forme de MSA, la planification du travail se
+fera en équipe entière mais les tâches seront réparties
+
+
+
+
+### Divers (insert sql and other)
+
+  INSERT INTO LocationVehicule.user (`id`, `username`,`firstname`,`licenceId`,`Date_Of_Birth`) VALUES(1, 'Robert', 'Deplante', 499865, '25.10.1980');
+  INSERT INTO LocationVehicule.user (`id`, `username`,`firstname`,`licenceId`,`Date_Of_Birth`) VALUES(2, 'Jhon', 'Dumoulin', 599862, '17.02.1996');
+  INSERT INTO LocationVehicule.user (`id`, `username`,`firstname`,`licenceId`,`Date_Of_Birth`) VALUES(3, 'Maîté', 'Pasla', 599684, '01.05.1968');
+  INSERT INTO LocationVehicule.user (`id`, `username`,`firstname`,`licenceId`,`Date_Of_Birth`) VALUES(4, 'Alice', 'Dupont', 123456, '10.02.1990');
+  INSERT INTO LocationVehicule.user (`id`, `username`,`firstname`,`licenceId`,`Date_Of_Birth`) VALUES(5, 'Bob', 'Martin', 234567, '15.06.1985');
+  INSERT INTO LocationVehicule.user (`id`, `username`,`firstname`,`licenceId`,`Date_Of_Birth`) VALUES(6, 'Maîté', 'Pasla', 599684, '01.05.1968');
+  INSERT INTO LocationVehicule.user (`id`, `username`,`firstname`,`licenceId`,`Date_Of_Birth`) VALUES(7, 'Charles', 'Durand', 345678, '20.11.1978');
+  INSERT INTO LocationVehicule.user (`id`, `username`,`firstname`,`licenceId`,`Date_Of_Birth`) VALUES(8, 'Emma', 'Leroy', 456789, '25.12.2000');
+
+  INSERT INTO LocationVehicule.user (id, username,firstname,licenceId,Date_Of_Birth) VALUES(1, 'Robert', 'Deplante', 499865, '25.10.1980');
+  INSERT INTO LocationVehicule.user (id, username,firstname,licenceId,Date_Of_Birth) VALUES(2, 'Jhon', 'Dumoulin', 599862, '17.02.1996');
+  INSERT INTO LocationVehicule.user (id, username,firstname,licenceId,Date_Of_Birth) VALUES(3, 'Maîté', 'Pasla', 599684, '01.05.1968');
+  INSERT INTO LocationVehicule.user (id, username,firstname,licenceId,Date_Of_Birth) VALUES(4, 'Alice', 'Dupont', 123456, '10.02.1990');
+  INSERT INTO LocationVehicule.user (id, username,firstname,licenceId,Date_Of_Birth) VALUES(5, 'Bob', 'Martin', 234567, '15.06.1985');
+  INSERT INTO LocationVehicule.user (id, username,firstname,licenceId,Date_Of_Birth) VALUES(6, 'Maîté', 'Pasla', 599684, '01.05.1968');
+  INSERT INTO LocationVehicule.user (id, username,firstname,licenceId,Date_Of_Birth) VALUES(7, 'Charles', 'Durand', 345678, '20.11.1978');
+  INSERT INTO LocationVehicule.user (id, username,firstname,licenceId,Date_Of_Birth) VALUES(8, 'Emma', 'Leroy', 456789, '25.12.2000');
+    
+
+     CREATE TABLE User (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        firstname VARCHAR(50) NOT NULL,
+        username VARCHAR(50) NOT NULL,
+        licenseId INT,
+        dateOfBirth VARCHAR(10)
+    );
+
+    
