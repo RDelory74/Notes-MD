@@ -18,6 +18,11 @@ Micro- services: C'est une approche architecturale d'API qui s'articule autour d
     4. Gestion des paiements 
     5. Gestion de la maintenance des vehicules
 
+## Installation du Framework
+
+sudo apt install maven
+
+
 ### Servlets ou Contrôlleurs
 
 Chacun des ces microservices va avoir ses routes (les Servlets (Contrôleurs)) depuis l'interface (JSP (fichier HTML enrichi de code Java)) vers le modèle (CLasse JAVA)
@@ -343,5 +348,102 @@ fera en équipe entière mais les tâches seront réparties
         licenseId INT,
         dateOfBirth VARCHAR(10)
     );
+
+    
+    {
+        "id": 2,
+        "type": "voiture",
+        "model": "Panamera",
+        "brand": "Porsche",
+        "color": "Blue",
+        "kilometer": 15000,
+        "horsePower": 550,
+        "cargo": 4,
+        "capacity": 5,
+        "displacement": 2894,
+        "registration": "BC-456-EF",
+        "available": true
+    },
+    {
+        "id": 3,
+        "type": "voiture",
+        "model": "Phantom",
+        "brand": "Rolls-Royce",
+        "color": "White",
+        "kilometer": 8000,
+        "horsePower": 563,
+        "cargo": 5,
+        "capacity": 5,
+        "displacement": 6749,
+        "registration": "CD-789-GH",
+        "available": true
+    },
+    {
+        "id": 4,
+        "type": "voiture",
+        "model": "Bentayga",
+        "brand": "Bentley",
+        "color": "Green",
+        "kilometer": 12000,
+        "horsePower": 600,
+        "cargo": 4,
+        "capacity": 5,
+        "displacement": 3996,
+        "registration": "EF-234-IJ",
+        "available": true
+    },
+    {
+        "id": 5,
+        "type": "voiture",
+        "model": "Urus",
+        "brand": "Lamborghini",
+        "color": "Yellow",
+        "kilometer": 10000,
+        "horsePower": 641,
+        "cargo": 4,
+        "capacity": 5,
+        "displacement": 3996,
+        "registration": "GH-567-KL",
+        "available": true
+    }
+]
+
+INSERT INTO `user` (id, username, firstname, licence_id, licence_year, date_of_birth, address, post_code, email, phone, role, password, has_order_id, has_vehicule_id)
+VALUES
+    (1, 'jdoe', 'John', 1001, '2018-01-15', '1990-05-20', '123 Main St', '12345', 'jdoe@example.com', 1234567890, 'user', 1234, 1, 201),
+    (2, 'asmith', 'Alice', 1002, '2019-02-20', '1985-08-15', '456 Elm St', '54321', 'asmith@example.com', 2345678901, 'user', 2345, 2, 202),
+    (3, 'bwilliams', 'Bob', 1003, '2020-03-25', '1992-07-10', '789 Oak St', '67890', 'bwilliams@example.com', 3456789012, 'admin', 3456, 3, 203),
+    (4, 'cjohnson', 'Cathy', 1004, '2017-04-30', '1988-09-25', '101 Maple St', '98765', 'cjohnson@example.com', 4567890123, 'user', 4567, 4, 204),
+    (5, 'dthomas', 'David', 1005, '2021-05-05', '1995-11-30', '102 Pine St', '56789', 'dthomas@example.com', 5678901234, 'user', 5678, 5, 205),
+    (6, 'esmith', 'Eve', 1006, '2018-06-10', '1983-03-18', '103 Cedar St', '87654', 'esmith@example.com', 6789012345, 'user', 6789, 6, 206),
+    (7, 'ffrancis', 'Frank', 1007, '2019-07-15', '1991-04-20', '104 Spruce St', '45678', 'ffrancis@example.com', 7890123456, 'user', 7890, 7, 207),
+    (8, 'glopez', 'Gloria', 1008, '2020-08-20', '1984-06-14', '105 Birch St', '34567', 'glopez@example.com', 8901234567, 'user', 8901, 8, 208),
+    (9, 'hmartin', 'Henry', 1009, '2017-09-25', '1989-12-02', '106 Poplar St', '23456', 'hmartin@example.com', 9012345678, 'user', 9012, 9, 209),
+    (10, 'ichang', 'Irene', 1010, '2018-10-30', '1993-07-05', '107 Cherry St', '34567', 'ichang@example.com', 1234567890, 'admin', 1234, 10, 210),
+    (11, 'jgarcia', 'Jose', 1011, '2019-11-05', '1987-02-12', '108 Willow St', '23456', 'jgarcia@example.com', 2345678901, 'user', 2345, 11, 211),
+    (12, 'klewis', 'Karen', 1012, '2020-12-10', '1986-10-08', '109 Walnut St', '87654', 'klewis@example.com', 3456789012, 'user', 3456, 12, 212),
+    (13, 'mroberts', 'Mark', 1013, '2017-01-15', '1994-05-17', '110 Fir St', '98765', 'mroberts@example.com', 4567890123, 'user', 4567, 13, 213),
+    (14, 'nbrown', 'Nancy', 1014, '2018-02-20', '1990-12-25', '111 Redwood St', '12345', 'nbrown@example.com', 5678901234, 'user', 5678, 14, 214),
+    (15, 'pdavis', 'Paul', 1015, '2019-03-25', '1985-09-30', '112 Cypress St', '54321', 'pdavis@example.com', 6789012345, 'user', 6789, 15, 215),
+    (16, 'qyoung', 'Quincy', 1016, '2020-04-30', '1988-06-19', '113 Sycamore St', '45678', 'qyoung@example.com', 7890123456, 'user', 7890, 16, 216),
+    (17, 'rwhite', 'Rachel', 1017, '2021-05-05', '1992-03-11', '114 Aspen St', '56789', 'rwhite@example.com', 8901234567, 'admin', 8901, 17, 217),
+    (18, 'sclark', 'Sam', 1018, '2018-06-10', '1986-09-29', '115 Cottonwood St', '87654', 'sclark@example.com', 9012345678, 'user', 9012, 18, 218),
+    (19, 'tnguyen', 'Tom', 1019, '2019-07-15', '1984-12-04', '116 Chestnut St', '34567', 'tnguyen@example.com', 1234567890, 'user', 1234, 19, 219),
+    (20, 'uvillegas', 'Ursula', 1020, '2020-08-20', '1991-10-13', '117 Magnolia St', '23456', 'uvillegas@example.com', 2345678901, 'user', 2345, 20, 220);
+
+
+    INSERT INTO `order` (id, user_id, vehicule_id, start_date, end_date, status, price, kilometers)
+VALUES
+    (7, 1, 2, '2024-11-01', '2024-11-05', 'confirmed', 150.0, 120),
+    (8, 2, 3, '2024-11-06', '2024-11-10', 'completed', 180.0, 200),
+    (9, 3, 4, '2024-11-12', '2024-11-15', 'pending', 160.0, 180),
+    (10, 4, 5, '2024-11-16', '2024-11-20', 'canceled', 0.0, 0),
+    (11, 5, 6, '2024-11-21', '2024-11-25', 'confirmed', 200.0, 220),
+    (12, 6, 7, '2024-11-26', '2024-12-01', 'completed', 250.0, 300),
+    (13, 7, 8, '2024-12-02', '2024-12-05', 'pending', 170.0, 190),
+    (14, 8, 2, '2024-12-06', '2024-12-10', 'confirmed', 220.0, 250),
+    (15, 9, 3, '2024-12-11', '2024-12-15', 'completed', 300.0, 350),
+    (16, 10, 4, '2024-12-16', '2024-12-20', 'canceled', 0.0, 0);
+
 
     
