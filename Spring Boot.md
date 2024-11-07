@@ -215,6 +215,25 @@ Depuis l'IDE du micro Service on lance le terminal et on fait la commande: mvn c
     UserRentakar: /home/rodolphe-delory/Rentakar_MSA/UserRentakar/target/rentakar-0.0.1-SNAPSHOT.jar
 
 
+https://medium.com/@AtefMADDOURI/dockeriser-vos-applications-spring-boot-8e33d76cddba
+
+### SWAGGER 
+
+Pour la doc
+
+Dans le pom.xml
+
+<dependency>
+<groupId>org.springdoc</groupId>
+<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+<version>2.5.0</version>
+</dependency>
+
+
+Dans le application.properties 
+
+springdoc.swagger-ui.path=/swagger
+
 ### Créer ses controller 
 
 Quand on cré ses controller on assign des annotation à notre classe pour indiquer qu'elle va utiliser des méthodes GET POST PUT PATCH DELETE
