@@ -206,6 +206,7 @@ Enfin avec le terminal pour lancer cette commande on va rentrer la ligne de comm
 
     java -jar /home/rodolphe-delory/rentakar/target/rentakar-0.0.1-SNAPSHOT.jar  // Lance en ligne de commande le user rentakar d'exo 1
 
+Depuis l'IDE du micro Service on lance le terminal et on fait la commande: mvn clean package // qui créé un fichier jar.
 
     rentakar
 
