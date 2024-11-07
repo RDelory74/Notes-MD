@@ -204,7 +204,14 @@ Ca va nous créer un fichier.jar dans le dossier target créé à cet occasion (
 
 Enfin avec le terminal pour lancer cette commande on va rentrer la ligne de commande: 
 
-    java -jar /home/rodolphe-delory/rentakar/target/rentakar-0.0.1-SNAPSHOT.jar
+    java -jar /home/rodolphe-delory/rentakar/target/rentakar-0.0.1-SNAPSHOT.jar  // Lance en ligne de commande le user rentakar d'exo 1
+
+
+    rentakar
+
+    VehiculeRentakar: /home/rodolphe-delory/Rentakar_MSA/VehiculeRentakar/target/rentakar-0.0.1-SNAPSHOT.jar
+    OrderRentakar: /home/rodolphe-delory/Rentakar_MSA/OrderRentakar/target/order-0.0.1-SNAPSHOT.jar
+    UserRentakar: /home/rodolphe-delory/Rentakar_MSA/UserRentakar/target/rentakar-0.0.1-SNAPSHOT.jar
 
 
 ### Créer ses controller 
