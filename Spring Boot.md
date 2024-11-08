@@ -4,6 +4,11 @@
 
 https://docs.spring.io/spring-boot/documentation.html
 
+
+Pour commerncer un projet Spring Boot commencez par le site 
+
+https://start.spring.io/
+
 ## Découverte du FrameWork
 
     Après une première passe, il s'agit d'un framework Java très utilisé, de par sa légereté, il n'embarque que les librairies nécessaires, son architecture est en microservices. 
@@ -233,6 +238,78 @@ Dans le pom.xml
 Dans le application.properties 
 
 springdoc.swagger-ui.path=/swagger
+
+
+### Eureka
+
+Pour la découverte des micro-services entre eux. 
+
+
+## Le serveur Eureka Micro service
+
+On créé un micro service pour le server eureka avec spring initializr
+
+on va selectionner les dependances suivantes: dans le pom.xml
+
+    Eureka server // pour le server 
+
+
+On inscrit les réglages suivants dans le properties
+
+
+        spring.application.name=demo
+        server.port= 9102
+
+        eureka.client.registerWithEureka=false
+        eureka.client.fetchRegistry=false
+
+        eureka.client.serviceUrl.defaultZone= http://localhost:9102/
+
+
+Et dans le main on annote la classe: 
+
+    @EnableEurekaServer
+
+## Le client EurekaDiscovery 
+
+La dependance dans le pom.xml
+
+    Eureka Discovery Client // pour les micro Services
+
+Dans le application.properties 
+
+    eureka.client.serviceUrl.defaultZone= http://localhost:9102/
+
+Dans le mainApp on annote la classe
+
+    @EnableDiscoveryClient
+
+
+Et dans la couche de Service 
+
+        import org.springframework.beans.factory.annotation.Autowired;
+        import org.springframework.cloud.client.discovery.DiscoveryClient;
+        import org.springframework.stereotype.Service;
+
+        @Service
+        public class YourService {
+
+            @Autowired
+            private DiscoveryClient discoveryClient;  *** J'instancie une connection eureka ***
+
+            public void discoverAndConsumeService() {
+                // Discover services by their registered name
+                discoveryClient.getInstances("other-service-name")      *** Ici je précise dans les guillemets le nom de mon microservice ***
+                                .forEach(serviceInstance -> {
+                                    // Consume the service using serviceInstance details (e.g., IP, port)
+                                    String serviceUrl = serviceInstance.getUri().toString();
+                                    // Implement your logic to consume the service
+                                });
+            }
+        }
+
+
+
 
 ### Créer ses controller 
 
