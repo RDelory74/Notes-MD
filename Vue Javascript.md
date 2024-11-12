@@ -1,6 +1,22 @@
-## SPA ( SINGLE PaGE APPLICATION)
+## SPA ( SINGLE PaGE APPLICATION) Vue.js (javascirpt)
+
+## Voir le design pattern (MVVM)
 
 ### Langague ES6+: 
+
+
+my-vue-app/
+├── src/
+│   ├── assets/              # Pour les fichiers statiques (images, styles CSS)
+│   ├── components/          # Composants réutilisables (ex : Navbar, Footer)
+│   ├── views/               # Pages (ex : Home, Orders, Vehicules)
+│   ├── router/              # Gestion du routage
+│   ├── store/               # Gestion de l'état global avec Vuex (si nécessaire)
+│   ├── services/            # Fichiers pour les appels API
+│   ├── App.vue              # Composant principal
+│   └── main.js              # Point d'entrée de l'application
+└── public/
+    └── index.html           # Template HTML de l'application
 
 #### Connaître la différence entre let et const
 

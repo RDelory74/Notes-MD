@@ -179,9 +179,40 @@ spring-boot-starter-web-services : pour les services plus classiques utilisant S
     Stubs (en test): une fausse classe simplifier pour tester une fonctionnalité
     Mock (en test): redefinition d'un comportement de méthode là encore pour réaliser un test sans avoir à écrire toute la méthode.
 
-#### Beans Factory 
+#### Beans Factory / Autowired
 
 La BeanFactory est un composant central de Spring qui s'occupe de la gestion des objets Java, appelés "beans", dans le contexte d'une application. Elle est responsable de créer, configurer et gérer le cycle de vie des objets.
+
+@bean
+C'est une annotation qu'on va mettre sur une classe qu'on va instancier qu'une seule fois mais qui va être rappellé plusieurs fois dans le code.  
+@Autowired
+Va permette de rappeller automatiquement cette classe au traver du code. 
+
+exemple: 
+
+
+
+        @SpringBootApplication
+            public class Application {
+
+              @Autowired
+              BookingService bookingService;
+
+              @Bean
+              BookingService bookingService() {
+                return new BookingService();
+              }
+
+              public static void main(String[] args) {
+                bookingService.book("Alice", "Bob", "Carol");
+              }
+            }
+
+@Bean tells Spring 'here is an instance of this class, please keep hold of it and give it back to me when I ask'.
+
+@Autowired says 'please give me an instance of this class, for example, one that I created with an @Bean annotation earlier'.
+
+
 
         <beans>
             <bean id="clientService" class="com.example.ClientService">
@@ -313,9 +344,9 @@ Et dans la couche de Service
 
 ### Créer ses controller 
 
-Quand on cré ses controller on assign des annotation à notre classe pour indiquer qu'elle va utiliser des méthodes GET POST PUT PATCH DELETE
+Quand on créé ses controllers on assign des annotation à notre classe pour indiquer qu'elle va utiliser des méthodes GET POST PUT PATCH DELETE
 
-L'annotation @RestController au dessus de la classe nous permet de l'identifier ainsis 
+L'annotation @RestController au dessus de la classe nous permet de l'identifier ainsi 
 
 puis on va ajouter des annotation mapping tel que @GetMapping 
 
