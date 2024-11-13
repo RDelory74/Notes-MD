@@ -246,9 +246,14 @@ Depuis l'IDE du micro Service on lance le terminal et on fait la commande: mvn c
 
     rentakar
 
+     java -jar
+
     VehiculeRentakar: /home/rodolphe-delory/Rentakar_MSA/VehiculeRentakar/target/rentakar-0.0.1-SNAPSHOT.jar
     OrderRentakar: /home/rodolphe-delory/Rentakar_MSA/OrderRentakar/target/order-0.0.1-SNAPSHOT.jar
     UserRentakar: /home/rodolphe-delory/Rentakar_MSA/UserRentakar/target/rentakar-0.0.1-SNAPSHOT.jar
+    LicenceCheck: /home/rodolphe-delory/Rentakar_MSA/GP_JAVA_AVANCE_api-licences/target/license-0.0.1-SNAPSHOT.jar
+    Eureka-Server: /home/rodolphe-delory/Rentakar_MSA/Eureka-Server/target/eureka-server-0.0.1-SNAPSHOT.jar
+
 
 
 https://medium.com/@AtefMADDOURI/dockeriser-vos-applications-spring-boot-8e33d76cddba
