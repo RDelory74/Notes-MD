@@ -458,6 +458,19 @@ Le projet devant être réalisé sous forme de MSA, la planification du travail 
 fera en équipe entière mais les tâches seront réparties
 
 
+## Route Rentakar_MSA
+
+
+Gateway: 
+
+Eureka: http://localhost:9097/eureka/
+
+UserRentakar:USERRENTAKAR   192.168.1.239:OrderRentakar:9093
+VehiculeRentakar:VEHICULERENTAKAR   192.168.1.239:UserRentakar:9090
+OrderRentakar: ORDERRENTAKAR    192.168.1.239:VehiculeRentakar:9091
+
+GPA_Licence
+
 
 
 ### Divers (insert sql and other)
@@ -586,4 +599,48 @@ VALUES
     (16, 10, 4, '2024-12-16', '2024-12-20', 'canceled', 0.0, 0);
 
 
-    
+    # Server Configuration
+server.port=8080
+spring.application.name=GatewayRentakar
+
+# Gateway Configuration
+spring.cloud.gateway.discovery.locator.lower-case-service-id=true
+spring.cloud.gateway.discovery.locator.enabled=true
+
+spring.main.web-application-type=reactive
+
+spring.cloud.gateway.routes[0].id=USERRENTAKAR
+spring.cloud.gateway.routes[0].uri=lb://USERRENTAKAR
+spring.cloud.gateway.routes[0].predicates[0]=Path=/users/**
+
+
+spring.cloud.gateway.routes[1].id=VEHICULERENTAKAR
+spring.cloud.gateway.routes[1].uri=lb://VEHICULERENTAKAR
+spring.cloud.gateway.routes[1].predicates[0]=Path=/vehicules/**
+
+
+spring.cloud.gateway.routes[2].id=ORDERRENTAKAR
+spring.cloud.gateway.routes[2].uri=lb://ORDERRENTAKAR
+spring.cloud.gateway.routes[2].predicates[0]=Path=/orders/**
+
+
+# Eureka Configuration
+eureka.client.serviceUrl.defaultZone=http://localhost:9097/eureka/
+eureka.instance.preferIpAddress=true
+
+
+# CORS Configuration
+spring.cloud.gateway.globalcors.corsConfigurations.[/**].allowedMethods=GET,POST,PUT,DELETE,OPTIONS
+#spring.cloud.gateway.globalcors.corsConfigurations.[/**].allowedOriginPatterns=*
+#spring.cloud.gateway.globalcors.corsConfigurations.[/**].allowedHeaders=*
+#spring.cloud.gateway.globalcors.corsConfigurations.[/**].allowCredentials=true
+
+# Optional: Timeout Configuration
+spring.cloud.gateway.httpclient.connect-timeout=1000
+spring.cloud.gateway.httpclient.response-timeout=5000
+
+# Optional: Logging Configuration
+logging.level.org.springframework.cloud.gateway=DEBUG
+logging.level.reactor.netty=DEBUG
+spring.cloud.gateway.httpserver.wiretap=true
+spring.cloud.gateway.httpclient.wiretap=true
