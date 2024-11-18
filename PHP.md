@@ -106,7 +106,7 @@ Je vais faire le même exercie avec une structure If/GET/ELSE/IFELSE:
 
 ## Le formulaire
 
-J'ai créé un formulaire avec Chat GPT dans le quel j'ai intégrer les champs et label désirés: 
+J'ai créé un formulaire dans le quel j'ai intégrer les champs et label désirés: Ca fait un peu comme livre dont tu es le heros et c'est chat gpt qui ajoute des chapitres
 
         <form class="contact-form" action="traitement_formulaire.php" method="POST">
         <label class="form-label" for="civility">Civilité :</label>
@@ -139,7 +139,7 @@ J'ai créé un formulaire avec Chat GPT dans le quel j'ai intégrer les champs e
 
 Je lui ai attribué une action (me renvoyer sur la page de traitement php traitement_formulaire.php ) et un methode (POST) qui est de récupérer les données
 
-Quand je rempli mon formulaire et que j'appuis sur le bouton Envoyer j'arrive sur uyn page qui m'afiche le resultat suivant: 
+Quand je rempli mon formulaire et que j'appuis sur le bouton Envoyer j'arrive sur unn page qui m'afiche le resultat suivant: 
 
 array(5) { ["civility"]=> string(2) "mr" ["name"]=> string(6) "Delory" ["email"]=> string(22) "roro_spike@hotmail.com" ["Raison"]=> string(2) "mr" ["message"]=> string(86) "Je trouve que le héros est pas trop trop bien. Je propose que ce soit une héroïne. " }
 
@@ -284,7 +284,7 @@ Si le chant civilite est rempli et (&&) vérifie que la valeur du chant est éga
     && filter_var($mail, FILTER_VALIDATE_EMAIL)
     && isset($civilite)
     && strlen($message) > 5
-    ){
+    )
 
 ## Super Bonus pour valider les compétences
 

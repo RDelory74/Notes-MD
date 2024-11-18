@@ -78,7 +78,7 @@ enfin le chevron qui lui va selcetionner tous les elements d'un type (genre p ou
 
 Bootstrap: 
 
-Enfin je dirais que bootstrap est un framework que l'on appel via un lien dans le head de notre html. 
+Enfin je dirais que bootstrap est une librairie que l'on appel via un lien dans le head de notre html. 
 
 en faisant ce lien on fait appel à tous le css de bootstrap ce qui nous permet d'intégrer des elements en les appellant simplement ou alors de la modifier en ajoutant des class(respecter la nomenclature de boostrap) via un espace 
 
