@@ -235,6 +235,45 @@ Bonnes pratiques :
 
 Les tests E2E complètent la pyramide de tests traditionnelle (unitaires, intégration) en validant l'application dans son ensemble.
 
+## Cahier de test test avancés (test routes API)
+
+    6. throw 404 if query parameter are outofbounds
+    ID: T6
+    Objectif: On vérifie que lors du scénario ou la route est appellée  // '/words?limit=10&page=2' // la page affiche bien une liste 10 elements par page puis qu'on est bien sur la page 2, comme il n'y a pas deux pages, je n'insert que deux mots, il faut que j'ai un code errer 404. 
+    Etapes de test: 
+        - Insertion des deux mots, je met dans une variable response la requête attendu. 
+    Resultat attendu: 
+        - que le status de la response.body soit égal à 404. 
+
+
+        7. check querry parameters
+    ID: T7
+    Objectif: On vérifie que lors du scénario ou la route est appellée  // '/words?limit=10&page=1' // la page affiche bien une liste 10 elements par page puis qu'on est bien sur la page 1, (je n'intègre que deux elements).
+    Etapes de test: 
+        - Insertion des deux mots, je met dans une variable response la requête attendu. 
+    Resultat attendu: 
+        - que le status de la response.body soit égal à:
+        {"items": [
+                {word:"bateau" },
+                {word: "califourchon"}
+            ], "currentPage": 1,
+            "totalCount": 2,
+            "totalPages": 1}
+
+        8. 'should return correct pages when nbListItemsToDisplay changes'
+        ID: T8
+    Objectif: On vérifie que lors du scénario ou le nobre de words est chang le nombre de pages s'adapte  // '/words?limit=10&page=1' //
+    Etapes de test: 
+        - Insertion de 30 mots, et calibrage du nombre d'éléments par pages à 6. 
+    Resultat attendu: 
+        - que le status de la response.body soit égal à:
+      {"items": [
+                {word:"bateau" },
+                {word: "califourchon"}
+            ], "currentPage": 1,
+            "totalCount": 2,
+            "totalPages": 1}
+
 ### Selecteur Stables (petite parenthèse)
 
 Il s'agit de bonne pratique dans la conceptiond des selecteurs HTML plus robustes: 
@@ -290,6 +329,7 @@ Pour exécuter vos tests, vous pourrez utiliser :
 bashCopynpx playwright test
 
 
+
 ### Ressources 
 
 https://2023.stateofjs.com/en-US
@@ -297,3 +337,11 @@ https://2023.stateofjs.com/en-US
 https://learn.microsoft.com/fr-fr/dotnet/devops/dotnet-test-github-action
 
 
+ expect(response.body).toEqual
+        ({"items": [
+                {word:"bateau" },
+                {word: "califourchon"}
+            ], "currentPage":1,
+            "totalCount": 3,
+            "totalPages": 2}
+    );
