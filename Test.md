@@ -237,7 +237,7 @@ Les tests E2E complètent la pyramide de tests traditionnelle (unitaires, intég
 
 ## Cahier de test test avancés (test routes API)
 
-    6. throw 404 if query parameter are outofbounds
+       6. throw 404 if query parameter are outofbounds
     ID: T6
     Objectif: On vérifie que lors du scénario ou la route est appellée  // '/words?limit=10&page=2' // la page affiche bien une liste 10 elements par page puis qu'on est bien sur la page 2, comme il n'y a pas deux pages, je n'insert que deux mots, il faut que j'ai un code errer 404. 
     Etapes de test: 
@@ -246,7 +246,7 @@ Les tests E2E complètent la pyramide de tests traditionnelle (unitaires, intég
         - que le status de la response.body soit égal à 404. 
 
 
-        7. check querry parameters
+        7. display pagination with normal scenario
     ID: T7
     Objectif: On vérifie que lors du scénario ou la route est appellée  // '/words?limit=10&page=1' // la page affiche bien une liste 10 elements par page puis qu'on est bien sur la page 1, (je n'intègre que deux elements).
     Etapes de test: 
@@ -260,9 +260,9 @@ Les tests E2E complètent la pyramide de tests traditionnelle (unitaires, intég
             "totalCount": 2,
             "totalPages": 1}
 
-        8. 'should return correct pages when nbListItemsToDisplay changes'
+        8. GET'should return correct pages when nbListItemsToDisplay changes'
         ID: T8
-    Objectif: On vérifie que lors du scénario ou le nobre de words est chang le nombre de pages s'adapte  // '/words?limit=10&page=1' //
+    Objectif: On vérifie que l'affichage du nombre de mot dans la variable limit est respecté // '/words?limit=10&page=1' //
     Etapes de test: 
         - Insertion de 30 mots, et calibrage du nombre d'éléments par pages à 6. 
     Resultat attendu: 
@@ -273,6 +273,44 @@ Les tests E2E complètent la pyramide de tests traditionnelle (unitaires, intég
             ], "currentPage": 1,
             "totalCount": 2,
             "totalPages": 1}
+
+        9. 'GET /checking displaying right number of word by limit value'
+        ID: T9
+    Objectif: On vérifie que lors du scénario ou le nobre de words est chang le nombre de pages s'adapte  // '/words?limit=10&page=1' //
+    Etapes de test: 
+        - Insertion de 30 mots, et calibrage du nombre d'éléments par pages à 6. 
+    Resultat attendu: 
+        - que le status de la response.body soit égal à:
+    {"items": [
+                 {word: "marmelade"},
+                 {word: "oubliette"},
+                 {word: "cithare"},
+                 {word: "carapace"},
+                 {word: "gondole"},
+                 {word: "égratignure"}
+             ], "currentPage": 3,
+             "totalCount": 32,
+             "totalPages": 6}
+
+        10. 'GET /checking displaying a random word'
+        ID: T10
+    Objectif: On vérifie que la requête  // '/words/random' // renvoi un des mots au hasard 
+    Etapes de test: 
+        - Insertion de 2 mots, et attente du retour de body de correspondre à un des deux mots indiqués. 
+    Resultat attendu: 
+        - que le status de la response.body soit égal à:
+        - expect(validWord).toContainEqual(response.body);
+
+        11. 'POST /checking a new word is adding to a list'
+        ID: T11
+    Objectif: On vérifie que la requête  // '/words' // ajoute bien un mot au tableau de mots 
+    Etapes de test: 
+        - Insertion de 2 mots, et ajout de . 
+    Resultat attendu: 
+        - que le status de la response.body soit égal à:
+        - expect(validWord).toContainEqual(response.body);
+
+
 
 ### Selecteur Stables (petite parenthèse)
 
