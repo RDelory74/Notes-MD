@@ -117,40 +117,26 @@ Pour l'instalation :
 
     Mettre à jour le système :
 
-    bash
-    Copier le code
     sudo apt update
     sudo apt upgrade
     Installer les paquets nécessaires :
 
-    bash
-    Copier le code
     sudo apt install apt-transport-https ca-certificates curl software-properties-common
     Ajouter la clé GPG officielle de Docker :
 
-    bash
-    Copier le code
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
     Ajouter le dépôt Docker :
 
-    bash
-    Copier le code
     sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
     Installer Docker :
 
-    bash
-    Copier le code
     sudo apt update
     sudo apt install docker-ce
     Vérifier l'installation :
 
-    bash
-    Copier le code
     sudo systemctl status docker
     (Optionnel) Exécuter Docker sans sudo :
 
-    bash
-    Copier le code
     sudo usermod -aG docker ${USER}
 
 
@@ -263,13 +249,11 @@ Utilisation de Docker Compose : Après avoir créé le fichier docker-compose.ym
 
 Pour démarrer les services :
 
-bash
-Copier le code
-docker-compose up
+
+docker-compose up --build // --build permet de reconstruire l'image d'origine pour créer le container
 Pour arrêter les services :
 
-bash
-Copier le code
+
 docker-compose down
 En résumé :
 Docker Compose est un outil pour gérer des applications multi-conteneurs.
