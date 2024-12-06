@@ -306,3 +306,19 @@ networks:
   wp_network:
     driver: bridge
 
+
+
+# Ressources
+
+before_script:
+    - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - chmod 400 "$SSH_PRIVATE_KEY"
+    - ssh-add "$SSH_PRIVATE_KEY"
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+- deploy-prod:
+  stage: deploy
+  script:
+    - ssh -o StrictHostKeyChecking=no user@production-server "docker-compose pull && docker-compose up -d"
+  environment: production
