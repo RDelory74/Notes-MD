@@ -88,4 +88,6 @@ Upload files
     timezone: '%env(APP_TIMEZONE)%'
 
     //
-    uploads_directory: '%kernel.project_dir%/public/uploads'
+    
+
+    Développeur musclé
