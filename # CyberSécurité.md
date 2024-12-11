@@ -26,7 +26,7 @@
         - Contre les types de menace suivants:
 
             - Le phishing: C'est une technique qui consiste à voler des informations à un utilisateur par le biais d'un mail ressemblant à un mail de confiance.
-            - Les ransomwares: Technique qui bloque l'accés à un utilisateur sur un terminal ou à des données et à qui ont va demande une rancçon pour retrouver son accès. (Attention dans bien des cas rien ne garantie le retour à cet accès)
+            - Les ransomwares: Technique qui bloque l'accés à un utilisateur sur un terminal ou à des données et à qui ont va demander une rançon pour retrouver son accès. (Attention dans bien des cas rien ne garantie le retour à cet accès)
             - Le malware: Il s'agit d'un programme malveillant qui permet d'accéder à un espace sécurisé ou d'endommager un logiciel
             - L'ingénierie sociale: Le fait de se renseigner sur une personne ou de cibler une proie par son âge ses centre d'interets ses points de vue politiques. 
 
@@ -72,7 +72,7 @@
 
     - LE PRINCIPE DE MOINDRE PRIVILEGE
 
-            - C'est controler les accés strcitement nécessaire à un utilisateur pour effectuer son travail ( typiquement reduire l'accés aux navigateurs internet)
+            - C'est controler les accés strictement nécessaire à un utilisateur pour effectuer son travail ( typiquement reduire l'accés aux navigateurs internet)
 
     - AUTHENTIFICATION A DEUX FACTEURS (2FA)
 
@@ -153,7 +153,7 @@
 
         - Intégrer une attaque dans le code html d'une page. 
         - Controler la taille de champs le type de characères
-    - Utiliser le Framework, ne pas faire confiance à ses utilisateurs. 
+        - Utiliser le Framework, ne pas faire confiance à ses utilisateurs. 
 
 
 ## LA DEFENSE EN PROFONDEUR
@@ -161,3 +161,21 @@ NE JAMAIS REPOSER TOUTE SA DEFENCE SUR UNE STRATEGIE AVOIR TOUJOURS AU MOINS DEU
 
 En TEMPS QUE DEVELOPEUR JE DOIS CONTROLER A CHAQUE FOIS QU'IL Y A UNE INTERFACE DONNEE ENTRE L'EXTERIEUR ET LE SERVEUR 
 
+ Smith' OR '1' = '1'; GRANT UPDATE ON TABLE employees TO unauthorized_user; UPDATE employees set salary = 100000 WHERE FIRST_NAME = 'John'; -- 
+
+
+ Smith' OR '1' = '1'; GRANT UPDATE ON TABLE employees TO unauthorized_user; UPDATE employees set salary = 100000 WHERE FIRST_NAME = 'John'; -- 
+
+ *' OR '1' = '1'; DROP TABLE access_log; --
+
+ eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MzQ3OT
+ I4Nz
+ MsImFkbWluIjoiZmFsc2UiLCJ1c2VyIjoi
+ U3lsdmVzdGVyIn0.fYpVMWaMev8Q_DVJWaELS3kGXcjAOfhhFtENJjPOZV9fsmVTkMKfqwnPcM0sCzSnBN3GWrRyygqRXt3GOFCqhQ
+
+ eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MzQ3OT
+ MzNj
+ MsImFkbWluIjoiZmFsc2UiLCJ1c2VyIjoi
+ VG9tIn0.BIrSC3aqtnlI-E05RiSoWxjwtyfyRQhmGkEoBEwo4Fn3J49KoqOTB2pu7TGt4qN5SnVqqGTQXyjw1uFCCeLY5g;
+
+ 
