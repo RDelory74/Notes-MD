@@ -1,5 +1,14 @@
 # Cyber-Sécurité
 
+## Se prémunir
+
+Un bon Framework, ne pas faire d'implementation native 
+
+
+## Les outils 
+
+
+
 ## Les bases de la sécurité
 
 ### Décourverte et receuil d'information
@@ -178,4 +187,24 @@ En TEMPS QUE DEVELOPEUR JE DOIS CONTROLER A CHAQUE FOIS QU'IL Y A UNE INTERFACE 
  MsImFkbWluIjoiZmFsc2UiLCJ1c2VyIjoi
  VG9tIn0.BIrSC3aqtnlI-E05RiSoWxjwtyfyRQhmGkEoBEwo4Fn3J49KoqOTB2pu7TGt4qN5SnVqqGTQXyjw1uFCCeLY5g;
 
- 
+
+tom
+ eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MzQ4NTY1NDUsImFkbWluIjoiZmFsc2UiLCJ1c2VyIjoiVG9tIn0.p7jROb3Qh5UIBiWBHiwlDVU4HHmhFAnxNO0Hs4_tmBOElDSfHcbFlTeP0Zzk6wE7o3Ly71Ctg-XUxOWaZd1Kgg
+eyJhbGciOiJOb25lIn0.ew0KICAiYWRtaW4iIDogInRydWUiLA0KICAiaWF0IiA6IDE3MzQ4NTY1NDUsDQogICJ1c2VyIiA6ICJUb20iDQp9
+
+Token modifié: de Tom avec admin: true, alg:None
+
+eyJhbGciOiJub25lIn0.ew0KICAiYWRtaW4iIDogInRydWUiLA0KICAiaWF0IiA6IDE2MDgxMjg1NjYsDQogICJ1c2VyIiA6ICJUb20iDQp9
+eyJhbGciOiJub25lIn0.ew0KICAiYWRtaW4iIDogInRydWUiLA0KICAiaWF0IiA6IDE3MzQ4NTgxNzYsDQogICJ1c2VyIiA6ICJUb20iDQp9
+eyJhbGciOiJub25lIn0.ew0KICAiYWRtaW4iIDogInRydWUiLA0KICAiaWF0IiA6IDE2MDgxMjg1NjYsDQogICJ1c2VyIiA6ICJUb20iDQp9
+
+
+ID: Guest 
+OCOUoEU8HP389lYGpMe3WV3zBJKgH7TSqZYZP7Ro
+
+hijack_cookie=6404940596975892541-1734085438357
+hijack_cookie=6404940596975892541-1734085438357
+hijack_cookie=6404940596975892541-1734085438357
+hijack_cookie=6404940596975892550-1734085799056
+
+
