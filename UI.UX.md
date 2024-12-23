@@ -172,6 +172,15 @@ emoji
 
 https://emojikeyboard.top/fr/
 
+Design System :
+
+DaisyUI
+Atlassian 
+Carbon 
+Apple
+
+
+
             <li>Freepik: <a href="https://www.pexels.com/">https://www.freepik.com/home</a></li>
 			<li>Pexels: <a href="https://www.pexels.com/">https://www.pexels.com/</a></li>
 			<li>SplitShire: <a href="https://www.splitshire.com/">https://www.splitshire.com/</a></li>
