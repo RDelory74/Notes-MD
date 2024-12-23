@@ -163,7 +163,14 @@ https://www.favicon.cc/?
 FIGMA
 https://whimsical.com/
 
+Règles de hierarchie viuselle
 
+https://www.chrbutler.com/gestalt-principles-of-design-proximity
+https://lawsofux.com/
+
+emoji
+
+https://emojikeyboard.top/fr/
 
             <li>Freepik: <a href="https://www.pexels.com/">https://www.freepik.com/home</a></li>
 			<li>Pexels: <a href="https://www.pexels.com/">https://www.pexels.com/</a></li>
