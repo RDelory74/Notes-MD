@@ -1,13 +1,17 @@
 
 # API 
 Pour des films
-https://www.themoviedb.org/
+//https://www.themoviedb.org/
 
 # Vue
-//little library for vue component
+little library for vue component
 https://headlessui.com/v1/vue/
 
 # Nuxt
+
+Directory convention nuxt:
+https://v2.vuejs.org/v2/style-guide/?redirect=true#Single-file-component-filename-casing-strongly-recommended
+
 library for nuxt admin auth component
 //shadcn-nuxt
 
