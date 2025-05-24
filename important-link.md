@@ -27,6 +27,10 @@ https://zooper.pages.dev/lab
 //example authentification Pocket-base
 https://github.com/fayazara/pocketbase-nuxt/tree/main
 
+# Symfony
+
+Good guide to start: 
+https://symfony.com/doc/6.4/the-fast-track/fr/index.html
 
 # Other
 
